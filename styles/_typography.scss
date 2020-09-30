@@ -1,12 +1,5 @@
-
-@font-face {
-  font-family: "new-type";
-  font-weight: normal;
-  src: url(./Roboto_Mono/RobotoMono-VariableFont_wght.ttf);
-}
-
 * {
-  font-family: 'Work Sans', sans-serif;
-  color: var(--text-main);
+  font-family: "Work Sans", sans-serif;
+  color: $text-main;
   font-size: 1rem;
 }

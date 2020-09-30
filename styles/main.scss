@@ -1,3 +1,4 @@
+@import "reset";
 @import "settings";
 @import "nav";
 @import "cards";
@@ -15,8 +16,8 @@
 }
 
 .page-wrapper {
-  max-width: 900px;
-  background-color: black;
+  max-width: 1100px;
+  background-color: #111;
 }
 
 .main-section__container {

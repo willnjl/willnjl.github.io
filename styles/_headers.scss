@@ -1,32 +1,29 @@
 .hero {
   position: relative;
+  // text-align: center;
+  color: white;
 
   &_img {
-    z-index: -1;
     width: 100%;
   }
 
   .links__container {
     font-family: "Advent Pro", sans-serif;
-    display: grid;
+    background: #0000009b;
+    color: $yellow;
+    display: flex;
     flex-direction: column;
-    font-size: calc(2vw + 20px);
-    font-weight: bold;
-    color: var(--col-yellow);
+    padding: 5rem;
+
     position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    right: 0%;
-    left: 0%;
     top: 35%;
-    padding: 1rem;
-    z-index: 1;
-    align-items: space-around;
-    background: rgba(0, 0, 0, 0.8);
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     .link {
       text-decoration: underline;
       padding: 1rem;
+      font-size: 2rem;
 
       &:hover {
         transition: color 1s;
@@ -54,7 +51,7 @@
       }
       &:nth-child(3):hover {
         margin-left: 6vw;
-        color: var(--btn-main);
+        color: $btn-green;
       }
     }
   }
