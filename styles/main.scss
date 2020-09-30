@@ -1,0 +1,26 @@
+@import "settings";
+@import "nav";
+@import "cards";
+@import "typography";
+@import "buttons";
+@import "headers";
+@import "footer";
+
+.page-wrapper,
+.main-section__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+.page-wrapper {
+  max-width: 900px;
+  background-color: black;
+}
+
+.main-section__container {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+}

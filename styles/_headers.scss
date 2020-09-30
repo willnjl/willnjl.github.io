@@ -1,0 +1,71 @@
+.hero {
+  position: relative;
+}
+
+.hero__img {
+  z-index: -1;
+  width: 100%;
+}
+
+.hero__text {
+  font-family: "Advent Pro", sans-serif;
+  display: grid;
+  flex-direction: column;
+  font-size: calc(2vw + 20px);
+  font-weight: bold;
+  color: var(--col-yellow);
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  right: 0%;
+  left: 0%;
+  top: 35%;
+  padding: 1rem;
+  z-index: 1;
+
+  align-items: space-around;
+}
+.hero__band {
+  max-width: 50%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.hero__text a {
+  text-decoration: underline;
+  padding: 1rem;
+}
+
+.hero__text a:hover {
+  transition: color 1s;
+}
+
+.hero__text a:nth-child(1) {
+  margin-left: 1vw;
+  transition: margin 0.5s;
+}
+.hero__text a:nth-child(1):hover {
+  margin-left: 2vw;
+  color: #ff4b73;
+}
+.hero__text a:nth-child(2) {
+  margin-left: 3vw;
+  transition: margin 1s;
+}
+.hero__text a:nth-child(2):hover {
+  margin-left: 4vw;
+  color: #00edff;
+}
+.hero__text a:nth-child(3) {
+  margin-left: 5vw;
+  transition: margin 1.5s;
+}
+.hero__text a:nth-child(3):hover {
+  margin-left: 6vw;
+  color: var(--btn-main);
+}
+
+@media screen and (max-width: 605px) {
+  .hero__text {
+    font-size: 5vw;
+  }
+}
