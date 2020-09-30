@@ -1,0 +1,23 @@
+.footer__container {
+  justify-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--text-main);
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.footer__nav--link {
+  color: var(--text-grey);
+  text-decoration: underline;
+  padding: 10px;
+}
+
+.footer__headshot {
+  max-width: 200px;
+  height: auto;
+  filter: saturate(0%);
+}
