@@ -1,5 +1,8 @@
 .cta {
-  background-color: $text-main;
-  border: 1px red solid;
-  color: yellow;
+  background-color: $yellow;
+  padding: 1rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

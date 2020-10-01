@@ -193,9 +193,11 @@ table {
   font-size: 1rem; }
 
 .cta {
-  background-color: #333;
-  border: 1px red solid;
-  color: yellow; }
+  background-color: #f9dc5c;
+  padding: 1rem; }
+
+.cta:hover {
+  text-decoration: underline; }
 
 .hero {
   position: relative;
