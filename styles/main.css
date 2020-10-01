@@ -171,21 +171,66 @@ table {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  border: 1px white solid;
-  max-width: 350px; }
+  margin: auto;
+  background-size: contain; }
 
 .cards_container .card {
-  position: relative;
-  border: 1px solid white; }
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  padding: 1rem; }
 
-.cards_container .card_img {
-  width: 100%; }
+.cards_container .card h2 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: #ddd; }
 
-.cards_container .card div {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
+.cards_container .card .card_img {
+  border: 2px solid #59ff75;
+  border-radius: 100%;
+  width: 235px;
+  height: 235px;
+  object-fit: cover; }
+
+.cards_container .card .card_text {
+  background-color: #333;
+  padding: 2rem;
+  margin-top: 1rem; }
+
+.cards_container .card .card_text p {
+  color: #999; }
+
+.cards_container .card_tags_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+.cards_container .card_tags_container li {
+  display: inline-block;
+  margin: 0.7rem;
+  font-size: 0.8rem;
+  color: #999; }
+
+.cards_container .card_links_container {
+  display: flex; }
+
+.cards_container .card_links_container li {
+  margin: 1rem;
+  color: #f9dc5c; }
+
+.cards_container .card_links_container li:hover {
+  color: #59ff75; }
+
+@media (max-width: 650px) {
+  .cards_container {
+    display: flex;
+    flex-direction: column; }
+  .card_tags_container {
+    display: flex;
+    flex-direction: column; } }
 
 * {
   font-family: "Work Sans", sans-serif;
@@ -310,14 +355,7 @@ table {
     display: flex;
     flex-direction: column; } }
 
-.content {
-  color: #f9dc5c; }
-
-.cv_banner {
-  width: 100%; }
-
-.page-wrapper,
-.main-section__container {
+.page-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -327,7 +365,7 @@ table {
   max-width: 900px;
   background-color: black; }
 
-section {
+.main_elem {
   display: flex;
   flex-direction: column;
   align-items: center;

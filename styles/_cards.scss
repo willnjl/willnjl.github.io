@@ -2,20 +2,75 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  border: 1px white solid;
-  max-width: 350px;
+  margin: auto;
+  // background-image: url("../assets/DSCF3801.jpg");
+  background-size: contain;
 
   .card {
-    position: relative;
-    border: 1px solid white;
-    &_img {
-      width: 100%;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+    padding: 1rem;
+
+    h2 {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      color: #ddd;
     }
-    div {
-      position: absolute;
-      top: 35%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+
+    .card_img {
+      border: 2px solid $btn-green;
+      border-radius: 100%;
+      width: 235px;
+      height: 235px;
+      object-fit: cover;
     }
+
+    .card_text {
+      background-color: #333;
+      padding: 2rem;
+      margin-top: 1rem;
+
+      p {
+        color: #999;
+      }
+    }
+    &_tags_container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      li {
+        display: inline-block;
+        margin: 0.7rem;
+        font-size: 0.8rem;
+        color: #999;
+      }
+    }
+    &_links_container {
+      display: flex;
+      li {
+        margin: 1rem;
+        color: $yellow;
+
+        &:hover {
+          color: $btn-green;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .cards_container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card_tags_container {
+    display: flex;
+    flex-direction: column;
   }
 }
