@@ -310,6 +310,12 @@ table {
     display: flex;
     flex-direction: column; } }
 
+.content {
+  color: #f9dc5c; }
+
+.cv_banner {
+  width: 100%; }
+
 .page-wrapper,
 .main-section__container {
   display: flex;
