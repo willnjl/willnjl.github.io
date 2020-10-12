@@ -1,3 +1,13 @@
+.grid_container {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1rem;
+  column-gap: 1rem;
+  margin: auto;
+  margin-top: 2rem;
+}
+
 .cards_container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -18,7 +28,7 @@
     h2 {
       margin-top: 1rem;
       font-size: 1.5rem;
-      color: #ddd;
+      color: $btn-green;
     }
 
     .card_img {
@@ -46,7 +56,7 @@
         display: inline-block;
         margin: 0.7rem;
         font-size: 0.8rem;
-        color: #999;
+        color: $green;
       }
     }
     &_links_container {

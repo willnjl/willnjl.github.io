@@ -167,6 +167,15 @@ table {
 .nav__link:hover {
   text-decoration: underline; }
 
+.grid_container {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1rem;
+  column-gap: 1rem;
+  margin: auto;
+  margin-top: 2rem; }
+
 .cards_container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -186,7 +195,7 @@ table {
 .cards_container .card h2 {
   margin-top: 1rem;
   font-size: 1.5rem;
-  color: #ddd; }
+  color: #59ff75; }
 
 .cards_container .card .card_img {
   border: 2px solid #59ff75;
@@ -212,7 +221,7 @@ table {
   display: inline-block;
   margin: 0.7rem;
   font-size: 0.8rem;
-  color: #999; }
+  color: #c2eabd; }
 
 .cards_container .card_links_container {
   display: flex; }
@@ -324,19 +333,6 @@ table {
   color: #59ff75;
   font-size: 1.5rem; }
 
-.contact_container {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 1rem;
-  column-gap: 1rem;
-  margin: auto;
-  margin-top: 2rem; }
-
-.contact_container .details {
-  grid-row-start: 1;
-  grid-row-end: 3; }
-
 .contact_item {
   background-color: #444;
   padding: 1.2rem;
@@ -354,6 +350,22 @@ table {
   .contact_container {
     display: flex;
     flex-direction: column; } }
+
+.skills_container {
+  display: flex;
+  flex-direction: column;
+  background-color: #444;
+  padding: 2rem; }
+
+.skills_container ul > li {
+  color: #c2eabd;
+  margin-top: 0.5rem; }
+
+.skills_title {
+  color: #f9dc5c;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+  margin: 0 auto; }
 
 .page-wrapper {
   display: flex;
