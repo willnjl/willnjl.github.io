@@ -254,6 +254,7 @@ table {
   text-decoration: underline; }
 
 .hero {
+  margin-top: 1rem;
   position: relative;
   color: white; }
 
@@ -327,7 +328,7 @@ table {
 .footer__headshot {
   max-width: 200px;
   height: auto;
-  filter: saturate(0%); }
+  filter: saturate(75%); }
 
 .contact {
   display: flex;
@@ -361,16 +362,18 @@ table {
   margin-top: 1rem; }
 
 .contact .social {
-  display: inline;
   margin-top: 1rem; }
 
-.contact .social svg {
-  max-width: 25px;
-  margin: auto;
-  transition: fill 1s; }
+.contact .social_link svg {
+  max-width: 35px;
+  transition: fill 1s;
+  margin-right: 1rem; }
 
-.contact .social svg:hover {
+.contact .social_link svg:hover {
   fill: #59ff75; }
+
+.contact_profile {
+  max-width: 245px; }
 
 .skills_container {
   display: flex;

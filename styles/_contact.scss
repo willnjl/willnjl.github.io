@@ -38,16 +38,20 @@
   }
 
   .social {
-    display: inline;
     margin-top: 1rem;
-
-    svg {
-      max-width: 25px;
-      margin: auto;
-      transition: fill 1s;
-      &:hover {
-        fill: $btn-green;
+    &_link {
+      svg {
+        max-width: 35px;
+        transition: fill 1s;
+        margin-right: 1rem;
+        &:hover {
+          fill: $btn-green;
+        }
       }
     }
   }
+}
+
+.contact_profile {
+  max-width: 245px;
 }
