@@ -7,10 +7,10 @@
 
   .column {
     padding: 2rem;
-    background-color: #444;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #444;
   }
 
   &_name {
@@ -37,9 +37,9 @@
     }
   }
 
-  .social {
+  .social_container {
     margin-top: 1rem;
-    &_link {
+    .social_link {
       svg {
         max-width: 35px;
         transition: fill 1s;
@@ -52,6 +52,21 @@
   }
 }
 
+@media (max-width: 600px) {
+  .contact {
+    flex-direction: column;
+  }
+  .social_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  svg {
+    width: 35px;
+  }
+}
+
 .contact_profile {
   max-width: 245px;
+  margin: auto;
 }
