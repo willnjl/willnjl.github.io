@@ -1,65 +1,34 @@
 .hero {
-  margin-top: 1rem;
-  position: relative;
-  // text-align: center;
   color: white;
+  width: 100vw;
+  position: sticky;
+  top: 0;
 
   &_img {
     width: 100%;
+    height: 100vh;
+    object-fit: cover;
   }
 
   .links__container {
+    opacity: 1;
     font-family: "Advent Pro", sans-serif;
-    background: #0000009b;
-    color: $yellow;
+    background: $shade;
+    color: white;
+    text-shadow: 1px 1px black;
     display: flex;
     flex-direction: column;
     padding: 5rem;
 
     position: absolute;
-    top: 35%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    .link {
-      text-decoration: underline;
-      padding: 1rem;
-      font-size: 2rem;
-
-      &:hover {
-        transition: color 1s;
-      }
-
-      &:nth-child(1) {
-        margin-left: 1vw;
-        transition: margin 0.5s;
-      }
-      &:nth-child(1):hover {
-        margin-left: 2vw;
-        color: $red;
-      }
-      &:nth-child(2) {
-        margin-left: 3vw;
-        transition: margin 1s;
-      }
-      &:nth-child(2):hover {
-        margin-left: 4vw;
-        color: $blue;
-      }
-      &:nth-child(3) {
-        margin-left: 5vw;
-        transition: margin 1.5s;
-      }
-      &:nth-child(3):hover {
-        margin-left: 6vw;
-        color: $btn-green;
-      }
-    }
   }
-}
 
-@media screen and (max-width: 605px) {
-  .hero__text {
-    font-size: 5vw;
+  @media screen and (max-width: 605px) {
+    .hero__text {
+      font-size: 5vw;
+    }
   }
 }

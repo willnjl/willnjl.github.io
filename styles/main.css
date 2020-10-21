@@ -83,7 +83,8 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+  color: inherit; }
 
 a,
 a:visited,
@@ -237,59 +238,32 @@ table {
   text-decoration: underline; }
 
 .hero {
-  margin-top: 1rem;
-  position: relative;
-  color: white; }
+  color: white;
+  width: 100vw;
+  position: sticky;
+  top: 0; }
 
 .hero_img {
-  width: 100%; }
+  width: 100%;
+  height: 100vh;
+  object-fit: cover; }
 
 .hero .links__container {
+  opacity: 1;
   font-family: "Advent Pro", sans-serif;
-  background: #0000009b;
-  color: #f9dc5c;
+  background: #00000066;
+  color: white;
+  text-shadow: 1px 1px black;
   display: flex;
   flex-direction: column;
   padding: 5rem;
   position: absolute;
-  top: 35%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
 
-.hero .links__container .link {
-  text-decoration: underline;
-  padding: 1rem;
-  font-size: 2rem; }
-
-.hero .links__container .link:hover {
-  transition: color 1s; }
-
-.hero .links__container .link:nth-child(1) {
-  margin-left: 1vw;
-  transition: margin 0.5s; }
-
-.hero .links__container .link:nth-child(1):hover {
-  margin-left: 2vw;
-  color: #ff4b73; }
-
-.hero .links__container .link:nth-child(2) {
-  margin-left: 3vw;
-  transition: margin 1s; }
-
-.hero .links__container .link:nth-child(2):hover {
-  margin-left: 4vw;
-  color: #00edff; }
-
-.hero .links__container .link:nth-child(3) {
-  margin-left: 5vw;
-  transition: margin 1.5s; }
-
-.hero .links__container .link:nth-child(3):hover {
-  margin-left: 6vw;
-  color: #59ff75; }
-
 @media screen and (max-width: 605px) {
-  .hero__text {
+  .hero .hero__text {
     font-size: 5vw; } }
 
 .footer__container {
@@ -395,17 +369,17 @@ svg {
 .page-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: auto; }
+  justify-content: center; }
 
 .page-wrapper {
-  max-width: 900px;
   background-color: black; }
 
 .main_elem {
+  opacity: 0;
+  position: relative;
   padding: 1rem;
-  background-color: #333;
-  margin: 2rem 1rem; }
+  background-color: #00000066;
+  margin: 5rem 1rem; }
 
 .main_elem h3 {
   color: #59ff75;

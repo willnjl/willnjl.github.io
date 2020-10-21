@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <script defer src="./app.js"></script>
     <link rel="stylesheet" href="./styles/main.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap"
@@ -29,8 +29,7 @@
     />
     <title>Will Leighton</title>
   </head>
-  <body class="page-wrapper">
-    <nav class="nav-bar">
+  <!-- <nav class="nav-bar">
       <h1 class="nav__logo">
         <a href="index.html">Will Leighton</a>
       </h1>
@@ -45,31 +44,36 @@
           <a href="#contact"> contact_ </a>
         </li>
       </ul>
-    </nav>
+    </nav> -->
+  <body class="page-wrapper">
     <header class="hero">
-      <h2 class="links__container">
-        <a href="#slider2" class="link">coding</a>
-        <a
-          target="_blank"
-          href="https://www.willstagelighting.com"
-          target="_blank"
-          class="link"
-          >performance</a
-        >
-        <a
-          target="_blank"
-          href="https://twitter.com/TrawlerAlert"
-          target="_blank"
-          class="link"
-          >environment</a
-        >
-      </h2>
+      <div class="links__container" id="hero_links">
+        <h2 class="link">
+          <a href="#slider2">coding</a>
+        </h2>
+        <h2 class="link">
+          <a
+            target="_blank"
+            href="https://www.willstagelighting.com"
+            target="_blank"
+            >performance</a
+          >
+        </h2>
+        <h2 class="link">
+          <a
+            target="_blank"
+            href="https://twitter.com/TrawlerAlert"
+            target="_blank"
+            >environment</a
+          >
+        </h2>
+      </div>
+
       <img src="assets/DSCF3835.jpg" class="hero_img" />
     </header>
 
-    <section class="main_elem">
-      <!-- <h3>skills_</h3> -->
-      <div class="slider owl-carousel owl-theme">
+    <section class="main_elem" id="skills">
+      <div class="slider owl-carousel owl-theme" id="slider">
         <div class="skills_container">
           <svg
             version="1.1"
@@ -442,19 +446,42 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
       ></script>
       <script>
-        $(".slider").owlCarousel({
+        $("#slider").owlCarousel({
           margin: 20,
           loop: true,
           center: true,
           responsive: {
             0: {
+              stagePadding: 30,
+              items: 1,
+            },
+            400: {
               stagePadding: 45,
               items: 1,
             },
-            // breakpoint from 480 up
-            550: {
-              stagePadding: 30,
+            450: {
+              stagePadding: 55,
+              items: 1,
+            },
+            500: {
+              stagePadding: 27,
+              items: 2,
+              center: false,
+            },
+            600: {
+              center: false,
+              items: 2,
+              stagePadding: 40,
+            },
+            700: {
+              center: false,
               items: 3,
+              stagePadding: 30,
+            },
+            1000: {
+              center: false,
+              items: 4,
+              stagePadding: 30,
             },
           },
         });
@@ -512,7 +539,7 @@
         </ul>
       </div>
     </section>
-    <section class="main_elem">
+    <section class="main_elem" id="projects">
       <div id="slider2" class="slider owl-carousel owl-theme">
         <article class="card">
           <img class="card_img" src="assets/ping-pong-scaled.jpg" />
