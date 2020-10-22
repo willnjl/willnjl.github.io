@@ -1,5 +1,22 @@
+@import "fonts";
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 350px) {
+  html {
+    font-size: 10px;
+  }
+}
+
 * {
   font-family: "Work Sans", sans-serif;
   color: $text-main;
-  font-size: 1rem;
 }

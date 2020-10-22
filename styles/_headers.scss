@@ -3,6 +3,8 @@
   width: 100vw;
   position: sticky;
   top: 0;
+  // max-width: 1450px;
+  margin: auto;
 
   &_img {
     width: 100%;
@@ -12,7 +14,6 @@
 
   .links__container {
     opacity: 1;
-    font-family: "Advent Pro", sans-serif;
     background: $shade;
     color: white;
     text-shadow: 1px 1px black;
@@ -24,11 +25,41 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
 
-  @media screen and (max-width: 605px) {
-    .hero__text {
-      font-size: 5vw;
+    .link {
+      margin-top: 25px;
+      font-weight: 400;
+      font-family: "Nothing You Could Do", cursive;
+      font-size: 2.5rem;
+      // text-transform: uppercase;
+      color: white;
+
+      transition: color 0.3s, margin-left 1s;
+      &:nth-child(1) {
+        &:hover {
+          color: $red;
+          margin-left: 1rem;
+        }
+      }
+      &:nth-child(2) {
+        margin-left: 1rem;
+        &:hover {
+          color: $blue;
+          margin-left: 2rem;
+        }
+      }
+      &:nth-child(3) {
+        margin-left: 2rem;
+        &:hover {
+          color: $btn-green;
+          margin-left: 2.5rem;
+        }
+      }
     }
+  }
+}
+@media screen and (max-width: 605px) {
+  .link {
+    font-size: 1rem;
   }
 }

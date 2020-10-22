@@ -1,17 +1,3 @@
-@font-face {
-  font-family: "honest";
-  font-weight: normal;
-  src: url(./Advent_Pro
-      Amatic_SC
-      Permanent_Marker/Amatic_SC/AmaticSC-Bold.ttf)
-    format("opentype");
-}
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&display=swap");
 
-@font-face {
-  font-family: "new-type";
-  font-weight: normal;
-  src: url(./Roboto_Mono/RobotoMono-VariableFont_wght.ttf);
-}
-
-$honest: "honest";
-$new: "new-type";
+@import url("https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap");

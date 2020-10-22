@@ -9,11 +9,9 @@
       href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Advent+Pro&family=Work+Sans:wght@500;400&display=swap"
-      rel="stylesheet"
-    />
+
     <script src="app.js" defer></script>
+    <script src="carousels.js" defer></script>
 
     <link
       rel="stylesheet"
@@ -49,7 +47,7 @@
     <header class="hero">
       <div class="links__container" id="hero_links">
         <h2 class="link">
-          <a href="#slider2">coding</a>
+          <a href="#slider2">technology</a>
         </h2>
         <h2 class="link">
           <a
@@ -374,7 +372,7 @@
           <ul>
             <li>My Sql</li>
             <li>Laravel</li>
-            <li>Using, creating, testing Restful API's</li>
+            <li>Restful API Design</li>
             <li>Blade Templating</li>
           </ul>
         </div>
@@ -445,47 +443,6 @@
         type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
       ></script>
-      <script>
-        $("#slider").owlCarousel({
-          margin: 20,
-          loop: true,
-          center: true,
-          responsive: {
-            0: {
-              stagePadding: 30,
-              items: 1,
-            },
-            400: {
-              stagePadding: 45,
-              items: 1,
-            },
-            450: {
-              stagePadding: 55,
-              items: 1,
-            },
-            500: {
-              stagePadding: 27,
-              items: 2,
-              center: false,
-            },
-            600: {
-              center: false,
-              items: 2,
-              stagePadding: 40,
-            },
-            700: {
-              center: false,
-              items: 3,
-              stagePadding: 30,
-            },
-            1000: {
-              center: false,
-              items: 4,
-              stagePadding: 30,
-            },
-          },
-        });
-      </script>
     </section>
 
     <section class="main_elem contact" id="contact">
@@ -538,147 +495,6 @@
           </a>
         </ul>
       </div>
-    </section>
-    <section class="main_elem" id="projects">
-      <div id="slider2" class="slider owl-carousel owl-theme">
-        <article class="card">
-          <img class="card_img" src="assets/ping-pong-scaled.jpg" />
-          <h2 class="skills_title">Ping Pong</h2>
-          <!-- <div class="card_text">
-            <p>
-              An app for Ping Pong enthusiasts to organise and display a
-              straight knock out tournament for up to eight people.
-            </p>
-          </div> -->
-          <ul class="card_tags_container">
-            <li>React</li>
-            <li>Redux</li>
-            <li>UX Design</li>
-          </ul>
-          <ul class="card_links_container">
-            <li>
-              <a
-                href="https://willnjl.github.io/PingPong-Tournament/"
-                target="_blank"
-                >Site</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://github.com/willnjl/PingPong-Tournament"
-                target="_blank"
-                >GitHub</a
-              >
-            </li>
-          </ul>
-        </article>
-        <article class="card">
-          <img class="card_img" src="assets/iScream-screen-shot-scaled.png" />
-          <h2 class="skills_title">iScream</h2>
-
-          <!-- <div class="card_text">
-            <p>
-              A Fully Operational React and Redux App with a laravel API. using
-              Leaftlet.js for the mapping.
-            </p>
-          </div> -->
-          <ul class="card_tags_container">
-            <li>Leaflet.js</li>
-            <li>React</li>
-            <li>Redux</li>
-            <li>UX Design</li>
-            <li>Team build</li>
-          </ul>
-          <ul class="card_links_container">
-            <li>
-              <a href="https://tom-meyrick.github.io/iScream/#/" target="_blank"
-                >Site</a
-              >
-            </li>
-            <li>
-              <a href="https://github.com/tom-meyrick/iScream" target="_blank"
-                >GitHub</a
-              >
-            </li>
-          </ul>
-        </article>
-        <article class="card">
-          <img
-            class="card_img"
-            src="assets/Screenshot 2020-10-01 at 15.59.26.png"
-          />
-          <h2 class="skills_title">js Tetris</h2>
-          <!-- <div class="card_text">
-            <p>
-              A in browser game of tetris. I developed my own emoji response
-              system to give the player in game feedback
-            </p>
-          </div> -->
-          <ul class="card_tags_container">
-            <li>Vanilla js</li>
-            <li>UX Design</li>
-            <li>Styling</li>
-          </ul>
-          <ul class="card_links_container">
-            <li>
-              <a href="https://willnjl.github.io/js.tetris/" target="_blank"
-                >Site</a
-              >
-            </li>
-            <li>
-              <a href="https://github.com/willnjl/js.tetris" target="_blank"
-                >GitHub</a
-              >
-            </li>
-          </ul>
-        </article>
-        <article class="card">
-          <img
-            class="card_img"
-            src="https://i.inews.co.uk/content/uploads/2020/06/PRI_154191979.jpg"
-          />
-          <h2 class="skills_title">Trawler App and Twitter Bot</h2>
-          <!-- <div class="card_text">
-            <p>
-              In Development - A Twitter Alert system for when enviromental
-              devastating Super Trawlers are Operationial in British Waters.
-              Uses Marine Traffic API and Leaftlet.js
-            </p>
-          </div> -->
-          <ul class="card_tags_container">
-            <li>Laravel API</li>
-            <li>Leaflet.js</li>
-            <li>Javascript</li>
-            <li>Twitter Bot</li>
-          </ul>
-          <ul class="card_links_container">
-            <!-- <li><a href="">Site</a></li> -->
-            <li>
-              <a href="https://twitter.com/TrawlerAlert" target="_blank"
-                >Twitter</a
-              >
-            </li>
-          </ul>
-        </article>
-      </div>
-      <script>
-        $("#slider2").owlCarousel({
-          margin: 20,
-          loop: true,
-          center: true,
-          responsive: {
-            0: {
-              stagePadding: 45,
-              items: 1,
-            },
-            // breakpoint from 480 up
-            550: {
-              stagePadding: 30,
-              items: 3,
-            },
-          },
-        });
-      </script>
     </section>
   </body>
 
