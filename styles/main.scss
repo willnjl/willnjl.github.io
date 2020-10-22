@@ -25,11 +25,17 @@
   padding: 1.5rem;
   position: relative;
   background-color: $shade;
-  margin-bottom: 5rem;
+  margin-bottom: 6rem;
 
   h3 {
     color: $btn-green;
     font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main_elem {
     margin-bottom: 1rem;
   }
 }
