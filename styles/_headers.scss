@@ -1,6 +1,6 @@
 .hero {
   color: white;
-  width: 99vw;
+  width: 100vw;
   position: sticky;
   top: 0;
   // margin: auto;
@@ -12,13 +12,14 @@
   }
 
   .links__container {
-    opacity: 1;
+    // opacity: 1;
     background: $shade;
     color: white;
-    text-shadow: 1px 1px black;
-    display: flex;
-    flex-direction: column;
+    // text-shadow: 5px 1px $green;
+    font-size: 1.5rem;
+    display: inline;
     padding: 5rem;
+    min-width: 50px;
 
     position: absolute;
     top: 50%;

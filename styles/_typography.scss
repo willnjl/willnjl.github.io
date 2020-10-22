@@ -1,17 +1,22 @@
 @import "fonts";
 
+@media screen and (min-width: 600px) {
+  :root {
+    font-size: 16px;
+  }
+}
 @media screen and (max-width: 450px) {
-  html {
+  :root {
     font-size: 14px;
   }
 }
 @media screen and (max-width: 400px) {
-  html {
+  :root {
     font-size: 13px;
   }
 }
 @media screen and (max-width: 350px) {
-  html {
+  :root {
     font-size: 10px;
   }
 }

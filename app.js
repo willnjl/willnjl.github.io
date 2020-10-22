@@ -9,6 +9,7 @@
   const contact = d.getElementById("contact");
   const contactTitle = d.getElementById("title_contact");
   const projectSlider = d.getElementById("projects");
+
   w.addEventListener("scroll", () => {
     let y = w.pageYOffset;
 
@@ -16,19 +17,33 @@
     //links
     heroLinks.style.opacity = mapRange(y, 30, 300, 1, 0);
 
-    skillTitle.style.opacity = mapRange(y, 240, 600, 0.5, 0);
+    contactTitle.style.opacity = mapRange(y, 240, 1200, 1, 0);
 
     //first slider
     if (y < 600) {
-      skillSlider.style.opacity = mapRange(y, 240, 600, 0, 1);
+      contact.style.opacity = mapRange(y, 240, 600, 0, 1);
     } else {
-      skillSlider.style.opacity = mapRange(y, 1250, 1300, 1, 0);
+      contact.style.opacity = mapRange(y, 1250, 1300, 1, 0);
     }
 
     //contact
-    contact.style.opacity = mapRange(y, 1000, 1500, 0, 1);
+    skillTitle.style.opacity = mapRange(y, 1000, 1800, 1, 0);
+    skillSlider.style.opacity = mapRange(y, 1000, 1500, 0, 1);
     if (y > 2000) {
-      contact.style.opacity = mapRange(y, 2100, 2200, 1, 0);
+      skillSlider.style.opacity = mapRange(y, 2100, 2200, 1, 0);
     }
+  });
+
+  contactTitle.addEventListener("click", () => {
+    contact.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+  skillTitle.addEventListener("click", () => {
+    skillSlider.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   });
 })(document, window);
