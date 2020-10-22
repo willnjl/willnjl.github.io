@@ -7,12 +7,14 @@
   const skillSlider = d.getElementById("skills");
   const contact = d.getElementById("contact");
   const projectSlider = d.getElementById("projects");
+  const scroll = d.getElementById("scroll-prompt");
   w.addEventListener("scroll", () => {
     let y = w.pageYOffset;
-    console.log(y);
 
     //links
     heroLinks.style.opacity = mapRange(y, 30, 300, 1, 0);
+
+    scroll.style.opacity = mapRange(y, 25, 300, 0.6, 0);
 
     //first slider
     if (y < 600) {

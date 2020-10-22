@@ -28,10 +28,10 @@
 
     .link {
       margin-top: 25px;
-      font-weight: 400;
-      font-family: "Nothing You Could Do", cursive;
+      font-family: "Gothic A1", sans-serif;
+      text-shadow: 2px 2px black;
       font-size: 2.5rem;
-      // text-transform: uppercase;
+      text-transform: capitalize;
       color: white;
 
       transition: color 0.3s, margin-left 1s;
