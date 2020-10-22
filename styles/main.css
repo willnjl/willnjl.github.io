@@ -130,6 +130,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+html {
+  overflow-x: hidden; }
+
 * {
   box-sizing: border-box; }
 
@@ -251,10 +254,9 @@ table {
 
 .hero {
   color: white;
-  width: 100vw;
+  width: 99vw;
   position: sticky;
-  top: 0;
-  margin: auto; }
+  top: 0; }
 
 .hero_img {
   width: 100%;
@@ -405,14 +407,17 @@ svg {
   fill: #c2eabd;
   margin-bottom: 1rem; }
 
-.scroll {
+.title_skills, .title_contact {
   font-family: "Gothic A1", sans-serif;
   opacity: 0.6;
   font-size: 2rem;
   position: sticky;
-  padding: 2rem;
+  padding: 1rem;
   color: white;
   bottom: 0; }
+
+.title_contact {
+  position: static; }
 
 .page-wrapper {
   display: flex;
@@ -424,10 +429,10 @@ svg {
 
 .main_elem {
   opacity: 0;
+  padding: 1.5rem;
   position: relative;
-  padding: 1rem;
   background-color: #00000066;
-  margin: 5rem 1rem; }
+  margin-bottom: 5rem; }
 
 .main_elem h3 {
   color: #59ff75;
