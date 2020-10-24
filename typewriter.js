@@ -1,5 +1,5 @@
 ((d, w) => {
-  var app = document.getElementById("hero_links");
+  var app = document.getElementById("ticker");
 
   var typewriter = new Typewriter(app, {
     // loop: true,
@@ -9,11 +9,9 @@
 
   typewriter
     .typeString("Technology, \n")
-    .pauseFor(2500)
-    // .deleteAll()
+    .pauseFor(1005)
     .typeString("Performance, \n")
-    .pauseFor(2500)
-    // .deleteAll()
+    .pauseFor(1500)
     .typeString("Environment \n")
     .start();
 })(document, window);

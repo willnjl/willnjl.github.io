@@ -1,0 +1,51 @@
+.card {
+  &_project {
+    margin-bottom: 2rem;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+
+    .right {
+      text-align: right;
+    }
+    .column {
+      padding: 10px;
+      max-width: 401px;
+    }
+
+    p {
+      line-height: 1.2rem;
+    }
+
+    .tags {
+      padding: 1rem 0;
+      font-size: 1.2rem;
+      color: grey;
+      li {
+        display: inline;
+        margin-right: 20px;
+      }
+    }
+    .links__container {
+      display: flex;
+      flex-direction: column;
+      color: $green;
+      width: 300px;
+      li {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        width: 100%;
+        background-color: none;
+        border: 1px solid $green;
+      }
+    }
+    .title {
+      color: $yellow;
+      font-size: 3rem;
+
+      margin: 0 auto;
+    }
+  }
+}

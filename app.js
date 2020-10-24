@@ -3,7 +3,7 @@
     value = (value - start1) / (stop1 - start1);
     return start2 + value * (stop2 - start2);
   };
-  const heroLinks = d.getElementById("hero_links");
+  const ticker = d.getElementById("ticker");
   const skillTitle = d.getElementById("title_skills");
   const skillSlider = d.getElementById("skills");
   const contact = d.getElementById("contact");
@@ -15,7 +15,7 @@
 
     console.log(y);
     //links
-    heroLinks.style.opacity = mapRange(y, 30, 300, 1, 0);
+    ticker.style.opacity = mapRange(y, 30, 300, 1, 0);
 
     contactTitle.style.opacity = mapRange(y, 240, 1200, 1, 0);
 

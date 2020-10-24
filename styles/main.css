@@ -192,63 +192,6 @@ html {
 .nav__link:hover {
   text-decoration: underline; }
 
-.card {
-  padding: 1rem;
-  background-color: #444;
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
-
-.card_img {
-  width: 75px;
-  height: 225px;
-  object-fit: cover;
-  margin: auto; }
-
-.card_text {
-  padding: 1rem;
-  border: 1px solid #333;
-  border-radius: 10%;
-  text-align: justify; }
-
-.card_text p {
-  font-size: 0.8rem;
-  color: white; }
-
-.card_tags_container {
-  display: flex;
-  max-width: 80%;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 1rem;
-  border: 1px solid #333;
-  border-radius: 10%; }
-
-.card_tags_container li {
-  margin: 10px;
-  color: white;
-  font-size: 0.7rem; }
-
-.card_links_container {
-  display: flex;
-  padding: 1rem; }
-
-.card_links_container li {
-  margin-left: 1rem;
-  color: #f9dc5c; }
-
-.card_links_container li:hover {
-  color: #59ff75;
-  text-decoration: underline; }
-
-@media (max-width: 650px) {
-  .cards_container {
-    display: flex;
-    flex-direction: column; }
-  .card_tags_container {
-    display: flex;
-    flex-direction: column; } }
-
 .cta {
   background-color: #f9dc5c;
   padding: 1rem; }
@@ -341,7 +284,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #444; }
+  background-color: #00000066; }
 
 .contact_name {
   color: white; }
@@ -366,6 +309,7 @@ html {
   margin-top: 1rem; }
 
 .contact .social_container .social_link svg {
+  fill: #c2eabd;
   max-width: 35px;
   transition: fill 1s;
   margin-right: 1rem; }
@@ -391,25 +335,22 @@ html {
   max-width: 245px;
   margin: auto; }
 
-.skills_container {
-  display: flex;
-  flex-direction: column;
+.card_skills {
   justify-content: center;
   align-items: center;
-  background-color: #444;
-  padding: 2rem; }
+  flex-direction: column; }
 
-.skills_container ul > li {
+.card_skills ul > li {
   color: white;
   margin-top: 1rem; }
 
-.skills_title {
+.card_skills .title {
   color: #c2eabd;
   font-size: 1.2rem;
   padding: 0.7rem;
   margin: 0 auto; }
 
-svg {
+.card_skills svg {
   max-width: 95px;
   fill: #c2eabd;
   margin-bottom: 1rem; }
@@ -430,7 +371,58 @@ svg {
 
 @media screen and (max-width: 620px) {
   .title_contact, .title_skills {
-    font-size: 7rem; } }
+    font-size: 5rem; } }
+
+.card_project {
+  margin-bottom: 2rem;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  color: white; }
+
+.card_project .right {
+  text-align: right; }
+
+.card_project .column {
+  padding: 10px;
+  max-width: 401px; }
+
+.card_project p {
+  line-height: 1.2rem; }
+
+.card_project .tags {
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  color: grey; }
+
+.card_project .tags li {
+  display: inline;
+  margin-right: 20px; }
+
+.card_project .links__container {
+  display: flex;
+  flex-direction: column;
+  color: #c2eabd;
+  width: 300px; }
+
+.card_project .links__container li {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  width: 100%;
+  background-color: none;
+  border: 1px solid #c2eabd; }
+
+.card_project .title {
+  color: #f9dc5c;
+  font-size: 3rem;
+  margin: 0 auto; }
+
+.card {
+  display: flex;
+  background-color: #00000066;
+  padding: 2rem;
+  border: 1px solid grey; }
 
 .page-wrapper {
   display: flex;
