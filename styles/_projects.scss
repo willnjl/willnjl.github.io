@@ -16,7 +16,7 @@
     }
 
     p {
-      line-height: 1.2rem;
+      line-height: 1.4rem;
     }
 
     .tags {
@@ -34,17 +34,22 @@
       color: $green;
       width: 300px;
       li {
+        // cursor: pointer;
         margin-bottom: 1rem;
         padding: 1rem;
         width: 100%;
         background-color: none;
         border: 1px solid $green;
+        &:hover {
+          border-color: $btn-green;
+          color: $btn-green;
+          transition: color 1s, border-color 1s;
+        }
       }
     }
     .title {
       color: $yellow;
       font-size: 3rem;
-
       margin: 0 auto;
     }
   }

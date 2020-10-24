@@ -389,7 +389,7 @@ html {
   max-width: 401px; }
 
 .card_project p {
-  line-height: 1.2rem; }
+  line-height: 1.4rem; }
 
 .card_project .tags {
   padding: 1rem 0;
@@ -412,6 +412,11 @@ html {
   width: 100%;
   background-color: none;
   border: 1px solid #c2eabd; }
+
+.card_project .links__container li:hover {
+  border-color: #59ff75;
+  color: #59ff75;
+  transition: color 1s, border-color 1s; }
 
 .card_project .title {
   color: #f9dc5c;
