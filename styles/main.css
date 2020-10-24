@@ -355,22 +355,21 @@ html {
   fill: #c2eabd;
   margin-bottom: 1rem; }
 
-.title_contact, .title_skills {
+.title {
   font-family: "Gothic A1", sans-serif;
   cursor: pointer;
   opacity: 1;
   font-size: 7rem;
-  position: sticky;
+  position: relative;
   padding: 1rem;
   color: white;
   bottom: 0; }
 
-.title_skills {
-  position: relative;
-  opacity: 0; }
+#title_contact {
+  position: sticky; }
 
 @media screen and (max-width: 620px) {
-  .title_contact, .title_skills {
+  .title_contact {
     font-size: 5rem; } }
 
 .card_project {

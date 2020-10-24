@@ -8,7 +8,8 @@
   const skillSlider = d.getElementById("skills");
   const contact = d.getElementById("contact");
   const contactTitle = d.getElementById("title_contact");
-  const projectSlider = d.getElementById("projects");
+  const workTitle = d.getElementById("title_work");
+  const work = d.getElementById("work");
 
   w.addEventListener("scroll", () => {
     let y = w.pageYOffset;
@@ -17,7 +18,7 @@
     //links
     ticker.style.opacity = mapRange(y, 30, 300, 1, 0);
 
-    contactTitle.style.opacity = mapRange(y, 240, 1200, 1, 0);
+    contactTitle.style.opacity = mapRange(y, 240, 428, 1, 0);
 
     //first slider
     if (y < 600) {
@@ -27,11 +28,14 @@
     }
 
     //contact
-    skillTitle.style.opacity = mapRange(y, 1000, 1800, 1, 0);
+    skillTitle.style.opacity = mapRange(y, 1000, 1300, 1, 0);
     skillSlider.style.opacity = mapRange(y, 1000, 1500, 0, 1);
     if (y > 2000) {
       skillSlider.style.opacity = mapRange(y, 2100, 2200, 1, 0);
     }
+
+    workTitle.style.opacity = mapRange(y, 1700, 1930, 1, 0);
+    work.style.opacity = mapRange(y, 1800, 2200, 0, 1);
   });
 
   contactTitle.addEventListener("click", () => {
