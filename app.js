@@ -14,7 +14,6 @@
   w.addEventListener("scroll", () => {
     let y = w.pageYOffset;
 
-    console.log(y);
     //links
     ticker.style.opacity = mapRange(y, 30, 300, 1, 0);
 
@@ -34,7 +33,7 @@
       skillSlider.style.opacity = mapRange(y, 2100, 2200, 1, 0);
     }
 
-    workTitle.style.opacity = mapRange(y, 1700, 1930, 1, 0);
+    workTitle.style.opacity = mapRange(y, 1700, 2100, 1, 0);
     work.style.opacity = mapRange(y, 1800, 2200, 0, 1);
   });
 
