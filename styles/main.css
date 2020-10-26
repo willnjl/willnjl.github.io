@@ -405,17 +405,27 @@ html {
   color: #c2eabd;
   width: 300px; }
 
-.card_project .links__container li {
-  margin-bottom: 1rem;
+.card_project .links__container li .fill, .card_project .links__container li .fill-right {
+  display: block;
+  margin-bottom: 1.2rem;
   padding: 1rem;
-  width: 100%;
-  background-color: none;
-  border: 1px solid #c2eabd; }
+  border: 1px solid #c2eabd;
+  background: linear-gradient(-45deg, rgba(0, 0, 0, 0) 50%, #59ff75 50%) right;
+  background-size: 210%;
+  transition: 0.6s ease-out; }
 
-.card_project .links__container li:hover {
+.card_project .links__container li .fill:hover, .card_project .links__container li .fill-right:hover {
+  background-position: left;
   border-color: #59ff75;
-  color: #59ff75;
-  transition: color 1s, border-color 1s; }
+  color: black; }
+
+.card_project .links__container li .fill-right {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0) 50%, #59ff75 50%) left;
+  background-size: 210%;
+  transition: 0.6s ease-out; }
+
+.card_project .links__container li .fill-right:hover {
+  background-position: right; }
 
 .card_project .title {
   color: #f9dc5c;

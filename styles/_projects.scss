@@ -33,17 +33,42 @@
       flex-direction: column;
       color: $green;
       width: 300px;
+
       li {
-        // cursor: pointer;
-        margin-bottom: 1rem;
-        padding: 1rem;
-        width: 100%;
-        background-color: none;
-        border: 1px solid $green;
-        &:hover {
-          border-color: $btn-green;
-          color: $btn-green;
-          transition: color 1s, border-color 1s;
+        .fill {
+          display: block;
+          margin-bottom: 1.2rem;
+          padding: 1rem;
+          border: 1px solid $green;
+          background: linear-gradient(
+              -45deg,
+              rgba(0, 0, 0, 0) 50%,
+              $btn-green 50%
+            )
+            right;
+          background-size: 210%;
+          transition: 0.6s ease-out;
+          // transition: color 0.3s, border-color 0.3s;
+          &:hover {
+            background-position: left;
+            border-color: $btn-green;
+            color: black;
+          }
+        }
+
+        .fill-right {
+          @extend .fill;
+          background: linear-gradient(
+              45deg,
+              rgba(0, 0, 0, 0) 50%,
+              $btn-green 50%
+            )
+            left;
+          background-size: 210%;
+          transition: 0.6s ease-out;
+          &:hover {
+            background-position: right;
+          }
         }
       }
     }
