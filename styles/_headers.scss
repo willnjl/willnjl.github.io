@@ -3,7 +3,7 @@
   width: 100vw;
   position: sticky;
   top: 0;
-  // margin: auto;
+  justify-self: flex-start;
 
   &_img {
     width: 100%;
@@ -12,15 +12,13 @@
   }
 
   .links__container {
-    // opacity: 1;
     background: $shade;
     color: white;
-    // text-shadow: 5px 1px $green;
-    font-size: 1.5rem;
+
+    font-size: 2.2rem;
     display: inline;
     padding: 5rem;
     min-width: 50px;
-
     position: absolute;
     top: 50%;
     left: 50%;

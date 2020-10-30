@@ -49,4 +49,10 @@
       block: "start",
     });
   });
+  workTitle.addEventListener("click", () => {
+    work.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
 })(document, window);

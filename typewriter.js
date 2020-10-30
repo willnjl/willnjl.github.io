@@ -8,10 +8,10 @@
   });
 
   typewriter
-    .typeString("Technology, \n")
-    .pauseFor(1005)
-    .typeString("Performance, \n")
-    .pauseFor(1500)
-    .typeString("Environment \n")
+    .typeString("Technology, ")
+    .pauseFor(600)
+    .typeString("Performance, ")
+    .pauseFor(640)
+    .typeString("Environment.")
     .start();
 })(document, window);

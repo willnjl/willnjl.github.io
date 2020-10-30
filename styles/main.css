@@ -157,6 +157,11 @@ html {
   color: #333; }
 
 .nav-bar {
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -203,7 +208,8 @@ html {
   color: white;
   width: 100vw;
   position: sticky;
-  top: 0; }
+  top: 0;
+  justify-self: flex-start; }
 
 .hero_img {
   width: 100%;
@@ -213,7 +219,7 @@ html {
 .hero .links__container {
   background: #00000066;
   color: white;
-  font-size: 1.5rem;
+  font-size: 2.2rem;
   display: inline;
   padding: 5rem;
   min-width: 50px;
@@ -253,7 +259,8 @@ html {
   .link {
     font-size: 1rem; } }
 
-.footer__container {
+.footer_card {
+  position: relative;
   justify-self: flex-end;
   display: flex;
   flex-direction: column;
@@ -359,7 +366,7 @@ html {
   font-family: "Gothic A1", sans-serif;
   cursor: pointer;
   opacity: 1;
-  font-size: 7rem;
+  font-size: 4rem;
   position: relative;
   padding: 1rem;
   color: white;
@@ -430,7 +437,24 @@ html {
 .card_project .title {
   color: #f9dc5c;
   font-size: 3rem;
-  margin: 0 auto; }
+  margin: 0 auto;
+  cursor: auto; }
+
+@media screen and (max-width: 700px) {
+  .card {
+    flex-direction: column-reverse;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 1rem; }
+  .card:nth-of-type(2n + 1) {
+    flex-direction: column; }
+  .card:nth-of-type(2n + 1):nth-child(1) {
+    order: 3; }
+  .card:nth-of-type(2n + 1):nth-child(2) {
+    order: 1; }
+  .card:nth-of-type(2n + 1) .column {
+    padding: 1rem;
+    margin: auto; } }
 
 .card {
   display: flex;
