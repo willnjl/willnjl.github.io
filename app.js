@@ -2,6 +2,18 @@
   const faders = d.querySelectorAll(".fade-in");
   const sliders = d.querySelectorAll(".slide-in");
 
+  const ticker = d.getElementById("ticker");
+
+  const mapRange = (value, start1, stop1, start2, stop2) => {
+    value = (value - start1) / (stop1 - start1);
+    return start2 + value * (stop2 - start2);
+  };
+
+  ticker.addEventListener("scroll", () => {
+    let y = w.pageYOffset;
+    ticker.style.opacity = mapRange(y, 30, 300, 1, 0);
+  });
+
   const appearOptions = {
     threshold: 0.2,
     rootMargin: "0px",
