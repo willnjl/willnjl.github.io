@@ -365,7 +365,6 @@ html {
 .title {
   font-family: "Gothic A1", sans-serif;
   cursor: pointer;
-  opacity: 1;
   font-size: 4rem;
   position: relative;
   padding: 1rem;
@@ -464,6 +463,21 @@ html {
   padding: 2rem;
   border: 1px solid grey; }
 
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in; }
+
+.appear {
+  opacity: 1; }
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s ease-in; }
+
+.fade-out {
+  transition: opacity 1s ease-in;
+  opacity: 0; }
+
 .page-wrapper {
   display: flex;
   flex-direction: column;
@@ -473,7 +487,6 @@ html {
   background-color: black; }
 
 .main_elem {
-  opacity: 0;
   padding: 1.5rem;
   position: relative;
   background-color: #00000066;

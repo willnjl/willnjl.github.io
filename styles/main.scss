@@ -10,6 +10,7 @@
 @import "titles";
 @import "projects";
 @import "card";
+@import "animations";
 
 .page-wrapper {
   display: flex;
@@ -22,7 +23,6 @@
 }
 
 .main_elem {
-  opacity: 0;
   padding: 1.5rem;
   position: relative;
   background-color: $shade;
