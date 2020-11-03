@@ -163,7 +163,7 @@ html {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1rem;
   background-color: #f9dc5c; }
 
 .nav__logo {
