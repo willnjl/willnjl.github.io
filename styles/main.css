@@ -481,17 +481,21 @@ html {
 .page-wrapper {
   background-color: black; }
 
-.main_elem {
+.main_elem, .main_elem--work {
   padding: 1.5rem;
   position: relative;
   background-color: #00000066;
   margin-bottom: 6rem; }
 
-.main_elem h3 {
+.main_elem--work {
+  max-width: 1000px;
+  margin: auto; }
+
+.main_elem h3, .main_elem--work h3 {
   color: #59ff75;
   font-size: 1.5rem;
   margin-bottom: 1rem; }
 
 @media screen and (max-width: 600px) {
-  .main_elem {
+  .main_elem, .main_elem--work {
     margin-bottom: 1rem; } }

@@ -27,7 +27,11 @@
   position: relative;
   background-color: $shade;
   margin-bottom: 6rem;
-
+  &--work {
+    @extend .main_elem;
+    max-width: 1000px;
+    margin: auto;
+  }
   h3 {
     color: $btn-green;
     font-size: 1.5rem;
