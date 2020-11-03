@@ -465,18 +465,10 @@ html {
 
 .fade-in {
   opacity: 0;
-  transition: opacity 1s ease-in; }
+  transition: opacity 450ms ease-in; }
 
 .appear {
   opacity: 1; }
-
-.fade-in {
-  opacity: 1;
-  transition: opacity 1s ease-in; }
-
-.fade-out {
-  transition: opacity 1s ease-in;
-  opacity: 0; }
 
 .page-wrapper {
   display: flex;

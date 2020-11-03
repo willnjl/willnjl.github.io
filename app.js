@@ -9,14 +9,14 @@
     return start2 + value * (stop2 - start2);
   };
 
-  ticker.addEventListener("scroll", () => {
+  w.addEventListener("scroll", () => {
     let y = w.pageYOffset;
     ticker.style.opacity = mapRange(y, 30, 300, 1, 0);
   });
 
   const appearOptions = {
-    threshold: 0.2,
-    rootMargin: "0px",
+    threshold: 0,
+    rootMargin: "0px 0px -150px 0px",
   };
 
   const appearOnScroll = new IntersectionObserver(function (
