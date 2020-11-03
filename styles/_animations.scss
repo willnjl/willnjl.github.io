@@ -6,3 +6,14 @@
 .appear {
   opacity: 1;
 }
+
+.nav-bar {
+  transition: all 0.3s ease;
+  top: 0;
+  left: 0;
+}
+
+.nav-bar.remove {
+  top: -150px;
+  left: 0;
+}

@@ -1,6 +1,7 @@
 ((d, w) => {
   const faders = d.querySelectorAll(".fade-in");
   const sliders = d.querySelectorAll(".slide-in");
+  const navBar = d.querySelector(".nav-bar");
 
   const ticker = d.getElementById("ticker");
 
@@ -13,6 +14,17 @@
     let y = w.pageYOffset;
     ticker.style.opacity = mapRange(y, 30, 300, 1, 0);
   });
+
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = () => {
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      navBar.classList.remove("remove");
+    } else {
+      navBar.classList.add("remove");
+    }
+    prevScrollpos = currentScrollPos;
+  };
 
   const appearOptions = {
     threshold: 0,

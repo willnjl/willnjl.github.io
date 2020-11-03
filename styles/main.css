@@ -160,8 +160,6 @@ html {
   z-index: 2;
   position: fixed;
   width: 100%;
-  top: 0;
-  left: 0;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -174,10 +172,6 @@ html {
 
 .nav__logo:hover {
   text-decoration: underline; }
-
-@media (max-width: 400px) {
-  .nav-bar {
-    display: none; } }
 
 @media (max-width: 600px) {
   .nav-mol {
@@ -469,6 +463,15 @@ html {
 
 .appear {
   opacity: 1; }
+
+.nav-bar {
+  transition: all 0.3s ease;
+  top: 0;
+  left: 0; }
+
+.nav-bar.remove {
+  top: -150px;
+  left: 0; }
 
 .page-wrapper {
   display: flex;
