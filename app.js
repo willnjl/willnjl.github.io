@@ -19,10 +19,7 @@
     rootMargin: "0px 0px -150px 0px",
   };
 
-  const appearOnScroll = new IntersectionObserver(function (
-    entries,
-    appearOnScroll
-  ) {
+  const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) {
         return;
@@ -31,8 +28,7 @@
         appearOnScroll.unobserve(entry.target);
       }
     });
-  },
-  appearOptions);
+  }, appearOptions);
 
   faders.forEach((fader) => {
     appearOnScroll.observe(fader);
