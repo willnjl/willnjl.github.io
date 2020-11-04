@@ -49,4 +49,17 @@
   sliders.forEach((slider) => {
     appearOnScroll.observe(slider);
   });
+
+  const contact = d.getElementById("title_contact");
+  contact.addEventListener("click", () => {
+    d.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+  });
+  const skills = d.getElementById("title_skills");
+  skills.addEventListener("click", () => {
+    d.getElementById("skills").scrollIntoView({ behavior: "smooth" });
+  });
+  const work = d.getElementById("title_work");
+  work.addEventListener("click", () => {
+    d.getElementById("work").scrollIntoView({ behavior: "smooth" });
+  });
 })(document, window);
