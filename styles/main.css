@@ -186,9 +186,25 @@ html {
 
 @media (max-width: 600px) {
   .nav-mol {
-    display: none; }
+    width: 100%;
+    margin-right: 0px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    position: absolute;
+    left: 0;
+    color: #f9dc5c;
+    top: 4rem; }
+  .nav-mol .nav__link {
+    padding: 1rem 2rem;
+    background-color: #00eeffab;
+    font-size: 1.3rem; }
+  .nav-mol .nav__link:hover {
+    text-decoration: underline; }
   .nav__menu {
-    display: inline-block; } }
+    display: inline-block;
+    max-width: 35px; } }
 
 .cta {
   background-color: #f9dc5c;
