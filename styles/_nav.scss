@@ -19,25 +19,25 @@
   }
 }
 
+.nav-mol {
+  .nav__link {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin-right: 5vw;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.nav__menu {
+  display: none;
+}
 @media (max-width: 600px) {
   .nav-mol {
     display: none;
   }
-
-  .nav__logo {
-    font-size: 1.2rem;
-  }
-}
-.nav-mol .nav__link {
-  margin-right: 1.5rem;
-  display: inline-block;
-}
-
-.nav__link {
-  font-size: 1.125rem;
-  list-style: none;
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
+  .nav__menu {
+    display: inline-block;
   }
 }
