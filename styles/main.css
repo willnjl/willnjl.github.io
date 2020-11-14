@@ -322,7 +322,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center; }
-  svg {
+  .social_container svg {
     width: 35px; } }
 
 .contact_profile {
@@ -345,21 +345,23 @@ html {
   margin: 0 auto; }
 
 .card_skills svg {
-  max-width: 95px;
+  margin: auto;
+  max-width: 75px;
   fill: #c2eabd;
   margin-bottom: 1rem; }
 
-.title {
+.section_title {
   font-family: "Gothic A1", sans-serif;
+  margin-left: 1.2rem;
+  margin-bottom: 2rem;
   cursor: pointer;
   font-size: 4rem;
   position: relative;
-  padding: 1rem;
-  color: white;
-  bottom: 0; }
+  color: white; }
 
 #title_contact {
-  position: sticky; }
+  position: sticky;
+  bottom: 0; }
 
 @media screen and (max-width: 620px) {
   .title_contact {
@@ -446,6 +448,7 @@ html {
 
 .card {
   display: flex;
+  justify-content: center;
   background-color: #00000066;
   padding: 2rem;
   border: 1px solid grey; }
@@ -478,7 +481,7 @@ html {
   padding: 1.5rem;
   position: relative;
   background-color: #00000066;
-  margin-bottom: 6rem; }
+  margin-bottom: 1rem; }
 
 .main_elem--work {
   max-width: 1000px;

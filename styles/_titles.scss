@@ -1,16 +1,16 @@
-.title {
+.section_title {
   font-family: "Gothic A1", sans-serif;
-  // margin-left: 15px;
+  margin-left: 1.2rem;
+  margin-bottom: 2rem;
   cursor: pointer;
   font-size: 4rem;
   position: relative;
-  padding: 1rem;
   color: white;
-  bottom: 0;
 }
 
 #title_contact {
   position: sticky;
+  bottom: 0;
 }
 
 @media screen and (max-width: 620px) {
