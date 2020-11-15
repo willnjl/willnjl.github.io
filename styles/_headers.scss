@@ -12,52 +12,36 @@
   }
 
   .links__container {
+    opacity: 0;
     background: $shade;
     color: white;
-
     font-size: 2.2rem;
-    display: inline;
-    padding: 5rem;
-    min-width: 50px;
+    padding: 10vw;
+    min-width: 50%;
     position: absolute;
-    top: 50%;
+    bottom: 0;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     .link {
-      margin-top: 25px;
-      font-family: "Gothic A1", sans-serif;
-      text-shadow: 2px 2px black;
-      font-size: 2.5rem;
-      text-transform: capitalize;
-      color: white;
-
-      transition: color 0.3s, margin-left 1s;
+      opacity: 0;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px black;
       &:nth-child(1) {
-        &:hover {
-          color: $red;
-          margin-left: 1rem;
-        }
+        align-self: start;
+        color: $red;
       }
       &:nth-child(2) {
-        margin-left: 1rem;
-        &:hover {
-          color: $blue;
-          margin-left: 2rem;
-        }
+        align-self: center;
+        color: $blue;
       }
       &:nth-child(3) {
-        margin-left: 2rem;
-        &:hover {
-          color: $btn-green;
-          margin-left: 2.5rem;
-        }
+        color: $btn-green;
+        align-self: flex-end;
       }
     }
-  }
-}
-@media screen and (max-width: 605px) {
-  .link {
-    font-size: 1rem;
   }
 }
