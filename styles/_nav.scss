@@ -6,12 +6,12 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 1rem;
+  padding: 10px;
   background-color: $yellow;
 }
 
 .nav__logo {
-  font-size: 2rem;
+  font-size: 1.2rem;
   margin-right: auto;
 
   &:hover {
@@ -22,7 +22,6 @@
 .nav-mol {
   .nav__link {
     display: inline-block;
-    font-size: 1.2rem;
     margin-right: 5vw;
     &:hover {
       text-decoration: underline;
