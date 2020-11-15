@@ -3,7 +3,7 @@
   const sliders = d.querySelectorAll(".slide-in");
   const navBar = d.querySelector(".nav-bar");
 
-  const ticker = d.getElementById("ticker");
+  const ticker = d.getElementById("hero");
 
   const mapRange = (value, start1, stop1, start2, stop2) => {
     value = (value - start1) / (stop1 - start1);

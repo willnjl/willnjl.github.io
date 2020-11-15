@@ -1,5 +1,5 @@
 let tl = gsap.timeline();
-const colour = "#c2eabd";
+const colour = "white";
 
 tl.to(".links__container", {
   opacity: 1,
@@ -23,9 +23,9 @@ tl.to(
   {
     color: colour,
     duration: 0.3,
-    stagger: 0.5,
+    stagger: 0.3,
   },
-  "-=1"
+  "-=0.5"
 );
 
 // tl.start();

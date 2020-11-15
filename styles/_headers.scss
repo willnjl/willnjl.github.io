@@ -1,4 +1,5 @@
 .hero {
+  background-color: $shade;
   color: white;
   width: 100vw;
   position: sticky;
@@ -12,8 +13,8 @@
   }
 
   .links__container {
+    background-color: $shade;
     opacity: 0;
-    background: $shade;
     color: white;
     font-size: 2.2rem;
     padding: 10vw;
@@ -27,9 +28,11 @@
     justify-content: center;
 
     .link {
+      font-family: "Courier New", Courier, monospace;
+      padding: 2px;
       opacity: 0;
       margin-bottom: 1rem;
-      text-shadow: 1px 1px black;
+      text-shadow: -1px -1px black;
       &:nth-child(1) {
         align-self: start;
         color: $red;
