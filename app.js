@@ -1,6 +1,5 @@
 ((d, w) => {
   const faders = d.querySelectorAll(".fade-in");
-  const sliders = d.querySelectorAll(".slide-in");
   const navBar = d.querySelector(".nav-bar");
 
   const ticker = d.getElementById("hero");
@@ -44,10 +43,6 @@
 
   faders.forEach((fader) => {
     appearOnScroll.observe(fader);
-  });
-
-  sliders.forEach((slider) => {
-    appearOnScroll.observe(slider);
   });
 
   const contact = d.getElementById("title_contact");

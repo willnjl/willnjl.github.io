@@ -1,6 +1,10 @@
 gsap.registerPlugin(ScrollTrigger);
 
 let tween = gsap.to(".links__container", {
+  scrollTrigger: {
+    trigger: ".page-wrapper",
+    start: "top -1200",
+  },
   opacity: 1,
   duration: 1,
   delay: 2,
@@ -15,6 +19,7 @@ const tl = gsap.timeline({
     trigger: ".page-wrapper",
     start: "top top",
     end: "top -1500px",
+    // once: true,
     scrub: 1,
   },
 });
