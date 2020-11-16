@@ -21,3 +21,24 @@
 .anim {
   position: absolute;
 }
+
+.canvas {
+  transform: rotateZ(-90deg);
+  opacity: 0;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.body {
+  height: 100%;
+  transform: rotateY(180deg);
+}
+
+.piece {
+  position: absolute;
+  right: 0;
+  transform: rotateY(180deg);
+  opacity: 0;
+  z-index: 2;
+}

@@ -19,6 +19,12 @@
       integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+      integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 
     <script src="app.js" defer></script>
     <script src="carousels.js" defer></script>
@@ -53,18 +59,22 @@
     </ul>
     <img src="assets/button.svg" alt="menu" class="nav__menu" />
   </nav>
+
+  <!--  -->
   <body class="page-wrapper">
     <header class="hero">
-      <ul class="links__container" id="hero">
-        <li class="link">Technology</li>
-        <li class="link">Perfromance</li>
-        <li class="link">Environment</li>
-      </ul>
+      <div class="links__container" id="hero">
+        <div class="canvas">
+          <img class="piece" src="assets/piece.svg" />
+          <img class="body" src="assets/generated.svg" />
+        </div>
+      </div>
       <picture>
         <source srcset="assets/bg-landscape.jpg" media="(min-width: 900px)" />
         <img src="assets/bg-portrait.jpg" class="hero_img" />
       </picture>
     </header>
+    <!--  -->
 
     <h3 class="section_title" id="title_contact">contact</h3>
     <section class="main_elem fade-in contact" id="contact">

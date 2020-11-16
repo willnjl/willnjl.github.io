@@ -23,10 +23,11 @@
 }
 
 .main_elem {
-  padding: 1.5rem;
   position: relative;
+  padding: 1.5rem;
   background-color: $shade;
   margin-bottom: 1rem;
+
   &--work {
     @extend .main_elem;
     max-width: 1000px;
