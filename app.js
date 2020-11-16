@@ -62,4 +62,22 @@
   work.addEventListener("click", () => {
     d.getElementById("work").scrollIntoView({ behavior: "smooth" });
   });
+
+  const tabAbout = d.getElementById("tab-about");
+  const tabContact = d.getElementById("tab-contact");
+  // const pageContact = d.getElementById("contact-page");
+  // const pageAbout = d.getElementById("about-page");
+
+  tabAbout.addEventListener("click", () => {
+    tabAbout.classList.add("current");
+    tabContact.classList.remove("current");
+    // pageContact.classList.add("hide");
+    // pageAbout.classList.remove("hide");
+  });
+  tabContact.addEventListener("click", () => {
+    // pageAbout.classList.add("hide");
+    // pageContact.classList.remove("hide");
+    tabContact.classList.add("current");
+    tabAbout.classList.remove("current");
+  });
 })(document, window);

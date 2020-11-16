@@ -130,11 +130,55 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
 html {
   overflow-x: hidden; }
 
 * {
   box-sizing: border-box; }
+
+.hide {
+  display: none !important; }
 
 @media screen and (min-width: 600px) {
   :root {
@@ -205,7 +249,7 @@ html {
 
 .hero .links__container {
   background-color: #00000066;
-  opacity: 1;
+  opacity: 0;
   color: white;
   font-size: 2.2rem;
   padding: 1rem;
@@ -302,13 +346,46 @@ html {
 .contact .social_container .social_link svg:hover {
   fill: #59ff75; }
 
-@media (max-width: 600px) {
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  justify-content: center;
+  flex-flow: row; }
+
+.tabs {
+  display: flex;
+  flex-direction: column; }
+
+.tabs button {
+  font-size: 0.8rem;
+  padding: 1rem;
+  background-color: #00000066;
+  border: none;
+  cursor: pointer;
+  transition: color 1s; }
+
+.tabs button:hover {
+  color: #59ff75; }
+
+.tab {
+  color: #c2eabd; }
+
+.current {
+  color: #59ff75; }
+
+@media (max-width: 650px) {
+  .contact-container {
+    flex-direction: column; }
+  .tabs {
+    flex-direction: row; }
   .contact {
     flex-direction: column;
+    width: 100%;
     margin: auto; }
   .column {
     justify-content: center;
-    width: 100%; }
+    text-align: center; }
   .social_container {
     display: flex;
     justify-content: center;
@@ -468,7 +545,6 @@ html {
 .canvas {
   transform: rotateZ(-90deg);
   display: inline-block;
-  opacity: 0;
   margin: auto; }
 
 .body {
