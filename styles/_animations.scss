@@ -24,14 +24,12 @@
 
 .canvas {
   transform: rotateZ(-90deg);
+  display: inline-block;
   opacity: 0;
-  width: 100%;
-  top: 0;
-  left: 0;
+  margin: auto;
 }
 
 .body {
-  height: 100%;
   transform: rotateY(180deg);
 }
 
