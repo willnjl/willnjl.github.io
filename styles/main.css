@@ -174,7 +174,8 @@ button,
 p {
   color: inherit; }
 
-html {
+html,
+body {
   overflow-x: hidden; }
 
 * {
@@ -254,7 +255,7 @@ html {
   background-color: #00000066;
   color: white;
   width: 100vw;
-  position: sticky;
+  position: fixed;
   top: 0;
   justify-self: flex-start; }
 
@@ -505,6 +506,8 @@ html {
     margin-bottom: 1rem; }
   .card .right {
     text-align: center; }
+  .card_project .links__container {
+    width: 75%; }
   .card:nth-of-type(2n + 1) {
     flex-direction: column; }
   .card:nth-of-type(2n + 1):nth-child(1) {
