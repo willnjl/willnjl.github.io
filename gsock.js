@@ -1,16 +1,25 @@
 gsap.registerPlugin(ScrollTrigger);
 
-let tween = gsap.to(".canvas", {
+let tween = gsap.to(".links__container", {
+  scrollTrigger: {
+    trigger: ".page-wrapper",
+    start: "top -1200",
+  },
   opacity: 1,
-  duration: 1.5,
+  duration: 1,
+  delay: 2,
 });
+tween.pause();
+if (window.pageYOffset < 1200) {
+  tween.play();
+}
 
-tween.play();
 const tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".page-wrapper",
     start: "top top",
     end: "top -1500px",
+    // once: true,
     scrub: 1,
   },
 });

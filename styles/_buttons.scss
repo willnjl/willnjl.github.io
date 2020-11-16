@@ -1,8 +1,24 @@
-.cta {
-  background-color: $yellow;
-  padding: 1rem;
-
-  &:hover {
-    text-decoration: underline;
+.tabs {
+  button {
+    font-size: 0.8rem;
+    padding: 1rem;
+    background-color: $shade;
+    border: none;
+    cursor: pointer;
+    transition: color 1s;
+    &:hover {
+      color: $btn-green;
+    }
+    &:focus {
+      outline: none;
+    }
   }
+}
+
+.tab {
+  color: $green;
+}
+
+.current {
+  color: $btn-green;
 }

@@ -1,6 +1,5 @@
 ((d, w) => {
   const faders = d.querySelectorAll(".fade-in");
-  const sliders = d.querySelectorAll(".slide-in");
   const navBar = d.querySelector(".nav-bar");
 
   const ticker = d.getElementById("hero");
@@ -46,10 +45,6 @@
     appearOnScroll.observe(fader);
   });
 
-  sliders.forEach((slider) => {
-    appearOnScroll.observe(slider);
-  });
-
   const contact = d.getElementById("title_contact");
   contact.addEventListener("click", () => {
     d.getElementById("contact").scrollIntoView({ behavior: "smooth" });
@@ -61,5 +56,23 @@
   const work = d.getElementById("title_work");
   work.addEventListener("click", () => {
     d.getElementById("work").scrollIntoView({ behavior: "smooth" });
+  });
+
+  const tabAbout = d.getElementById("tab-about");
+  const tabContact = d.getElementById("tab-contact");
+  const pageContact = d.getElementById("page-contact");
+  const pageAbout = d.getElementById("page-about");
+
+  tabAbout.addEventListener("click", () => {
+    tabAbout.classList.add("current");
+    tabContact.classList.remove("current");
+    pageContact.classList.add("hide");
+    pageAbout.classList.remove("hide");
+  });
+  tabContact.addEventListener("click", () => {
+    pageAbout.classList.add("hide");
+    pageContact.classList.remove("hide");
+    tabContact.classList.add("current");
+    tabAbout.classList.remove("current");
   });
 })(document, window);
