@@ -14,13 +14,13 @@
 
   .links__container {
     background-color: $shade;
-    opacity: 0;
+    opacity: 1;
     color: white;
     font-size: 2.2rem;
     padding: 10vw;
     min-width: 50%;
     position: absolute;
-    bottom: 0;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
