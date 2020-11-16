@@ -5,8 +5,10 @@ let tween = gsap.to(".links__container", {
   duration: 1,
   delay: 2,
 });
-
-tween.play();
+tween.pause();
+if (window.pageYOffset < 1200) {
+  tween.play();
+}
 
 const tl = gsap.timeline({
   scrollTrigger: {

@@ -171,6 +171,9 @@ button,
 [type="submit"] {
   -webkit-appearance: button; }
 
+p {
+  color: inherit; }
+
 html {
   overflow-x: hidden; }
 
@@ -227,12 +230,25 @@ html {
 .nav__menu {
   display: none; }
 
-.cta {
-  background-color: #f9dc5c;
-  padding: 1rem; }
+.tabs button {
+  font-size: 0.8rem;
+  padding: 1rem;
+  background-color: #00000066;
+  border: none;
+  cursor: pointer;
+  transition: color 1s; }
 
-.cta:hover {
-  text-decoration: underline; }
+.tabs button:hover {
+  color: #59ff75; }
+
+.tabs button:focus {
+  outline: none; }
+
+.tab {
+  color: #c2eabd; }
+
+.current {
+  color: #59ff75; }
 
 .hero {
   background-color: #00000066;
@@ -356,23 +372,6 @@ html {
 .tabs {
   display: flex;
   flex-direction: column; }
-
-.tabs button {
-  font-size: 0.8rem;
-  padding: 1rem;
-  background-color: #00000066;
-  border: none;
-  cursor: pointer;
-  transition: color 1s; }
-
-.tabs button:hover {
-  color: #59ff75; }
-
-.tab {
-  color: #c2eabd; }
-
-.current {
-  color: #59ff75; }
 
 @media (max-width: 650px) {
   .contact-container {
@@ -556,6 +555,16 @@ html {
   transform: rotateY(180deg);
   opacity: 0;
   z-index: 2; }
+
+.about {
+  padding: 1rem;
+  color: #f9dc5c;
+  background-color: #00000066; }
+
+.about p {
+  font-size: 1.2;
+  line-height: 1.2;
+  margin-top: 1.1rem; }
 
 .page-wrapper {
   display: flex;
