@@ -558,8 +558,10 @@ html {
 
 .about {
   padding: 1rem;
+  border: 1px solid #777;
   color: #f9dc5c;
-  background-color: #00000066; }
+  background-color: #00000066;
+  max-width: 600px; }
 
 .about p {
   font-size: 1.2;
