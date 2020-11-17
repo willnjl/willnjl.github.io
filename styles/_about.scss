@@ -9,4 +9,11 @@
     line-height: 1.2;
     margin-top: 1.1rem;
   }
+
+  a {
+    color: $blue;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

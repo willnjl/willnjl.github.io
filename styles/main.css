@@ -561,7 +561,6 @@ body {
 
 .about {
   padding: 1rem;
-  border: 1px solid #777;
   color: #f9dc5c;
   background-color: #00000066;
   max-width: 600px; }
@@ -570,6 +569,12 @@ body {
   font-size: 1.2;
   line-height: 1.2;
   margin-top: 1.1rem; }
+
+.about a {
+  color: #00edff; }
+
+.about a:hover {
+  text-decoration: underline; }
 
 .page-wrapper {
   display: flex;
