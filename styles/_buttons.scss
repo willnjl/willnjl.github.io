@@ -22,3 +22,20 @@
 .current {
   color: $btn-green;
 }
+
+.about_btn {
+  cursor: pointer;
+  color: $green;
+  padding: 1rem;
+  border: 1px solid $green;
+  // max-width: 50px;
+  background: linear-gradient(-45deg, rgba(0, 0, 0, 0) 50%, $btn-green 50%)
+    right;
+  background-size: 210%;
+  transition: 0.6s ease-out;
+  &:hover {
+    background-position: left;
+    border-color: $btn-green;
+    color: black;
+  }
+}

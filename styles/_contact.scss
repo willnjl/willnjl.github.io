@@ -7,14 +7,8 @@
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: $shade;
-  }
-
-  &_name {
-    // border: 1px solid $red;
-    color: white;
-
     h5 {
       font-size: 1.5rem;
       color: $yellow;
@@ -25,13 +19,13 @@
       margin-top: 1rem;
       color: $green;
     }
-  }
 
-  .details {
-    margin-top: 1rem;
-    li {
-      color: white;
-      margin-top: 1rem;
+    .details {
+      margin-top: 1.2rem;
+      li {
+        color: white;
+        margin-top: 1rem;
+      }
     }
   }
 
@@ -81,6 +75,12 @@
   .column {
     justify-content: center;
     text-align: center;
+
+    .about_btn {
+      width: 200px;
+      margin: auto;
+      margin-top: 2rem;
+    }
   }
   .social_container {
     display: flex;

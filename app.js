@@ -1,7 +1,6 @@
 ((d, w) => {
   const faders = d.querySelectorAll(".fade-in");
   const navBar = d.querySelector(".nav-bar");
-
   const ticker = d.getElementById("hero");
 
   const mapRange = (value, start1, stop1, start2, stop2) => {
@@ -58,21 +57,21 @@
     d.getElementById("work").scrollIntoView({ behavior: "smooth" });
   });
 
-  const tabAbout = d.getElementById("tab-about");
-  const tabContact = d.getElementById("tab-contact");
-  const pageContact = d.getElementById("page-contact");
-  const pageAbout = d.getElementById("page-about");
+  const aboutPage = d.getElementById("page-about");
+  const socialPage = d.getElementById("page-social");
+  const aboutBtn = d.getElementById("about-btn");
+  let aboutState = false;
+  aboutBtn.addEventListener("click", () => {
+    aboutState = !aboutState;
 
-  tabAbout.addEventListener("click", () => {
-    tabAbout.classList.add("current");
-    tabContact.classList.remove("current");
-    pageContact.classList.add("hide");
-    pageAbout.classList.remove("hide");
-  });
-  tabContact.addEventListener("click", () => {
-    pageAbout.classList.add("hide");
-    pageContact.classList.remove("hide");
-    tabContact.classList.add("current");
-    tabAbout.classList.remove("current");
+    if (aboutState) {
+      aboutPage.classList.remove("hide");
+      socialPage.classList.add("hide");
+      aboutBtn.innerHTML = "profiles";
+    } else {
+      aboutBtn.innerHTML = "about";
+      aboutPage.classList.add("hide");
+      socialPage.classList.remove("hide");
+    }
   });
 })(document, window);

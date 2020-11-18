@@ -81,54 +81,51 @@
     <h3 class="section_title" id="title_contact">contact</h3>
     <section class="main_elem--contact fade-in">
       <div class="contact-container">
-        <div class="tabs">
-          <button class="current tab" id="tab-contact">Contact</button>
-          <button class="tab" id="tab-about">About</button>
-        </div>
-        <div id="page-about" class="about hide">
-          <p>
-            Previously a lighting designer for events, installations and
-            performance, I am used to bring together technical know how and
-            creative briefs.
-          </p>
-
-          <p>
-            Using technology convay a message, creating unforgettable
-            experiences, problem solving and intensive collaboration, are skills
-            I still use everyday in web development.
-          </p>
-
-          <p>
-            I have am a member of ClimateAction.Tech and have contributed on a
-            voluntry basis to a number of international tech initiatives to
-            combat climate change. Social Media platform
-            <a class="about_link" href="https://climateconnect.earth/browse"
-              >Climate Connect</a
-            >
-            and reforestation API
-            <a class="about_link" href="https://digitalhumani.com/"
-              >DigitalHumani</a
-            >.
-          </p>
-
-          <p>
-            Outside of work I enjoy creative coding, volunteering, campaigning
-            for environmental issues, music, surfing and skateboarding.
-          </p>
-        </div>
         <div class="contact" id="page-contact">
           <div class="column">
-            <div class="contact_name">
+            <div class="contact_info">
               <h5>Will Leighton</h5>
               <h6>Full-Stack Developer</h6>
+              <ul class="details">
+                <li>0044 79 32 404 942</li>
+                <li>will_leighton@outlook.com</li>
+                <li>Bristol, UK</li>
+              </ul>
             </div>
-            <ul class="details">
-              <li>0044 79 32 404 942</li>
-              <li>will_leighton@outlook.com</li>
-              <li>Bristol, UK</li>
-            </ul>
+            <button class="about_btn" id="about-btn">About Me</button>
           </div>
-          <div class="column">
+          <div id="page-about" class="column about hide">
+            <p>
+              Previously a lighting designer for events, installations and
+              performance, I am used to bring together technical know how and
+              creative briefs.
+            </p>
+
+            <p>
+              Using technology convay a message, creating unforgettable
+              experiences, problem solving and intensive collaboration, are
+              skills I still use everyday in web development.
+            </p>
+
+            <p>
+              I have am a member of ClimateAction.Tech and have contributed on a
+              voluntry basis to a number of international tech initiatives to
+              combat climate change. Social Media platform
+              <a class="about_link" href="https://climateconnect.earth/browse"
+                >Climate Connect</a
+              >
+              and reforestation API
+              <a class="about_link" href="https://digitalhumani.com/"
+                >DigitalHumani</a
+              >.
+            </p>
+
+            <p>
+              Outside of work I enjoy creative coding, volunteering, campaigning
+              for environmental issues, music, surfing and skateboarding.
+            </p>
+          </div>
+          <div class="column" id="page-social">
             <img
               src="https://github.com/willnjl/willnjl.github.io/blob/7f90eac62df4835c2880b186caee68c27b6bc69a/assets/headshot.jpg?raw=true"
               alt="headshot"
@@ -679,48 +676,63 @@
             alerting followers to the activity. React front-end in development.
           </p>
         </div>
-        <ul class="links__container right">
-          <li>
-            <a
-              class="fill-right"
-              target="_blank"
-              href="https://twitter.com/TrawlerAlert"
-              >Twitter</a
-            >
-          </li>
-          <li>
-            <a
-              class="fill-right"
-              target="_blank"
-              href="https://willnjl.github.io/Trawler-App/"
-              >Link</a
-            >
-          </li>
-          <!-- <li><a href="">GitHub</a></li> -->
-        </ul>
+        <div class="column col-reverse">
+          <img
+            class="project_img"
+            src="assets/screenshots/trawler1.jpg"
+            alt=""
+            srcset=""
+          />
+          <ul class="links__container right">
+            <li>
+              <a
+                class="fill-right"
+                target="_blank"
+                href="https://willnjl.github.io/Trawler-App/"
+                >Link</a
+              >
+            </li>
+            <li>
+              <a
+                class="fill-right"
+                target="_blank"
+                href="https://twitter.com/TrawlerAlert"
+                >Twitter</a
+              >
+            </li>
+          </ul>
+        </div>
       </article>
 
       <article class="card card_project">
-        <ul class="links__container">
-          <li>
-            <a
-              class="fill"
-              target="_blank"
-              href="https://tom-meyrick.github.io/iScream/#/"
-            >
-              Link
-            </a>
-          </li>
-          <li>
-            <a
-              class="fill"
-              target="_blank"
-              href="https://github.com/tom-meyrick/iScream"
-            >
-              GitHub
-            </a>
-          </li>
-        </ul>
+        <div class="column">
+          <img
+            src="assets/screenshots/iScream1.jpg"
+            class="project_img"
+            alt=""
+            srcset=""
+          />
+          <ul class="links__container">
+            <li>
+              <a
+                class="fill"
+                target="_blank"
+                href="https://tom-meyrick.github.io/iScream/#/"
+              >
+                Link
+              </a>
+            </li>
+            <li>
+              <a
+                class="fill"
+                target="_blank"
+                href="https://github.com/tom-meyrick/iScream"
+              >
+                GitHub
+              </a>
+            </li>
+          </ul>
+        </div>
         <div class="column">
           <h4 class="title right">iScream</h4>
           <ul class="tags right">
@@ -751,44 +763,60 @@
             project of the Develop me Coding Fellowship.
           </p>
         </div>
-        <ul class="links__container right">
-          <li>
-            <a
-              class="fill-right"
-              target="_blank"
-              href="https://willnjl.github.io/PingPong-Tournament/"
-              >Link</a
-            >
-          </li>
-          <li>
-            <a
-              class="fill-right"
-              target="_blank"
-              href="https://github.com/willnjl/PingPong-Tournament"
-              >GitHub</a
-            >
-          </li>
-        </ul>
+        <div class="column col-reverse">
+          <img
+            src="assets/screenshots/pong.jpg"
+            class="project_img"
+            alt=""
+            srcset=""
+          />
+          <ul class="links__container right">
+            <li>
+              <a
+                class="fill-right"
+                target="_blank"
+                href="https://willnjl.github.io/PingPong-Tournament/"
+                >Link</a
+              >
+            </li>
+            <li>
+              <a
+                class="fill-right"
+                target="_blank"
+                href="https://github.com/willnjl/PingPong-Tournament"
+                >GitHub</a
+              >
+            </li>
+          </ul>
+        </div>
       </article>
       <article class="card card_project">
-        <ul class="links__container">
-          <li>
-            <a
-              class="fill"
-              target="_blank"
-              href="https://willnjl.github.io/js.tetris/"
-              >Link</a
-            >
-          </li>
-          <li>
-            <a
-              class="fill"
-              target="_blank"
-              href="https://github.com/willnjl/js.tetris/blob/master/app.js"
-              >GitHub</a
-            >
-          </li>
-        </ul>
+        <div class="column">
+          <img
+            src="assets/screenshots/tetris.jpg"
+            class="project_img--border"
+            alt=""
+            srcset=""
+          />
+          <ul class="links__container">
+            <li>
+              <a
+                class="fill"
+                target="_blank"
+                href="https://willnjl.github.io/js.tetris/"
+                >Link</a
+              >
+            </li>
+            <li>
+              <a
+                class="fill"
+                target="_blank"
+                href="https://github.com/willnjl/js.tetris/blob/master/app.js"
+                >GitHub</a
+              >
+            </li>
+          </ul>
+        </div>
         <div class="column">
           <h4 class="title">jsTetris</h4>
           <ul class="tags">

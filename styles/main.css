@@ -260,6 +260,20 @@ body {
 .current {
   color: #59ff75; }
 
+.about_btn {
+  cursor: pointer;
+  color: #c2eabd;
+  padding: 1rem;
+  border: 1px solid #c2eabd;
+  background: linear-gradient(-45deg, rgba(0, 0, 0, 0) 50%, #59ff75 50%) right;
+  background-size: 210%;
+  transition: 0.6s ease-out; }
+
+.about_btn:hover {
+  background-position: left;
+  border-color: #59ff75;
+  color: black; }
+
 .hero {
   background-color: #00000066;
   color: white;
@@ -314,25 +328,22 @@ body {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   background-color: #00000066; }
 
-.contact_name {
-  color: white; }
-
-.contact_name h5 {
+.contact .column h5 {
   font-size: 1.5rem;
   color: #f9dc5c; }
 
-.contact_name h6 {
+.contact .column h6 {
   font-size: 1.2;
   margin-top: 1rem;
   color: #c2eabd; }
 
-.contact .details {
-  margin-top: 1rem; }
+.contact .column .details {
+  margin-top: 1.2rem; }
 
-.contact .details li {
+.contact .column .details li {
   color: white;
   margin-top: 1rem; }
 
@@ -373,6 +384,10 @@ body {
   .column {
     justify-content: center;
     text-align: center; }
+  .column .about_btn {
+    width: 200px;
+    margin: auto;
+    margin-top: 2rem; }
   .social_container {
     display: flex;
     justify-content: center;
@@ -435,7 +450,10 @@ body {
 
 .card_project .column {
   padding: 10px;
-  max-width: 401px; }
+  max-width: 401px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
 .card_project p {
   line-height: 1.4rem; }
@@ -451,14 +469,16 @@ body {
 
 .card_project .links__container {
   display: flex;
-  flex-direction: column;
+  margin-top: 1rem;
   color: #c2eabd;
-  width: 300px; }
+  justify-content: space-evenly;
+  width: 100%; }
 
 .card_project .links__container li .fill, .card_project .links__container li .fill-right {
+  width: 175px;
   display: block;
-  margin-bottom: 1.2rem;
   padding: 1rem;
+  margin: 10px;
   border: 1px solid #c2eabd;
   background: linear-gradient(-45deg, rgba(0, 0, 0, 0) 50%, #59ff75 50%) right;
   background-size: 210%;
@@ -487,7 +507,6 @@ body {
   .card {
     flex-direction: column-reverse;
     margin: auto;
-    text-align: center;
     margin-bottom: 1rem; }
   .card .right {
     text-align: center; }
@@ -501,7 +520,18 @@ body {
     order: 1; }
   .card:nth-of-type(2n + 1) .column {
     padding: 1rem;
-    margin: auto; } }
+    margin: auto; }
+  .column p {
+    text-align: justify; } }
+
+.project_img, .project_img--border {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: scale-down;
+  border-radius: 10px; }
+
+.project_img--border {
+  border: 5px solid white; }
 
 .card {
   display: flex;
