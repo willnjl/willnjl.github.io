@@ -95,7 +95,12 @@
     }
     &_project {
       .links__container {
-        width: 75%;
+        li {
+          .fill {
+            max-width: 100px;
+            min-width: 85px;
+          }
+        }
       }
     }
   }

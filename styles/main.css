@@ -510,8 +510,9 @@ body {
     margin-bottom: 1rem; }
   .card .right {
     text-align: center; }
-  .card_project .links__container {
-    width: 75%; }
+  .card_project .links__container li .fill, .card_project .links__container li .fill-right {
+    max-width: 100px;
+    min-width: 85px; }
   .card:nth-of-type(2n + 1) {
     flex-direction: column; }
   .card:nth-of-type(2n + 1):nth-child(1) {
