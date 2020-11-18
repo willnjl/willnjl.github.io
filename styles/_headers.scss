@@ -6,12 +6,6 @@
   top: 0;
   justify-self: flex-start;
 
-  &_img {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-  }
-
   .links__container {
     background-color: $shade;
     opacity: 0;
@@ -19,7 +13,6 @@
     font-size: 2.2rem;
     padding: 1rem;
     min-width: 50%;
-
     position: absolute;
     top: 50%;
     left: 50%;
@@ -27,25 +20,5 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-
-    .link {
-      font-family: "Courier New", Courier, monospace;
-      padding: 2px;
-      opacity: 0;
-      margin-bottom: 1rem;
-      text-shadow: -1px -1px black;
-      &:nth-child(1) {
-        align-self: start;
-        color: $red;
-      }
-      &:nth-child(2) {
-        align-self: center;
-        color: $blue;
-      }
-      &:nth-child(3) {
-        color: $btn-green;
-        align-self: flex-end;
-      }
-    }
   }
 }

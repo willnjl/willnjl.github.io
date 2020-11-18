@@ -22,7 +22,7 @@
     .tags {
       padding: 1rem 0;
       font-size: 1.2rem;
-      color: grey;
+      color: $green;
       li {
         display: inline;
         margin-right: 20px;
@@ -92,7 +92,6 @@
     }
     &_project {
       .links__container {
-        // flex-direction: row;
         width: 75%;
       }
     }

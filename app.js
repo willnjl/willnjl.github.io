@@ -11,7 +11,7 @@
 
   w.addEventListener("scroll", () => {
     let y = w.pageYOffset;
-    ticker.style.opacity = mapRange(y, 1200, 2000, 1, 0);
+    ticker.style.opacity = mapRange(y, 1250, 1850, 1, 0);
   });
 
   var prevScrollpos = window.pageYOffset;

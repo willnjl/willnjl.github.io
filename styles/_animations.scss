@@ -28,14 +28,15 @@
   margin: auto;
 }
 
-.body {
-  transform: rotateY(180deg);
-}
-
 .piece {
   position: absolute;
   right: 0;
   transform: rotateY(180deg);
   opacity: 0;
   z-index: 2;
+}
+
+.piece,
+.body {
+  transform: rotateY(180deg) scale(0.5);
 }

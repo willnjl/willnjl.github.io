@@ -38,7 +38,8 @@
   .social_container {
     margin-top: 1rem;
     .social_link {
-      svg {
+      svg,
+      img {
         fill: $green;
         max-width: 35px;
         transition: fill 1s;

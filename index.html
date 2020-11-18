@@ -46,9 +46,12 @@
     <title>Will Leighton</title>
   </head>
   <nav class="nav-bar">
-    <h1 class="nav__logo">
-      <a href="index.html">Will Leighton</a>
-    </h1>
+    <div class="nav__name">
+      <h1>
+        <a href="index.html">Will Leighton</a>
+      </h1>
+      <span class="nav__tag">// Full Stack Developer</span>
+    </div>
     <ul class="nav-mol">
       <li class="nav__link">
         <a target="_blank" href="assets/Will Leighton - CV.pdf"> cv_ </a>
@@ -71,41 +74,47 @@
       </div>
       <picture>
         <source srcset="assets/bg-landscape.jpg" media="(min-width: 900px)" />
-        <img src="assets/bg-portrait.jpg" class="hero_img" />
+        <img src="assets/bg-portrait.jpg" class="bg_img" />
       </picture>
     </header>
-    <!--  -->
 
     <h3 class="section_title" id="title_contact">contact</h3>
-    <section class="main_elem fade-in">
+    <section class="main_elem--contact fade-in">
       <div class="contact-container">
         <div class="tabs">
           <button class="current tab" id="tab-contact">Contact</button>
           <button class="tab" id="tab-about">About</button>
         </div>
-        <div id='page-about' class="about hide">
-         
- <p>
-   Previously a lighting designer and technician for events, installations and performance, I am used to finding the common ground between technical know-how and creative briefs.
- </p>
+        <div id="page-about" class="about hide">
+          <p>
+            Previously a lighting designer for events, installations and
+            performance, I am used to bring together technical know how and
+            creative briefs.
+          </p>
 
-<p>
-Using technology convay a message, creating beautiful user experiences, problem solving and  working to immovable deadlines, are skills I still use everyday in web development. 
-</p>
+          <p>
+            Using technology convay a message, creating unforgettable
+            experiences, problem solving and intensive collaboration, are skills
+            I still use everyday in web development.
+          </p>
 
-<p>
-  With a proven record of being adaptable and a fast learner with  and a natural ability to get on with people.  I am happiest contributing to a team and putting work into practice.
-</p>
+          <p>
+            I have am a member of ClimateAction.Tech and have contributed on a
+            voluntry basis to a number of international tech initiatives to
+            combat climate change. Social Media platform
+            <a class="about_link" href="https://climateconnect.earth/browse"
+              >Climate Connect</a
+            >
+            and reforestation API
+            <a class="about_link" href="https://digitalhumani.com/"
+              >DigitalHumani</a
+            >.
+          </p>
 
-<p>
-  I have am a member of ClimateAction.Tech and have contributed voluntarily to a number of international tech initiatives to combat climate change. Social Media platform <a class="about_link" href="https://climateconnect.earth/browse" >Climate Connect</a> and reforestation API <a class="about_link" href="https://digitalhumani.com/">DigitalHumani</a>.
-</p>
-<p>
-  Outside of work I enjoy creative coding, volunteering, campaigning for environmental issues, music, surfing and skateboarding.
-</p>
-
-
-   
+          <p>
+            Outside of work I enjoy creative coding, volunteering, campaigning
+            for environmental issues, music, surfing and skateboarding.
+          </p>
         </div>
         <div class="contact" id="page-contact">
           <div class="column">
@@ -160,7 +169,7 @@ Using technology convay a message, creating beautiful user experiences, problem 
                   />
                 </svg>
               </a>
-    
+
               <a
                 href="https://github.com/willnjl"
                 target="_blank"
@@ -179,20 +188,66 @@ Using technology convay a message, creating beautiful user experiences, problem 
                 </svg>
               </a>
               <a
-                href="www.willstagelighting.com"
+                href="http://www.willstagelighting.com"
                 target="_blank"
                 class="social_link"
-                alt="lighting design website"
+                alt="lighting design"
               >
+                <?xml version="1.0" encoding="iso-8859-1"?>
+                <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                 <svg
-                  role="img"
-                  viewBox="0 0 24 24"
+                  version="1.1"
+                  class="social_link"
                   xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 512 512"
+                  style="enable-background: new 0 0 512 512"
+                  xml:space="preserve"
                 >
-                  <title>Wix</title>
-                  <path
-                    d="M13.731 7.509c-.476.249-.653.67-.653 1.832 0 0 .241-.233.598-.363.26-.094.483-.237.612-.331.401-.295.464-.674.464-1.312 0 0-.656-.018-1.021.174m-2.82.272c-.388.342-.502.887-.502.887l-1.284 4.975L8.057 9.57c-.104-.433-.291-.968-.588-1.33-.378-.46-1.146-.49-1.228-.49-.082 0-.85.03-1.228.49-.296.362-.484.897-.588 1.33l-1.068 4.072-1.284-4.975s-.113-.545-.5-.887C.942 7.227 0 7.345 0 7.345l2.459 9.297s.811.059 1.217-.148c.533-.272.787-.482 1.11-1.747.287-1.127 1.091-4.44 1.166-4.676.038-.116.085-.395.29-.395.208 0 .252.278.288.395.074.236.88 3.549 1.167 4.676.323 1.265.576 1.475 1.11 1.747.405.207 1.216.148 1.216.148l2.46-9.297s-.943-.118-1.572.436m3.84 1.082s-.154.238-.505.434c-.225.126-.441.212-.674.323-.388.186-.494.394-.494.71V16.643s.62.079 1.027-.128c.522-.266.642-.523.647-1.68V9.2h-.001zm6.13 3.153L24 7.376s-1.317-.224-1.969.369c-.417.38-.883 1.063-.883 1.063L20 10.463c-.056.086-.13.18-.245.18-.117 0-.19-.094-.245-.18l-1.148-1.655s-.467-.683-.884-1.063c-.652-.593-1.969-.37-1.969-.37l3.12 4.641-3.112 4.626s1.372.174 2.024-.42c.417-.38.82-.998.82-.998l1.149-1.654c.055-.086.128-.18.245-.18.116 0 .189.094.245.18l1.148 1.654s.427.618.844.998c.652.594 2 .42 2 .42Z"
-                  />
+                  <g>
+                    <g>
+                      <polygon
+                        points="230.346,199.4 256.214,318.137 282.083,199.4 		"
+                      />
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path
+                        d="M368.265,45.863c-30.947-30.371-71.912-46.62-115.267-45.836C210.388,0.826,170.655,17.94,141.12,48.22
+			c-29.548,30.292-45.651,70.441-45.341,113.052c0.263,36.092,12.85,71.133,35.444,99.138
+			c25.261,31.312,40.058,70.05,42.233,108.597h66.338l-39.377-180.483c-0.869-3.988,0.116-8.028,2.676-11.207
+			c2.561-3.18,6.424-4.899,10.507-4.899h85.231c4.082,0,7.946,1.849,10.507,5.028s3.545,7.09,2.676,11.078l-39.377,180.483h65.874
+			c2.201-38.547,17.09-77.271,42.502-108.921c22.707-28.282,35.213-63.631,35.213-100.002
+			C416.226,116.781,399.193,76.218,368.265,45.863z"
+                      />
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path
+                        d="M173.767,395.989v48.065c0,20.895,16.98,38.023,37.875,38.023h6.203C222.261,498.781,237.885,512,256.428,512
+			s34.168-13.219,38.583-29.923h5.308c20.895,0,37.915-17.128,37.915-38.023v-48.065H173.767z"
+                      />
+                    </g>
+                  </g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
                 </svg>
               </a>
             </ul>
@@ -748,21 +803,5 @@ Using technology convay a message, creating beautiful user experiences, problem 
         </div>
       </article>
     </section>
-
-    <!-- <footer class="footer_card">
-      <nav>
-        <ul class="footer__nav--container">
-          <li class="footer__nav--link">
-            <a href="#"> Back to the top </a>
-          </li>
-          <li class="footer__nav--link">
-            <a href="#"> Contact </a>
-          </li>
-          <li class="footer__nav--link">
-            <a href="#"> Theatre Portfolio Page </a>
-          </li>
-        </ul>
-      </nav> -->
-    </footer>
   </body>
 </html>

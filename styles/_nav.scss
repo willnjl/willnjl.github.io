@@ -2,27 +2,34 @@
   z-index: 2;
   position: fixed;
   width: 100%;
-
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  padding: 10px;
+  padding: 1.2rem;
   background-color: $yellow;
 }
 
-.nav__logo {
-  font-size: 1.2rem;
+.nav__name {
+  display: flex;
+  align-items: center;
   margin-right: auto;
-
-  &:hover {
-    text-decoration: underline;
+  flex-wrap: wrap;
+  h1 {
+    font-size: 1.3rem;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .nav__tag {
+    margin-left: 1vw;
+    color: #333;
+    margin-right: auto;
   }
 }
 
 .nav-mol {
   .nav__link {
     display: inline-block;
-    margin-right: 5vw;
+    margin-right: 2vw;
     &:hover {
       text-decoration: underline;
     }

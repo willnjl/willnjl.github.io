@@ -6,8 +6,8 @@ let tween = gsap.to(".links__container", {
     start: "top -1200",
   },
   opacity: 1,
-  duration: 1,
-  delay: 2,
+  duration: 3,
+  delay: 0.5,
 });
 tween.pause();
 if (window.pageYOffset < 1200) {
@@ -19,7 +19,7 @@ const tl = gsap.timeline({
     trigger: ".page-wrapper",
     start: "top top",
     end: "top -1500px",
-    // once: true,
+    once: true,
     scrub: 1,
   },
 });
@@ -32,8 +32,8 @@ tl.to(".canvas", {
     ".piece",
     {
       rotateZ: "-27deg",
-      x: "122px",
-      y: "-3px",
+      x: "95px",
+      y: "25px",
       startAt: {
         rotateZ: "192deg",
         x: "101vw",
@@ -47,8 +47,8 @@ tl.to(".canvas", {
     "-=1"
   )
   .to(".canvas", {
-    rotateZ: "90deg",
-    duration: 2,
+    rotate: "90deg",
+    duration: 1,
   });
 
 //

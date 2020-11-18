@@ -23,13 +23,19 @@
   background-color: black;
 }
 
+.bg_img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
 .main_elem {
   position: relative;
-
   padding: 1.5rem;
   background-color: $shade;
   margin-bottom: 1rem;
-
+  &--contact {
+    @extend .main_elem;
+  }
   &--work {
     @extend .main_elem;
     max-width: 1000px;
