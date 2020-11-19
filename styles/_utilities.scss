@@ -1,0 +1,22 @@
+.right {
+  text-align: right;
+}
+
+.hide {
+  display: none !important;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  background-color: $shade;
+  padding: 2rem;
+  border: 1px solid grey;
+  color: white;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
