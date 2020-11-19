@@ -67,7 +67,7 @@
     if (aboutState) {
       aboutPage.classList.remove("hide");
       socialPage.classList.add("hide");
-      aboutBtn.innerHTML = "profiles";
+      aboutBtn.innerHTML = "connect";
     } else {
       aboutBtn.innerHTML = "about";
       aboutPage.classList.add("hide");

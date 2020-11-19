@@ -427,8 +427,7 @@ body {
   cursor: pointer;
   font-size: 4rem;
   position: relative;
-  color: white;
-  text-decoration: underline #c2eabd; }
+  color: white; }
 
 #title_contact {
   margin-top: 2500px; }
