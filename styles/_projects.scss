@@ -97,8 +97,7 @@
       .links__container {
         li {
           .fill {
-            max-width: 100px;
-            min-width: 85px;
+            width: 115px;
           }
         }
       }
@@ -121,6 +120,20 @@
   .column {
     p {
       text-align: justify;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card {
+    &_project {
+      .links__container {
+        li {
+          .fill {
+            width: 75px;
+          }
+        }
+      }
     }
   }
 }

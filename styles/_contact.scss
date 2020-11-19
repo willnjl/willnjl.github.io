@@ -1,26 +1,24 @@
-.contact {
+.contact-container {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-
   .column {
     padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     background-color: $shade;
-    h5 {
+  }
+  .contact_info {
+    &_name {
       font-size: 1.5rem;
       color: $yellow;
     }
-
-    h6 {
+    &_tag {
       font-size: 1.2;
       margin-top: 1rem;
       color: $green;
     }
-
-    .details {
+    &_details {
       margin-top: 1.2rem;
       li {
         color: white;
@@ -32,8 +30,7 @@
   .social_container {
     margin-top: 1rem;
     .social_link {
-      svg,
-      img {
+      svg {
         fill: $green;
         max-width: 35px;
         transition: fill 1s;
@@ -46,42 +43,47 @@
   }
 }
 
-.contact-container {
-  display: flex;
-  flex-direction: row;
+.profile_img {
+  max-width: 245px;
   margin: auto;
-  justify-content: center;
-  flex-flow: row;
 }
-.tabs {
-  display: flex;
-  flex-direction: column;
+
+.about {
+  padding: 1rem;
+  color: $yellow;
+  background-color: $shade;
+  max-width: 600px;
+  p {
+    font-size: 1.2;
+    line-height: 1.2;
+    margin-top: 1.1rem;
+  }
+
+  a {
+    color: $blue;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 @media (max-width: 650px) {
   .contact-container {
     flex-direction: column;
-  }
-  .tabs {
-    flex-direction: row;
-  }
-
-  .contact {
-    flex-direction: column;
     width: 100%;
     margin: auto;
-  }
-
-  .column {
-    justify-content: center;
-    text-align: center;
-
-    .about_btn {
-      width: 200px;
-      margin: auto;
-      margin-top: 2rem;
+    .column {
+      justify-content: center;
+      text-align: center;
     }
   }
+
+  .about_btn {
+    width: 200px;
+    margin: auto;
+    margin-top: 2rem;
+  }
+
   .social_container {
     display: flex;
     justify-content: center;
@@ -90,9 +92,4 @@
       width: 35px;
     }
   }
-}
-
-.contact_profile {
-  max-width: 245px;
-  margin: auto;
 }

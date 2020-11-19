@@ -33,9 +33,7 @@
   padding: 1.5rem;
   background-color: $shade;
   margin-bottom: 1rem;
-  &--contact {
-    @extend .main_elem;
-  }
+
   &--work {
     @extend .main_elem;
     max-width: 1000px;
