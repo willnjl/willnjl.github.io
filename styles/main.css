@@ -320,28 +320,6 @@ body {
   display: inline-block;
   margin: auto; }
 
-.footer_card {
-  position: relative;
-  justify-self: flex-end;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  background-color: #333;
-  width: 100%;
-  margin-top: 2rem; }
-
-.footer__nav--link {
-  color: #777;
-  text-decoration: underline;
-  padding: 10px; }
-
-.footer__headshot {
-  max-width: 200px;
-  height: auto;
-  filter: saturate(75%); }
-
 .contact-container {
   display: flex;
   justify-content: center; }
@@ -454,11 +432,13 @@ body {
   .title_contact {
     font-size: 5rem; } }
 
-.project_img {
+.project_img, .project_img--border {
   max-width: 100%;
   max-height: 200px;
   object-fit: scale-down;
-  border-radius: 10px;
+  border-radius: 10px; }
+
+.project_img--border {
   border: 5px solid white; }
 
 .card_project {
