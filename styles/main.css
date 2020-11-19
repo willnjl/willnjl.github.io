@@ -355,6 +355,10 @@ body {
 .contact-container .social_container .social_link svg:hover {
   fill: #59ff75; }
 
+.profile_img {
+  max-width: 245px;
+  margin: auto; }
+
 .about {
   padding: 1rem;
   color: #f9dc5c;
@@ -390,10 +394,6 @@ body {
     align-items: center; }
   .social_container svg {
     width: 35px; } }
-
-.contact_profile {
-  max-width: 245px;
-  margin: auto; }
 
 .card_skills {
   justify-content: center;
@@ -437,8 +437,7 @@ body {
   flex-direction: row;
   width: 100%;
   justify-content: space-around;
-  align-items: center;
-  color: white; }
+  align-items: center; }
 
 .card_project .right {
   text-align: right; }
@@ -537,7 +536,8 @@ body {
   justify-content: center;
   background-color: #00000066;
   padding: 2rem;
-  border: 1px solid grey; }
+  border: 1px solid grey;
+  color: white; }
 
 .fade-in {
   opacity: 0;
@@ -565,23 +565,6 @@ body {
 .piece,
 .body {
   transform: rotateY(180deg) scale(0.5); }
-
-.about {
-  padding: 1rem;
-  color: #f9dc5c;
-  background-color: #00000066;
-  max-width: 600px; }
-
-.about p {
-  font-size: 1.2;
-  line-height: 1.2;
-  margin-top: 1.1rem; }
-
-.about a {
-  color: #00edff; }
-
-.about a:hover {
-  text-decoration: underline; }
 
 .page-wrapper {
   display: flex;
