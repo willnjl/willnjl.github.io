@@ -1,6 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
 
-let tween = gsap.to(".links__container", {
+let tween = gsap.to("#hero", {
   scrollTrigger: {
     trigger: ".page-wrapper",
     start: "top -1200",

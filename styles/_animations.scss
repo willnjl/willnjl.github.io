@@ -7,25 +7,15 @@
   opacity: 1;
 }
 
-.nav-bar {
+.nav {
   transition: all 0.3s ease;
   top: 0;
   left: 0;
 }
 
-.nav-bar.remove {
+.nav.remove {
   top: -150px;
   left: 0;
-}
-
-.anim {
-  position: absolute;
-}
-
-.canvas {
-  transform: rotateZ(-90deg);
-  display: inline-block;
-  margin: auto;
 }
 
 .piece {

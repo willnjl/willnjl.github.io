@@ -1,24 +1,24 @@
-.hero {
+.bg_img {
   background-color: $shade;
   color: white;
   width: 100vw;
   position: fixed;
   top: 0;
   justify-self: flex-start;
+}
+.hero {
+  position: fixed;
+  background-color: $shade;
+  opacity: 0;
+  padding: 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
 
-  .links__container {
-    background-color: $shade;
-    opacity: 0;
-    color: white;
-    font-size: 2.2rem;
-    padding: 1rem;
-    min-width: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  .canvas {
+    transform: rotateZ(-90deg);
+    display: inline-block;
+    margin: auto;
   }
 }

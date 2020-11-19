@@ -45,14 +45,14 @@
 
     <title>Will Leighton</title>
   </head>
-  <nav class="nav-bar">
-    <div class="nav__name">
+  <nav class="nav" id="navbar">
+    <div class="nav_title_container">
       <h1>
         <a href="index.html">Will Leighton</a>
       </h1>
       <span class="nav__tag">// Full Stack Developer</span>
     </div>
-    <ul class="nav-mol">
+    <ul class="nav_links_container">
       <li class="nav__link">
         <a target="_blank" href="assets/Will Leighton - CV.pdf"> cv_ </a>
       </li>
@@ -60,23 +60,23 @@
         <a href="#contact"> contact_ </a>
       </li>
     </ul>
-    <img src="assets/button.svg" alt="menu" class="nav__menu" />
   </nav>
 
   <!--  -->
   <body class="page-wrapper">
-    <header class="hero">
-      <div class="links__container" id="hero">
-        <div class="canvas">
-          <img class="piece" src="assets/piece.svg" />
-          <img class="body" src="assets/generated.svg" />
-        </div>
-      </div>
+    <div class="bg_img">
       <picture>
         <source srcset="assets/bg-landscape.jpg" media="(min-width: 900px)" />
         <img src="assets/bg-portrait.jpg" class="bg_img" />
       </picture>
-    </header>
+    </div>
+
+    <div class="hero" id="hero">
+      <div class="canvas">
+        <img class="piece" src="assets/piece.svg" />
+        <img class="body" src="assets/generated.svg" />
+      </div>
+    </div>
 
     <h3 class="section_title" id="title_contact">contact</h3>
     <section class="main_elem--contact fade-in">

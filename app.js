@@ -1,7 +1,7 @@
 ((d, w) => {
   const faders = d.querySelectorAll(".fade-in");
-  const navBar = d.querySelector(".nav-bar");
-  const ticker = d.getElementById("hero");
+  const navBar = d.getElementById("navbar");
+  const hero = d.getElementById("hero");
 
   const mapRange = (value, start1, stop1, start2, stop2) => {
     value = (value - start1) / (stop1 - start1);
@@ -10,7 +10,7 @@
 
   w.addEventListener("scroll", () => {
     let y = w.pageYOffset;
-    ticker.style.opacity = mapRange(y, 1250, 1850, 1, 0);
+    hero.style.opacity = mapRange(y, 1250, 1850, 1, 0);
   });
 
   var prevScrollpos = window.pageYOffset;
