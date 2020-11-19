@@ -1,10 +1,7 @@
 .card {
   &_skills {
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     ul > li {
-      color: white;
       margin-top: 1rem;
     }
     .title {

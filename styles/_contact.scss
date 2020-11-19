@@ -3,8 +3,6 @@
   justify-content: center;
   .column {
     padding: 2rem;
-    display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
     background-color: $shade;
   }
@@ -28,6 +26,7 @@
   }
 
   .social_container {
+    width: 100%;
     margin-top: 1rem;
     .social_link {
       svg {

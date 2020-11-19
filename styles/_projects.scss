@@ -1,105 +1,54 @@
-.card {
-  &_project {
-    margin-bottom: 2rem;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
+.project_img {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: scale-down;
+  border-radius: 10px;
+  border: 5px solid white;
+}
 
-    .right {
-      text-align: right;
-    }
-    .column {
-      padding: 10px;
-      max-width: 401px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+.card_project {
+  @extend .card;
+  margin-bottom: 2rem;
+  flex-direction: row;
+  justify-content: space-around;
+
+  &_title {
+    color: $yellow;
+    font-size: 3rem;
+    margin: 0 auto;
+    cursor: auto;
+  }
+  &_tags {
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    color: $green;
+    li {
+      display: inline;
+      margin-right: 20px;
     }
 
     p {
       line-height: 1.4rem;
     }
-
-    .tags {
-      padding: 1rem 0;
-      font-size: 1.2rem;
-      color: $green;
-      li {
-        display: inline;
-        margin-right: 20px;
-      }
-    }
-    .links__container {
-      display: flex;
-      margin-top: 1rem;
-      color: $green;
-      justify-content: space-evenly;
-      width: 100%;
-
-      li {
-        .fill {
-          width: 175px;
-          display: block;
-          padding: 1rem;
-          margin: 10px;
-          border: 1px solid $green;
-          background: linear-gradient(
-              -45deg,
-              rgba(0, 0, 0, 0) 50%,
-              $btn-green 50%
-            )
-            right;
-          background-size: 210%;
-          transition: 0.6s ease-out;
-          &:hover {
-            background-position: left;
-            border-color: $btn-green;
-            color: black;
-          }
-        }
-
-        .fill-right {
-          @extend .fill;
-          background: linear-gradient(
-              45deg,
-              rgba(0, 0, 0, 0) 50%,
-              $btn-green 50%
-            )
-            left;
-          background-size: 210%;
-          transition: 0.6s ease-out;
-          &:hover {
-            background-position: right;
-          }
-        }
-      }
-    }
-    .title {
-      color: $yellow;
-      font-size: 3rem;
-      margin: 0 auto;
-      cursor: auto;
-    }
+  }
+  .column {
+    padding: 10px;
+    max-width: 401px;
+  }
+  .links_container {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: space-evenly;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 700px) {
-  .card {
+  .card_project {
     flex-direction: column-reverse;
-    margin: auto;
     margin-bottom: 1rem;
     .right {
       text-align: center;
-    }
-    &_project {
-      .links__container {
-        li {
-          .fill {
-            width: 115px;
-          }
-        }
-      }
     }
   }
   .card:nth-of-type(2n + 1) {
@@ -110,41 +59,11 @@
     &:nth-child(2) {
       order: 1;
     }
-    .column {
-      padding: 1rem;
-      margin: auto;
-    }
   }
 
   .column {
     p {
       text-align: justify;
     }
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .card {
-    &_project {
-      .links__container {
-        li {
-          .fill {
-            width: 75px;
-          }
-        }
-      }
-    }
-  }
-}
-
-.project_img {
-  max-width: 100%;
-  max-height: 200px;
-  object-fit: scale-down;
-  border-radius: 10px;
-
-  &--border {
-    @extend .project_img;
-    border: 5px solid white;
   }
 }
