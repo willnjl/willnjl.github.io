@@ -51,6 +51,7 @@
     })
     .to(".hero", {
       opacity: 0,
+      duration: 1,
     });
 })(document, window);
 
