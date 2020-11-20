@@ -297,6 +297,10 @@ body {
 .fill-right:hover {
   background-position: right; }
 
+@media screen and (max-width: 700px) {
+  .fill, .fill-right {
+    max-width: 95px; } }
+
 .bg_img {
   background-color: #00000066;
   color: white;
@@ -426,7 +430,7 @@ body {
   color: white; }
 
 .section_title--first {
-  margin-top: 2500px; }
+  margin-top: 2000px; }
 
 @media screen and (max-width: 620px) {
   .title_contact {

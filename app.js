@@ -3,16 +3,6 @@
   const navBar = d.getElementById("navbar");
   const hero = d.getElementById("hero");
 
-  const mapRange = (value, start1, stop1, start2, stop2) => {
-    value = (value - start1) / (stop1 - start1);
-    return start2 + value * (stop2 - start2);
-  };
-
-  w.addEventListener("scroll", () => {
-    let y = w.pageYOffset;
-    hero.style.opacity = mapRange(y, 1250, 1850, 1, 0);
-  });
-
   var prevScrollpos = window.pageYOffset;
   window.onscroll = () => {
     let currentScrollPos = window.pageYOffset;
@@ -48,10 +38,17 @@
   contact.addEventListener("click", () => {
     d.getElementById("contact").scrollIntoView({ behavior: "smooth" });
   });
+
+  const contactLink = d.getElementById("nav-contact");
+  contactLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    d.getElementById("page-contact").scrollIntoView({ behavior: "smooth" });
+  });
   const skills = d.getElementById("title_skills");
   skills.addEventListener("click", () => {
     d.getElementById("skills").scrollIntoView({ behavior: "smooth" });
   });
+
   const work = d.getElementById("title_work");
   work.addEventListener("click", () => {
     d.getElementById("work").scrollIntoView({ behavior: "smooth" });
@@ -61,6 +58,7 @@
   const socialPage = d.getElementById("page-social");
   const aboutBtn = d.getElementById("about-btn");
   let aboutState = false;
+
   aboutBtn.addEventListener("click", () => {
     aboutState = !aboutState;
 
