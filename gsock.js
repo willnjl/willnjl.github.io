@@ -8,6 +8,10 @@
   });
   tween.pause();
 
+  if (w.pageYOffset < 1500) {
+    tween.play();
+  }
+
   w.addEventListener("scroll", () => {
     if (w.pageYOffset < 1500) {
       tween.play();
