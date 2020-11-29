@@ -392,8 +392,11 @@ body {
     width: 100%;
     margin: auto; }
   .contact-container .column {
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     text-align: center; }
+  .contact-container .column .fill, .contact-container .column .fill-right {
+    margin-top: 2rem; }
   .about_btn {
     width: 200px;
     margin: auto;
