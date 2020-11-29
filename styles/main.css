@@ -484,8 +484,7 @@ body {
 @media screen and (max-width: 700px) {
   .card_project {
     flex-direction: column-reverse;
-    margin-bottom: 1rem; }
-  .card_project .right {
+    margin-bottom: 1rem;
     text-align: center; }
   .card:nth-of-type(2n + 1), .card_project:nth-of-type(2n + 1) {
     flex-direction: column; }
