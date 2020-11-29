@@ -53,9 +53,11 @@
   background-color: $shade;
   max-width: 600px;
   p {
+    width: 100%;
     font-size: 1.2;
     line-height: 1.2;
     margin-top: 1.1rem;
+    text-align: justify;
   }
 
   a {
