@@ -16,6 +16,7 @@
   justify-content: space-around;
 
   &_title {
+    text-align: center;
     color: $yellow;
     font-size: 3rem;
     margin: 0 auto;
@@ -29,11 +30,8 @@
       display: inline;
       margin-right: 20px;
     }
-
-    p {
-      line-height: 1.4rem;
-    }
   }
+
   .column {
     padding: 10px;
     max-width: 401px;

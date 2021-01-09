@@ -24,4 +24,8 @@
 * {
   font-family: "Work Sans", sans-serif;
   color: $text-main;
+  p {
+    // letter-spacing: 1px;
+    line-height: 1.5rem;
+  }
 }

@@ -220,6 +220,9 @@ body {
   font-family: "Work Sans", sans-serif;
   color: #333; }
 
+* p {
+  line-height: 1.5rem; }
+
 .nav {
   z-index: 2;
   position: fixed;
@@ -457,6 +460,7 @@ body {
   justify-content: space-around; }
 
 .card_project_title {
+  text-align: center;
   color: #f9dc5c;
   font-size: 3rem;
   margin: 0 auto;
@@ -470,9 +474,6 @@ body {
 .card_project_tags li {
   display: inline;
   margin-right: 20px; }
-
-.card_project_tags p {
-  line-height: 1.4rem; }
 
 .card_project .column {
   padding: 10px;
