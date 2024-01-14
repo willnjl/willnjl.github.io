@@ -17,6 +17,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@strapi/blocks-react-renderer": "^1.0.0",
     "@strapi/types": "^4.17.0",
     "@types/node": "^20",
     "@types/react": "^18",
