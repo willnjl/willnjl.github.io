@@ -10,6 +10,7 @@
     "deploy": "gh-pages -b main -d build"
   },
   "dependencies": {
+    "axios": "^1.6.5",
     "gh-pages": "^6.1.1",
     "next": "14.0.4",
     "react": "^18",
