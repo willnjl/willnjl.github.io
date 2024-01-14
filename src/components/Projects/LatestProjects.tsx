@@ -1,24 +1,25 @@
-import { APIResponseCollection } from '@/types/types'
-import React from 'react'
+import { APIResponseCollection } from "@/types/types";
+import React from "react";
 
 type Props = {
-  projects: APIResponseCollection<"api::project.project">
-}
+	projects: APIResponseCollection<"api::project.project">;
+};
 
 const LatestProjects = (props: Props) => {
+	let { projects } = props;
 
-  let { projects } = props;
-
-  return( <ul>
-      {projects.data.map(project => {
-        const title = project.attributes.Heading;
-        return (<li role="article">
-          <h2>{title}</h2>
-        </li>)
-      })}
-    
-  </ul>)
-}
-
+	return (
+		<ul>
+			{projects.data.map((project) => {
+				const title = project.attributes.Heading;
+				return (
+					<li key={project.id} role="article">
+						<h2>{title}</h2>
+					</li>
+				);
+			})}
+		</ul>
+	);
+};
 
 export default LatestProjects;

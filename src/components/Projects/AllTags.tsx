@@ -9,7 +9,7 @@ const AllTags = (props: Props) => {
 	return (
 		<ul className="">
 			{props.tags.data.map((item) => (
-				<li className="inline-block mr-4 mb-2 text-lg">
+				<li key={item.id} className="inline-block mr-4 mb-2 text-lg">
 					<Link href={"#"} className="text-blue-700">
 						{item.attributes.Title}
 					</Link>
