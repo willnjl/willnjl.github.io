@@ -18,13 +18,13 @@ export default async function Home() {
 		<main className="text-black">
 			<Section>
 				<div className="wrap">
-					<h1 className="text-4xl mb-8 font-bold">
+					{/* <h1 className="text-4xl mb-8 font-bold">
 						{homepage.data.attributes.Heading}
-					</h1>
+					</h1> */}
 					<RichText content={homepage.data.attributes.Content} />
 				</div>
 			</Section>
-			<Section>
+			{/* <Section>
 				<div className="wrap">
 					<div className="mb-4">
 						<h4 className="text-sm mr-5 mb-1">Filter</h4>
@@ -32,7 +32,7 @@ export default async function Home() {
 					</div>
 					<LatestProjects projects={projects} />
 				</div>
-			</Section>
+			</Section> */}
 		</main>
 	);
 }
