@@ -14,7 +14,7 @@ export async function getProjects() {
 }
 
 export async function getTags() {
-	return await fetchData<APIResponseCollection<"api::tags.tags">>("tags");
+	return await fetchData<APIResponseCollection<"api::tag.tag">>("tags");
 }
 
 export async function fetchData<T>(
