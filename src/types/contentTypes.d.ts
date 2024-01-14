@@ -768,40 +768,6 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
-export interface ApiCategoryCategory extends Schema.CollectionType {
-  collectionName: 'categories';
-  info: {
-    singularName: 'category';
-    pluralName: 'categories';
-    displayName: 'Category';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    projects: Attribute.Relation<
-      'api::category.category',
-      'manyToMany',
-      'api::project.project'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiHomepageHomepage extends Schema.SingleType {
   collectionName: 'homepages';
   info: {
@@ -856,11 +822,6 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'api::project.project',
       'manyToMany',
       'api::tag.tag'
-    >;
-    categories: Attribute.Relation<
-      'api::project.project',
-      'manyToMany',
-      'api::category.category'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -925,7 +886,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
-      'api::category.category': ApiCategoryCategory;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::project.project': ApiProjectProject;
       'api::tag.tag': ApiTagTag;
