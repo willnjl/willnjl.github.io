@@ -1,5 +1,6 @@
 import { APIResponseCollection } from "@/types/types";
 import React from "react";
+import MediaCarousel from "./MediaCarousel";
 
 type Props = {
 	projects: APIResponseCollection<"api::project.project">;
@@ -7,14 +8,19 @@ type Props = {
 
 const LatestProjects = (props: Props) => {
 	let { projects } = props;
-
 	return (
 		<ul>
-			{projects.data.map((project) => {
-				const title = project.attributes.Heading;
+			{projects.data.map((project, i) => {
+				const title = project.attributes.title;
+				const media = project.attributes.media as
+					| APIResponseCollection<"plugin::upload.file">
+					| undefined;
 				return (
-					<li key={project.id} role="article">
-						<h2>{title}</h2>
+					<li key={project.id} role="article" className="mb-2">
+						{/* <h2 className="text-3xl">{title}</h2> */}
+						<ul>
+							<MediaCarousel media={media} index={i} />
+						</ul>
 					</li>
 				);
 			})}

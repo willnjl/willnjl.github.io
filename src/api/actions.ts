@@ -21,11 +21,17 @@ export async function fetchData<T>(
 	endpoint: string,
 	revalidate: number = 3600
 ): Promise<T> {
-	let promise = await fetch(`${BASE_URL}/${endpoint}`, {
-		next: {
-			revalidate,
-		},
+	const params = new URLSearchParams({
+		populate: "*",
 	});
+	let promise = await fetch(
+		`${BASE_URL}/api/${endpoint}?${params.toString()}`,
+		{
+			next: {
+				revalidate,
+			},
+		}
+	);
 
 	if (!promise.ok) {
 		throw new Error("Unable to reach API");
@@ -34,3 +40,5 @@ export async function fetchData<T>(
 
 	return data;
 }
+
+export const assetUrl = (url: string) => `${BASE_URL}${url}`;
