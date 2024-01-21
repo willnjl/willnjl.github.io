@@ -780,11 +780,9 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    Heading: Attribute.String;
-    Content: Attribute.Blocks;
-    Headshot: Attribute.Media;
-    FlexContent: Attribute.DynamicZone<
-      ['flexible-content.hero', 'flexible-content.wysiwyg']
+    headshot: Attribute.Media;
+    content: Attribute.DynamicZone<
+      ['flexible-content.wysiwyg', 'flexible-content.hero']
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
