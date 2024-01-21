@@ -1,10 +1,8 @@
 import { BASE_URL } from "./consts";
-import { APIResponseCollection, APIResponseData } from "@/types/types";
+import { APIResponseCollection, APIResponse } from "@/types/types";
 
 export async function getHomepage() {
-	return await fetchData<{ data: APIResponseData<"api::homepage.homepage"> }>(
-		"homepage"
-	);
+	return await fetchData<APIResponse<"api::homepage.homepage">>("homepage");
 }
 
 export async function getProjects() {
