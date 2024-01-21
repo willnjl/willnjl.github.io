@@ -37,7 +37,7 @@ const MediaCarousel = ({ media, index = 0 }: Props) => {
 	return (
 		<Swiper {...options}>
 			{(media?.data ?? []).map((item) => (
-				<SwiperSlide className="max-w-[550px] bg-slate-200" key={item.id}>
+				<SwiperSlide className="max-w-[550px] bg-blue-400" key={item.id}>
 					<div className="aspect-w-16 aspect-h-9 ">
 						<LazyLoadMedia
 							src={assetUrl(item.attributes.url)}

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef, useState } from "react";
 
 interface LazyLoadMediaProps {
@@ -22,7 +24,7 @@ const useLazyLoadMedia = (): [React.RefObject<HTMLElement>, boolean] => {
 					}
 				});
 			},
-			{ threshold: 0.5 } // Adjust threshold as needed
+			{ threshold: 0.25 } // Adjust threshold as needed
 		);
 
 		if (targetRef.current) {

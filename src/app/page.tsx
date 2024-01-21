@@ -1,11 +1,11 @@
-import Image from "next/image";
-import axios from "../api/axios";
-import { AxiosError } from "axios";
 import { getTags, getHomepage, getProjects } from "@/api/actions";
 import LatestProjects from "@/components/Projects/LatestProjects";
 import Section from "@/components/Layout/Section";
-import RichText from "@/components/RichText";
+import { APIResponse, APIResponseData } from "@/types/types";
 import AllTags from "@/components/Projects/AllTags";
+import HorizontalScrollHeading from "@/components/Animations/HorizontalScrollHeading";
+import FlexContent from "@/components/FlexContent";
+import Headshot from "@/components/Headshot";
 
 export default async function Home() {
 	let [homepage, projects, tags] = await Promise.all([
@@ -15,20 +15,48 @@ export default async function Home() {
 	]);
 
 	return (
-		<main className="text-black">
-			<Section>
-				<div className="wrap">
-					<RichText content={homepage.data.attributes.Content} />
+		<main className="">
+			<Section className={"relative pb-20 xl:pb-44"}>
+				<HorizontalScrollHeading>
+					<h2 className="text-blue-200">{"Developer"}</h2>
+				</HorizontalScrollHeading>
+				<div className="wrap pt-20 relative">
+					<div className="lg:flex items-start justify-between">
+						<FlexContent
+							className={"max-w-4xl"}
+							contentList={homepage.data.attributes.content}
+						/>
+						<Headshot
+							headshot={
+								//@ts-ignore
+								homepage.data.attributes
+									.headshot as APIResponse<"plugin::upload.file">
+							}
+						/>
+					</div>
 				</div>
 			</Section>
-			<Section>
-				<div className="wrap">
-					<div className="mb-4">
-						<h4 className="text-sm mr-5 mb-1">Filter</h4>
+			<Section className={"bg-blue-200 text-white"}>
+				<HorizontalScrollHeading>
+					<h2 className="text-blue-600">{"Works"}</h2>
+				</HorizontalScrollHeading>
+				<div className="wrap pt-44">
+					<div className="md:flex">
+						<h4 className="text-8xl md:mr-10 xl:mr-24">Porfolio</h4>
+						<div className="flex-1 text-2xl">
+							<p>
+								Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam
+								ducimus exercitationem in dolores eveniet porro voluptates quod
+								nihil enim adipisci vero commodi magni possimus quo, deserunt
+								obcaecati quam? Quidem, tenetur.
+							</p>
+						</div>
+					</div>
+					<div className="pt-32 mb-8">
 						<AllTags tags={tags} />
 					</div>
 				</div>
-				<LatestProjects projects={projects} />
+				{/* <LatestProjects projects={projects} /> */}
 			</Section>
 		</main>
 	);

@@ -7,11 +7,13 @@ import React from "react";
 
 type Props = {
 	content?: BlocksContent;
+	className?: String;
 };
 
-const RichText = (props: Props) => {
+const RichText: React.FC<Props> = (props: Props) => {
+	const mergedClasses = `${props.className} wyg`;
 	return (
-		<div className="wyg">
+		<div className={mergedClasses}>
 			<BlocksRenderer content={props.content ?? []} />
 		</div>
 	);
