@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .wrap {
-	@apply max-w-4xl px-5;
+	@apply max-w-[92rem] mx-auto px-5;
 }
 
 .test {
@@ -22,10 +22,10 @@ blockquote {
 }
 
 .wyg h1 {
-	@apply text-4xl font-bold sm:text-4xl;
+	@apply text-5xl font-bold;
 }
 .wyg h2 {
-	@apply text-2xl font-bold sm:text-3xl;
+	@apply text-4xl font-bold sm:text-5xl;
 }
 .wyg h3 {
 	@apply text-3xl font-bold sm:text-2xl;
@@ -43,9 +43,14 @@ blockquote {
 .wyg h4,
 .wyg h5,
 .wyg h6 {
-	@apply mb-4 pt-2 first:pt-0;
+	@apply mb-12 pt-2 first:pt-0;
 }
 
 .wyg a {
 	@apply text-blue-700;
+}
+
+.btn-primary {
+	@apply bg-blue-400 py-3 px-6 uppercase font-secondary border-gray-400 border;
+	border-radius: 30px;
 }
