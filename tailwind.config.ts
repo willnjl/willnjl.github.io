@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 const config: Config = {
 	content: [
@@ -7,8 +8,17 @@ const config: Config = {
 		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	theme: {
+		fontFamily: {
+			sans: ["Bacasime Antique", ...defaultTheme.fontFamily.sans],
+			secondary: ["Tahoma", ...defaultTheme.fontFamily.sans],
+		},
 		extend: {
 			colors: {
+				blue: {
+					200: "#575772",
+					400: "#2D2C3D",
+					600: "#201F31",
+				},
 				black: {
 					DEFAULT: "#030303",
 				},
