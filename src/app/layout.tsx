@@ -17,13 +17,13 @@ export default function RootLayout({
 		<html lang="en">
 			<head>
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
-				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+				<link rel="preconnect" href="https://fonts.gstatic.com" />
 				<link
 					href="https://fonts.googleapis.com/css2?family=Bacasime+Antique&display=swap"
 					rel="stylesheet"
 				/>
 			</head>
-			<body className={"font-sans text-white bg-blue-600"}>
+			<body className={"font-sans text-white bg-blue-600 overflow-x-hidden"}>
 				<Header />
 				{children}
 			</body>
