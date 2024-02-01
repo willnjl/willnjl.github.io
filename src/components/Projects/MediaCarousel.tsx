@@ -7,7 +7,7 @@ import { SwiperOptions } from "swiper/types";
 import "swiper/css";
 import LazyLoadMedia from "../LazyLoadMedia";
 import { Autoplay } from "swiper/modules";
-import rnd from "../utils/rnd";
+import rnd from "../../utils/rnd";
 
 const createOptions = (index: number): SwiperOptions => ({
 	modules: [Autoplay],
