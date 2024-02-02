@@ -1,4 +1,3 @@
-import React from "react";
 import LazyLoadMedia from "./LazyLoadMedia";
 import { APIResponse } from "@/types/types";
 import { assetUrl } from "@/api/actions";

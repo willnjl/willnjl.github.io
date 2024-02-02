@@ -1,5 +1,5 @@
 import { APIResponseCollection } from "@/types/types";
-import React from "react";
+
 import MediaCarousel from "./MediaCarousel";
 
 type Props = {

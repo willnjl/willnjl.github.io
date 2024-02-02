@@ -3,8 +3,6 @@ import {
 	type BlocksContent,
 } from "@strapi/blocks-react-renderer";
 
-import React from "react";
-
 type Props = {
 	content?: BlocksContent;
 	className?: String;
