@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ScrollSmoother from "@/libs/LenisSmoothScroll";
 
 import "./globals.css";
 import Header from "@/components/Layout/Header";
@@ -23,6 +24,7 @@ export default function RootLayout({
 					rel="stylesheet"
 				/>
 			</head>
+			<ScrollSmoother />
 			<body className={"font-sans text-white bg-blue-600 overflow-x-hidden"}>
 				<Header />
 				{children}
