@@ -17,7 +17,6 @@ const LatestProjects = (props: Props) => {
 					| undefined;
 				return (
 					<li key={project.id} role="article" className="mb-2">
-						{/* <h2 className="text-3xl">{title}</h2> */}
 						<ul>
 							<MediaCarousel media={media} index={i} />
 						</ul>

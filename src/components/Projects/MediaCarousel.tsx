@@ -39,12 +39,12 @@ const MediaCarousel = ({ media, index = 0 }: Props) => {
 			{(media?.data ?? []).map((item) => (
 				<SwiperSlide className="max-w-[550px] bg-blue-400" key={item.id}>
 					<div className="aspect-w-16 aspect-h-9 ">
-						<LazyLoadMedia
+						{/* <LazyLoadMedia
 							src={assetUrl(item.attributes.url)}
 							type={item.attributes.mime}
 							alt={item.attributes.name}
 							className="pointer-events-none w-full object-cover"
-						/>
+						/> */}
 					</div>
 				</SwiperSlide>
 			))}

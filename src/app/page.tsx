@@ -15,11 +15,13 @@ export default async function Home() {
 	]);
 
 	return (
-		<main className="">
+		<main class="">
 			<Section className={"relative pb-20 xl:pb-44"}>
-				<HorizontalScrollHeading>
-					<h2 className="text-blue-200">{"Developer"}</h2>
-				</HorizontalScrollHeading>
+				<div className="absolute top-0 left-0">
+					<HorizontalScrollHeading translateX={-500}>
+						<h2 className="text-blue-200">{"Developer"}</h2>
+					</HorizontalScrollHeading>
+				</div>
 				<div className="wrap pt-20 relative">
 					<div className="lg:flex items-start justify-between">
 						<FlexContent
@@ -36,11 +38,13 @@ export default async function Home() {
 					</div>
 				</div>
 			</Section>
-			<Section className={"bg-blue-200 text-white"}>
-				<HorizontalScrollHeading>
-					<h2 className="text-blue-600">{"Works"}</h2>
-				</HorizontalScrollHeading>
-				<div className="wrap pt-44">
+			<Section className={"bg-blue-200 text-white relative"}>
+				<div className="absolute top-0 left-0">
+					<HorizontalScrollHeading translateX={150}>
+						<h2 className="text-blue-600">{"Works"}</h2>
+					</HorizontalScrollHeading>
+				</div>
+				<div className="wrap pt-44 relative">
 					<div className="md:flex">
 						<h4 className="text-8xl md:mr-10 xl:mr-24">Porfolio</h4>
 						<div className="flex-1 text-2xl">
@@ -56,7 +60,8 @@ export default async function Home() {
 						<AllTags tags={tags} />
 					</div>
 				</div>
-				{/* <LatestProjects projects={projects} /> */}
+
+				<LatestProjects projects={projects} />
 			</Section>
 		</main>
 	);

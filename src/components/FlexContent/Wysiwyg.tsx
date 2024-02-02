@@ -7,7 +7,7 @@ type Props = {
 
 const Wysiwyg: React.FC<Props> = (props: Props) => {
 	return (
-		<RichText className={"text-2xl  leading-relaxed"} content={props.content} />
+		<RichText className={"text-xl  leading-relaxed"} content={props.content} />
 	);
 };
 

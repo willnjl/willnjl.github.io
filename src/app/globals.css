@@ -43,7 +43,7 @@ blockquote {
 .wyg h4,
 .wyg h5,
 .wyg h6 {
-	@apply mb-12 pt-2 first:pt-0;
+	@apply mb-7 pt-2 first:pt-0;
 }
 
 .wyg a {
