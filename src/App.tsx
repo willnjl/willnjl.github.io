@@ -1,19 +1,10 @@
 import React from "react";
 import "./styles/app.scss";
 import Scene from "./components/Scene";
+import { useAppContext } from "./context/AppContext";
+
 export default function App() {
-	const [isActive, setIsActive] = React.useState(false);
-
-	React.useEffect(() => {
-		const handleKeyDown = (event: KeyboardEvent) => {
-			if (event.key === "Escape") {
-				setIsActive(true);
-			}
-		};
-
-		window.addEventListener("keydown", handleKeyDown);
-		return () => window.removeEventListener("keydown", handleKeyDown);
-	}, []);
+	const { isActive } = useAppContext();
 
 	return (
 		<header className={`coverpage ${isActive ? "coverpage--closed" : ""}`}>
