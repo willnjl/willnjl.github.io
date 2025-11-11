@@ -46,7 +46,10 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 		};
 
 		const handleMouseMove = (event: MouseEvent) => {
-			setMousePosition({ x: event.clientX, y: event.clientY });
+			setMousePosition({
+				x: (event.clientX - window.innerWidth / 2) / (window.innerWidth / 2),
+				y: (event.clientY - window.innerHeight / 2) / (window.innerHeight / 2),
+			});
 		};
 
 		window.addEventListener("keydown", handleKeyDown);
