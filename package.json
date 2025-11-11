@@ -1,0 +1,29 @@
+{
+  "name": "portolio-docs",
+  "version": "1.0.0",
+  "description": "I’m an experienced Full Stack Developer with a background in fast-paced agency environments. I'm driven by opportunities to learn from exceptional people and solve complex problems. I thrive on crafting beautiful, accessible user experiences and bringing ideas to life. Outside of work, I enjoy live music, exploring the outdoors, and experimenting with new programming tools and languages.",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.3",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.1.0",
+    "sass": "^1.94.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.2"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.6",
+    "@react-three/fiber": "^9.4.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "three": "^0.181.1"
+  }
+}
