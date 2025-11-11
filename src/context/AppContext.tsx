@@ -45,19 +45,44 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 			}
 		};
 
-		const handleMouseMove = (event: MouseEvent) => {
+		const updatePosition = (clientX: number, clientY: number) => {
 			setMousePosition({
-				x: (event.clientX - window.innerWidth / 2) / (window.innerWidth / 2),
-				y: (event.clientY - window.innerHeight / 2) / (window.innerHeight / 2),
+				x: (clientX - window.innerWidth / 2) / (window.innerWidth / 2),
+				y: (clientY - window.innerHeight / 2) / (window.innerHeight / 2),
 			});
+		};
+
+		const handleMouseMove = (event: MouseEvent) => {
+			updatePosition(event.clientX, event.clientY);
+		};
+
+		const handleTouchMove = (event: TouchEvent) => {
+			if (event.touches.length > 0) {
+				const touch = event.touches[0];
+				updatePosition(touch.clientX, touch.clientY);
+			}
+		};
+
+		const handleTouchEnd = () => {
+			setMousePosition({ x: 0, y: 0 });
+		};
+
+		const handleMouseLeave = () => {
+			setMousePosition({ x: 0, y: 0 });
 		};
 
 		window.addEventListener("keydown", handleKeyDown);
 		window.addEventListener("mousemove", handleMouseMove);
+		window.addEventListener("mouseleave", handleMouseLeave);
+		window.addEventListener("touchmove", handleTouchMove);
+		window.addEventListener("touchend", handleTouchEnd);
 
 		return () => {
 			window.removeEventListener("keydown", handleKeyDown);
 			window.removeEventListener("mousemove", handleMouseMove);
+			window.removeEventListener("mouseleave", handleMouseLeave);
+			window.removeEventListener("touchmove", handleTouchMove);
+			window.removeEventListener("touchend", handleTouchEnd);
 		};
 	}, []);
 
