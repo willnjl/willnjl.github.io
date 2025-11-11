@@ -7,6 +7,11 @@
 	background-color: black;
 	z-index: 1;
 	color: white;
+	&--closed {
+		opacity: 0;
+		left: -9999px;
+		transition: opacity 0.2s ease-out, left 0s 0.2s;
+	}
 }
 
 .wrap {
