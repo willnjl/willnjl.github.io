@@ -18,9 +18,11 @@ export default function App() {
 	return (
 		<header className={`coverpage ${isActive ? "coverpage--closed" : ""}`}>
 			<Scene />
-			<div className="wrap">
-				<h2>React Widget</h2>
-				<p>This React app is embedded inside a normal webpage.</p>
+			<div className="coverpage__content">
+				<div className="wrap">
+					<h2>Will Leighton</h2>
+					<p>Press 'enter' to proceed</p>
+				</div>
 			</div>
 		</header>
 	);
