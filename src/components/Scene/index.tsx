@@ -1,17 +1,10 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import {
-	CameraControls,
-	Environment,
-	Html,
-	OrbitControls,
-	PerspectiveCamera,
-} from "@react-three/drei";
+import { CameraControls } from "@react-three/drei";
 import Model from "../Model";
-import { useAppContext } from "@/context/AppContext";
+
 import { CameraRig } from "@/components/CameraRig";
 import Bubbles from "../Bubbles";
-import * as THREE from "three";
 import Background from "../Background";
 import LoadingScreen from "../LoadingScreen";
 import AnchorChain from "../AnchorChain";
@@ -20,8 +13,6 @@ const LIGHT_COLOR = "#b9f0ef";
 const GROUND_COLOR = "#000a1a";
 
 export default function Scene() {
-	const { mousePosition } = useAppContext();
-
 	return (
 		<>
 			<LoadingScreen />
