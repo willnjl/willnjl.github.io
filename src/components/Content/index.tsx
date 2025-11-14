@@ -6,24 +6,24 @@ const xIntensity = -4;
 const yIntensity = -2;
 
 export default () => {
-	const { targetVector } = useAppContext();
+	const { mouseVelocity } = useAppContext();
 	const ref = useRef<HTMLDivElement>(null);
 
 	const current = useRef(new THREE.Vector3(0, 0, 0));
 
 	useEffect(() => {
 		const animate = () => {
-			const x = current.current.x * xIntensity;
+			const x = current.current.x * -xIntensity;
 			const y = current.current.y * yIntensity;
 
-			current.current.lerp(targetVector, 0.1);
+			current.current.lerp(mouseVelocity, 0.01);
 			if (ref.current) {
 				ref.current.style.transform = `perspective(1880px) rotateY(${x}deg) rotateX(${y}deg) translateZ(50px)`;
 			}
 			requestAnimationFrame(animate);
 		};
 		animate();
-	}, [targetVector]);
+	}, [mouseVelocity]);
 
 	return (
 		<div className="coverpage__content" ref={ref}>

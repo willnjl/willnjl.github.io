@@ -18,6 +18,7 @@ interface AppContextType {
 	setIsActive: (active: boolean) => void;
 	mousePosition: MousePosition;
 	targetVector: THREE.Vector3;
+	mouseVelocity: THREE.Vector3;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -43,6 +44,11 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 
 	// Shared target vector for camera and DOM - use ref to persist across renders
 	const targetVector = useRef(new THREE.Vector3(0, 0, 0)).current;
+	const mouseVelocity = useRef(new THREE.Vector3(0, 0, 0)).current;
+
+	// Track last mouse position and time for velocity calculation
+	const lastMousePos = useRef({ x: 0, y: 0, time: Date.now() });
+	const velocityDecayRef = useRef<number | null>(null);
 
 	useEffect(() => {
 		const handleKeyDown = (event: KeyboardEvent) => {
@@ -60,6 +66,36 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 			const rotX = -x < 0 ? -x * 5 : -x * 10;
 			const rotY = y * 8;
 			targetVector.set(rotX, rotY, 0);
+
+			// Calculate velocity
+			const now = Date.now();
+			const dt = (now - lastMousePos.current.time) / 1000; // seconds
+
+			if (dt > 0) {
+				const vx = (x - lastMousePos.current.x) / dt;
+				const vy = (y - lastMousePos.current.y) / dt;
+				mouseVelocity.set(vx * 2, vy * 2, 0); // Scale for visibility
+			}
+
+			lastMousePos.current = { x, y, time: now };
+
+			// Clear existing decay timeout
+			if (velocityDecayRef.current) {
+				cancelAnimationFrame(velocityDecayRef.current);
+			}
+
+			// Start velocity decay after mouse stops
+			const decay = () => {
+				mouseVelocity.lerp(new THREE.Vector3(0, 0, 0), 0.05);
+				if (mouseVelocity.length() > 0.0001) {
+					velocityDecayRef.current = requestAnimationFrame(decay);
+				} else {
+					mouseVelocity.set(0, 0, 0);
+					velocityDecayRef.current = null;
+				}
+			};
+
+			velocityDecayRef.current = requestAnimationFrame(decay);
 		};
 
 		const handleMouseMove = (event: MouseEvent) =>
@@ -92,7 +128,13 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 
 	return (
 		<AppContext.Provider
-			value={{ isActive, setIsActive, mousePosition, targetVector }}
+			value={{
+				isActive,
+				setIsActive,
+				mousePosition,
+				targetVector,
+				mouseVelocity,
+			}}
 		>
 			{children}
 		</AppContext.Provider>
