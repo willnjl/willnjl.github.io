@@ -10,6 +10,12 @@ import {
 import Model from "../Model";
 import { useAppContext } from "@/context/AppContext";
 import { CameraRig } from "@/components/CameraRig";
+import Bubbles from "../Bubbles";
+import * as THREE from "three";
+import Background from "../Background";
+
+const LIGHT_COLOR = "#b9f0efff";
+const GROUND_COLOR = "#000a1a";
 
 export default function Scene() {
 	const { mousePosition } = useAppContext();
@@ -25,13 +31,28 @@ export default function Scene() {
 			}}
 			dpr={[1, 2]}
 		>
+			<Background />
+			<ambientLight intensity={0.2} color="#4db8e8" />
+			<directionalLight
+				position={[0, 20, 0]}
+				intensity={1.5}
+				color={LIGHT_COLOR}
+				castShadow
+				shadow-mapSize-width={2048}
+				shadow-mapSize-height={2048}
+			/>
+			<hemisphereLight
+				intensity={0.3}
+				color={LIGHT_COLOR}
+				groundColor={GROUND_COLOR}
+			/>
 			<CameraRig />
 			<CameraControls
 				mouseButtons={{ left: 0, middle: 0, right: 0, wheel: 0 }}
 				touches={{ one: 0, two: 0, three: 0 }}
 			/>
-			<Model position={[0, -0.5, 0]} scale={0.01} castShadow receiveShadow />
-			<Environment preset="studio" />
+			<Bubbles />
+			<Model position={[0, -0.5, 0]} scale={0.0075} castShadow receiveShadow />
 		</Canvas>
 	);
 }

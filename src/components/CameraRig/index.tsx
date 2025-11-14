@@ -15,7 +15,7 @@ export const CameraRig: React.FC = () => {
 		if (!cameraRef.current) return;
 
 		// Smooth interpolation toward target vector
-		current.current.lerp(targetVector, delta * 2);
+		current.current.lerp(targetVector, delta * 1);
 
 		cameraRef.current.position.set(current.current.x, current.current.y, 5);
 		cameraRef.current.lookAt(0, 0, 0);
