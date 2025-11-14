@@ -84,9 +84,9 @@ export const AnchorChain: React.FC<AnchorChainProps> = ({
 				>
 					<torusGeometry args={[linkRadius, linkThickness, 12, 24]} />
 					<meshStandardMaterial
-						color="#b8b8b8"
+						color="#fcfbfb"
 						metalness={1}
-						roughness={0.2}
+						roughness={1}
 						envMapIntensity={1.5}
 					/>
 				</mesh>

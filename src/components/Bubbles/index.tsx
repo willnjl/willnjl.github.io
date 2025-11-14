@@ -11,8 +11,8 @@ interface BubbleProps {
 const COLOR = "#e6effc6f";
 
 export const Bubbles: React.FC<BubbleProps> = ({
-	count = 100,
-	radius = 5,
+	count = 150,
+	radius = 2,
 	speed = 0.5,
 }) => {
 	const meshRef = useRef<THREE.InstancedMesh>(null!);
@@ -43,7 +43,7 @@ export const Bubbles: React.FC<BubbleProps> = ({
 					Math.random() * 0.05 + 0.02,
 					(Math.random() - 0.5) * 0.02
 				),
-				scale: Math.random() * 0.15 + 0.05,
+				scale: Math.random() * 0.08 + 0.03,
 				wobble: Math.random() * Math.PI * 2,
 				wobbleSpeed: Math.random() * 0.02 + 0.01,
 				angle,

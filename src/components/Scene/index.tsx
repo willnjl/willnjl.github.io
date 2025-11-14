@@ -8,6 +8,7 @@ import Bubbles from "../Bubbles";
 import Background from "../Background";
 import LoadingScreen from "../LoadingScreen";
 import AnchorChain from "../AnchorChain";
+import FogShader from "../FogShader";
 
 const LIGHT_COLOR = "#b9f0ef";
 const GROUND_COLOR = "#000a1a";
@@ -46,6 +47,13 @@ export default function Scene() {
 					<CameraControls
 						mouseButtons={{ left: 0, middle: 0, right: 0, wheel: 0 }}
 						touches={{ one: 0, two: 0, three: 0 }}
+					/>
+					<FogShader
+						thickness={2.0}
+						bottomColor="#000000"
+						topColor="#4db8e8"
+						near={20}
+						far={55}
 					/>
 					<Bubbles />
 					<AnchorChain />
