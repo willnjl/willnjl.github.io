@@ -28,7 +28,7 @@ export default () => {
 	return (
 		<div className="coverpage__content" ref={ref}>
 			<div className="wrap">
-				<h2>Will Leighton</h2>
+				<h1>Will Leighton</h1>
 				<p>Press 'enter' to proceed</p>
 			</div>
 		</div>
