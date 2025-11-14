@@ -21,7 +21,7 @@ div#app:empty::before {
 .sidebar,
 .sidebar-toggle,
 body {
-	background-color: #000a16;
+	background-color: var(--bg-color);
 }
 .sidebar,
 .sidebar ul li a,
