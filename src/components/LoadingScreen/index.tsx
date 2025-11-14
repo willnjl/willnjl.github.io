@@ -11,7 +11,7 @@ export default function LoadingScreen() {
 					<div className="bubble"></div>
 					<div className="bubble"></div>
 				</div>
-				<h2>Illuminating...</h2>
+				<h2>Diving in...</h2>
 
 				<div className="loading-bar">
 					<div className="loading-progress"></div>

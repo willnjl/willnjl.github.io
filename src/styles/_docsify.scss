@@ -52,3 +52,17 @@ body {
 .markdown-section hr {
 	border-bottom: 1px solid #324c66;
 }
+
+.sidebar-nav a[target="_blank"] {
+	&::after {
+		content: "🔗";
+		fill: white;
+		font-size: 0.8rem;
+		margin-left: 0.5rem;
+	}
+}
+
+.markdown-section p.tip,
+.markdown-section tr:nth-child(2n) {
+	background-color: transparent;
+}
