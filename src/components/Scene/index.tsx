@@ -14,6 +14,7 @@ import Bubbles from "../Bubbles";
 import * as THREE from "three";
 import Background from "../Background";
 import LoadingScreen from "../LoadingScreen";
+import AnchorChain from "../AnchorChain";
 
 const LIGHT_COLOR = "#b9f0efff";
 const GROUND_COLOR = "#000a1a";
@@ -56,6 +57,7 @@ export default function Scene() {
 						touches={{ one: 0, two: 0, three: 0 }}
 					/>
 					<Bubbles />
+					<AnchorChain />
 					<Model
 						position={[0, -0.5, 0]}
 						scale={0.0075}
