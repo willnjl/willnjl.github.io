@@ -4,15 +4,15 @@ import "./styles.scss";
 export default function LoadingScreen() {
 	const [hasLoaded, setHasLoaded] = useState(false);
 
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			setHasLoaded(true);
-		}, 5000);
+	// useEffect(() => {
+	// 	const timer = setTimeout(() => {
+	// 		setHasLoaded(true);
+	// 	}, 5000);
 
-		return () => clearTimeout(timer);
-	}, []);
+	// 	return () => clearTimeout(timer);
+	// }, []);
 
-	if (hasLoaded) return null;
+	// if (hasLoaded) return null;
 
 	return (
 		<div className="loading-screen">
@@ -22,7 +22,8 @@ export default function LoadingScreen() {
 					<div className="bubble"></div>
 					<div className="bubble"></div>
 				</div>
-				<h2>Illuminting...</h2>
+				<h2>Illuminating...</h2>
+
 				<div className="loading-bar">
 					<div className="loading-progress"></div>
 				</div>
