@@ -16,7 +16,7 @@ import Background from "../Background";
 import LoadingScreen from "../LoadingScreen";
 import AnchorChain from "../AnchorChain";
 
-const LIGHT_COLOR = "#b9f0efff";
+const LIGHT_COLOR = "#b9f0ef";
 const GROUND_COLOR = "#000a1a";
 
 export default function Scene() {

@@ -96,7 +96,7 @@ export const Bubbles: React.FC<BubbleProps> = ({
 		<instancedMesh ref={meshRef} args={[undefined, undefined, count]}>
 			<sphereGeometry args={[1, 16, 16]} />
 			<meshPhysicalMaterial
-				color="#a3b1bbc6"
+				color="#a3b1bb"
 				transparent
 				opacity={0.3}
 				roughness={0}
