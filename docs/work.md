@@ -1,15 +1,19 @@
 # Work
 
-| Project / Link                                                       | Core Technology Stack                                                                                |
-| :------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------- |
-| **[skeetfirst.im](https://skeetfirst.im/)**                          | Self Developed Laravel App, 'What's On' guide and online platform                                    |
-| **[Megawatt](https://megawatt.game/)**                               | Wordpress Site                                                                                       |
-| **[AP Verify](https://verify.ap.org/)**                              | Sophisticated suite of AI tools. SWhite label SaaS Application for high-profile media organsiations. |
-| **[TravelWest.info](https://journeyplanner.travelwest.info/?ui=ui)** | NextJS, Zustand, Typescript, OpenLayer Maps                                                          |
-| **[Talent International](https://www.talentinternational.com/)**     | Wordpress, React, Multinational website with Deep CRM integrations                                   |
-| **[RTC Consulting](https://www.rtc.co.uk/)**                         | NextJS, Headless Wordpress, GraphQL                                                                  |
+| Project / Link                                                       | Core Technology Stack                                                                               |
+| :------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
+| **[skeetfirst.im](https://skeetfirst.im/)**                          | Laravel, self started project.                                                                      |
+| **[AP Verify](https://verify.ap.org/)**                              | Sophisticated suite of AI tools. White-label SaaS Application for high-profile media organsiations. |
+| **[Talent International](https://www.talentinternational.com/)**     | Wordpress, React, Multinational website with Deep CRM integrations                                  |
+| **[RTC Consulting](https://www.rtc.co.uk/)**                         | NextJS, Headless Wordpress, GraphQL                                                                 |
+| **[Megawatt](https://megawatt.game/)**                               | Wordpress Site                                                                                      |
+| **[TravelWest.info](https://journeyplanner.travelwest.info/?ui=ui)** | NextJS, Zustand, Typescript, OpenLayer Maps                                                         |
 
-_It's important to note that many of these projects were completed in an agency environment. I'm posting them here to serve as a conversation starter and to highlight some of the projects I have been involved in._
+---
+
+_A quick note: these were mostly team projects completed in an agency environment. They are listed here to demonstrate the type of work I've been involved in and as a conversation starter._
+
+---
 
 ## Employment History
 
