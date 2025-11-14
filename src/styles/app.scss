@@ -1,3 +1,19 @@
+#app {
+	opacity: 0;
+}
+.coverpage--closed {
+	#app {
+		opacity: 1;
+	}
+}
+
+div#app:empty::before {
+	content: "" !important;
+}
+
+body {
+	background-color: #011936;
+}
 .coverpage {
 	position: fixed;
 	top: 0;

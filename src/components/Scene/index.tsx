@@ -13,6 +13,7 @@ import { CameraRig } from "@/components/CameraRig";
 import Bubbles from "../Bubbles";
 import * as THREE from "three";
 import Background from "../Background";
+import LoadingScreen from "../LoadingScreen";
 
 const LIGHT_COLOR = "#b9f0efff";
 const GROUND_COLOR = "#000a1a";
@@ -21,38 +22,48 @@ export default function Scene() {
 	const { mousePosition } = useAppContext();
 
 	return (
-		<Canvas
-			camera={{ position: [0, 1.5, 12], fov: 50 }}
-			shadows
-			gl={{
-				antialias: true,
-				alpha: true,
-				powerPreference: "high-performance",
-			}}
-			dpr={[1, 2]}
-		>
-			<Background />
-			<ambientLight intensity={0.2} color="#4db8e8" />
-			<directionalLight
-				position={[0, 20, 0]}
-				intensity={1.5}
-				color={LIGHT_COLOR}
-				castShadow
-				shadow-mapSize-width={2048}
-				shadow-mapSize-height={2048}
-			/>
-			<hemisphereLight
-				intensity={0.3}
-				color={LIGHT_COLOR}
-				groundColor={GROUND_COLOR}
-			/>
-			<CameraRig />
-			<CameraControls
-				mouseButtons={{ left: 0, middle: 0, right: 0, wheel: 0 }}
-				touches={{ one: 0, two: 0, three: 0 }}
-			/>
-			<Bubbles />
-			<Model position={[0, -0.5, 0]} scale={0.0075} castShadow receiveShadow />
-		</Canvas>
+		<>
+			<LoadingScreen />
+			<Canvas
+				camera={{ position: [0, 1.5, 12], fov: 50 }}
+				shadows
+				gl={{
+					antialias: true,
+					alpha: true,
+					powerPreference: "high-performance",
+				}}
+				dpr={[1, 2]}
+			>
+				<Suspense fallback={null}>
+					<Background />
+					<ambientLight intensity={0.2} color="#4db8e8" />
+					<directionalLight
+						position={[0, 20, 0]}
+						intensity={1.5}
+						color={LIGHT_COLOR}
+						castShadow
+						shadow-mapSize-width={2048}
+						shadow-mapSize-height={2048}
+					/>
+					<hemisphereLight
+						intensity={0.3}
+						color={LIGHT_COLOR}
+						groundColor={GROUND_COLOR}
+					/>
+					<CameraRig />
+					<CameraControls
+						mouseButtons={{ left: 0, middle: 0, right: 0, wheel: 0 }}
+						touches={{ one: 0, two: 0, three: 0 }}
+					/>
+					<Bubbles />
+					<Model
+						position={[0, -0.5, 0]}
+						scale={0.0075}
+						castShadow
+						receiveShadow
+					/>
+				</Suspense>
+			</Canvas>
+		</>
 	);
 }
