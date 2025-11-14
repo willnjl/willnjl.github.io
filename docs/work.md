@@ -26,6 +26,8 @@ _A quick note: these were mostly team projects completed in an agency environmen
   - **Collaborating** in Lunar's Agile software development environment.
   - Being **versatile** to a variety of stacks including React,TS, NextJS, Laravel, Roots.io / Wordpress.
 
+---
+
 ### [Fifteen Ten Ltd](https://fifteenten.co.uk)
 
 - **Position:** Senior Developer
@@ -37,6 +39,8 @@ _A quick note: these were mostly team projects completed in an agency environmen
   - **Providing** technical expertise, problem solving and project planning.
   - **Facilitating** collaboration between inhouse and contracted developers, project managers and clients.
 
+---
+
 ### [Fifteen Ten Ltd](https://fifteenten.co.uk)
 
 - **Position:** Web Developer
@@ -47,11 +51,15 @@ _A quick note: these were mostly team projects completed in an agency environmen
   - **Testing** websites for responsiveness, performance, SEO and QA.
   - **Maintaining** legacy sites (php, jQuery, CSS)
 
+---
+
 ### Coding Fellowship - Develop Me
 
 - **Position:** Coding Fellowship Graduate
 - **Duration:** September 2020
 - **Curriculum** Intensive and project-driven 12 week software development course using a webstack • Taught by industry professionals using best practice approaches.
+
+---
 
 ### Technical Theatre and Live Events Specialist
 
