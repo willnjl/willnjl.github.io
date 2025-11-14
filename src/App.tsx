@@ -6,15 +6,27 @@ import Content from "./components/Content";
 
 export default function App() {
 	const { isActive } = useAppContext();
+	const [isActiveDebounced, setIsActiveDebounced] = React.useState(isActive);
 
 	useEffect(() => {
-		(document.querySelector("body") as HTMLBodyElement).style.overflow =
-			isActive ? "" : "hidden";
+		const timer = setTimeout(() => setIsActiveDebounced(isActive), 300);
+		return () => clearTimeout(timer);
 	}, [isActive]);
+
+	useEffect(() => {
+		const body = document.querySelector("body") as HTMLBodyElement;
+		body.style.overflow = isActive ? "" : "hidden";
+		if (isActive) body.classList.add("body--coverpage-closed");
+	}, [isActive]);
+
 	return (
 		<header className={`coverpage ${isActive ? "coverpage--closed" : ""}`}>
-			<Scene />
-			<Content />
+			{!isActiveDebounced && (
+				<>
+					<Scene />
+					<Content />
+				</>
+			)}
 		</header>
 	);
 }

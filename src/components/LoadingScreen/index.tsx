@@ -1,18 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./styles.scss";
 
 export default function LoadingScreen() {
 	const [hasLoaded, setHasLoaded] = useState(false);
-
-	// useEffect(() => {
-	// 	const timer = setTimeout(() => {
-	// 		setHasLoaded(true);
-	// 	}, 5000);
-
-	// 	return () => clearTimeout(timer);
-	// }, []);
-
-	// if (hasLoaded) return null;
 
 	return (
 		<div className="loading-screen">

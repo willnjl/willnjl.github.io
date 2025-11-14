@@ -1,0 +1,32 @@
+.coverpage {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #011936;
+	z-index: 1;
+	color: white;
+	&--closed {
+		opacity: 0;
+		left: -9999px;
+		transition: opacity 0.2s ease-out, left 0s 0.2s;
+	}
+
+	&__content {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		padding: 4rem 0;
+	}
+}
+
+.wrap {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1rem;
+	@media screen and (min-width: 650px) {
+		padding: 2rem;
+	}
+}

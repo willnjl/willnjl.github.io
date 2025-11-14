@@ -1,0 +1,51 @@
+div#app:empty::before {
+	content: "" !important;
+}
+
+.sidebar-toggle span {
+	background-color: #10c3c6;
+}
+
+.markdown-section h1,
+.markdown-section h2,
+.markdown-section h3,
+.markdown-section h4,
+.markdown-section strong {
+	&,
+	* {
+		color: #a3fcef;
+	}
+	font-weight: 600;
+}
+
+.sidebar,
+.sidebar-toggle,
+body {
+	background-color: #000a16;
+}
+
+.sidebar,
+.content,
+.section-link {
+	color: rgb(253, 253, 253) !important;
+	p {
+		line-height: 1.75;
+	}
+}
+
+.section-link {
+	font-size: 19px !important;
+}
+
+.app-name {
+	margin-bottom: 1.5rem !important;
+}
+
+.sidebar > h1 {
+	text-align: left;
+	margin: 0 0 0 15px;
+}
+
+.markdown-section hr {
+	border-bottom: 1px solid #324c66;
+}
