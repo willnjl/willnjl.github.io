@@ -51,12 +51,6 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 	const velocityDecayRef = useRef<number | null>(null);
 
 	useEffect(() => {
-		const handleKeyDown = (event: KeyboardEvent) => {
-			if (event.key === "Escape") {
-				setIsActive(true);
-			}
-		};
-
 		const updatePosition = (clientX: number, clientY: number) => {
 			const x = (clientX - window.innerWidth / 2) / (window.innerWidth / 2);
 			const y = (clientY - window.innerHeight / 2) / (window.innerHeight / 2);
@@ -111,14 +105,25 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 		const handleTouchEnd = () => setMousePosition({ x: 0, y: 0 });
 		const handleMouseLeave = () => setMousePosition({ x: 0, y: 0 });
 
-		window.addEventListener("keydown", handleKeyDown);
+		const handleEnter = () => {
+			setIsActive(true);
+		};
+		window.addEventListener("keydown", handleEnter);
+		// window.addEventListener("click", handleEnter);
+		window.addEventListener("touchstart", (event: TouchEvent) => {
+			if (event.touches.length === 1) {
+				handleEnter();
+			}
+		});
 		window.addEventListener("mousemove", handleMouseMove);
 		window.addEventListener("mouseleave", handleMouseLeave);
 		window.addEventListener("touchmove", handleTouchMove);
 		window.addEventListener("touchend", handleTouchEnd);
 
 		return () => {
-			window.removeEventListener("keydown", handleKeyDown);
+			window.removeEventListener("keydown", handleEnter);
+			// window.removeEventListener("click", handleEnter);
+			window.removeEventListener("touchstart", handleEnter as EventListener);
 			window.removeEventListener("mousemove", handleMouseMove);
 			window.removeEventListener("mouseleave", handleMouseLeave);
 			window.removeEventListener("touchmove", handleTouchMove);
