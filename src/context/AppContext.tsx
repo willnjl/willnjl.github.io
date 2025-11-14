@@ -3,8 +3,10 @@ import React, {
 	useContext,
 	useState,
 	useEffect,
+	useRef,
 	ReactNode,
 } from "react";
+import * as THREE from "three";
 
 interface MousePosition {
 	x: number;
@@ -15,6 +17,7 @@ interface AppContextType {
 	isActive: boolean;
 	setIsActive: (active: boolean) => void;
 	mousePosition: MousePosition;
+	targetVector: THREE.Vector3;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -38,6 +41,9 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 		y: 0,
 	});
 
+	// Shared target vector for camera and DOM - use ref to persist across renders
+	const targetVector = useRef(new THREE.Vector3(0, 0, 0)).current;
+
 	useEffect(() => {
 		const handleKeyDown = (event: KeyboardEvent) => {
 			if (event.key === "Escape") {
@@ -46,15 +52,18 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 		};
 
 		const updatePosition = (clientX: number, clientY: number) => {
-			setMousePosition({
-				x: (clientX - window.innerWidth / 2) / (window.innerWidth / 2),
-				y: (clientY - window.innerHeight / 2) / (window.innerHeight / 2),
-			});
+			const x = (clientX - window.innerWidth / 2) / (window.innerWidth / 2);
+			const y = (clientY - window.innerHeight / 2) / (window.innerHeight / 2);
+
+			setMousePosition({ x, y });
+
+			const rotX = -x < 0 ? -x * 5 : -x * 10;
+			const rotY = y * 8;
+			targetVector.set(rotX, rotY, 0);
 		};
 
-		const handleMouseMove = (event: MouseEvent) => {
+		const handleMouseMove = (event: MouseEvent) =>
 			updatePosition(event.clientX, event.clientY);
-		};
 
 		const handleTouchMove = (event: TouchEvent) => {
 			if (event.touches.length > 0) {
@@ -63,13 +72,8 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 			}
 		};
 
-		const handleTouchEnd = () => {
-			setMousePosition({ x: 0, y: 0 });
-		};
-
-		const handleMouseLeave = () => {
-			setMousePosition({ x: 0, y: 0 });
-		};
+		const handleTouchEnd = () => setMousePosition({ x: 0, y: 0 });
+		const handleMouseLeave = () => setMousePosition({ x: 0, y: 0 });
 
 		window.addEventListener("keydown", handleKeyDown);
 		window.addEventListener("mousemove", handleMouseMove);
@@ -87,7 +91,9 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 	}, []);
 
 	return (
-		<AppContext.Provider value={{ isActive, setIsActive, mousePosition }}>
+		<AppContext.Provider
+			value={{ isActive, setIsActive, mousePosition, targetVector }}
+		>
 			{children}
 		</AppContext.Provider>
 	);
