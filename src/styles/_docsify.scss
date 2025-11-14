@@ -3,7 +3,7 @@ div#app:empty::before {
 }
 
 .sidebar-toggle span {
-	background-color: #10c3c6;
+	background-color: var(--theme-color);
 }
 
 .markdown-section h1,
@@ -13,7 +13,7 @@ div#app:empty::before {
 .markdown-section strong {
 	&,
 	* {
-		color: #a3fcef;
+		color: var(--theme-color);
 	}
 	font-weight: 600;
 }
@@ -23,18 +23,21 @@ div#app:empty::before {
 body {
 	background-color: #000a16;
 }
-
 .sidebar,
-.content,
-.section-link {
-	color: rgb(253, 253, 253) !important;
+.sidebar ul li a,
+.content {
+	color: var(--text-color);
+}
+
+.content {
+	ul,
 	p {
-		line-height: 1.75;
+		line-height: var(--line-height);
 	}
 }
 
 .section-link {
-	font-size: 19px !important;
+	font-size: var(--font-size);
 }
 
 .app-name {

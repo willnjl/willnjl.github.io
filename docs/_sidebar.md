@@ -1,0 +1,5 @@
+- [Home](/)
+- [About](about.md)
+- [Work](work.md)
+- [Skills](skills.md)
+- [Artificial Intellegence](ai.md)
