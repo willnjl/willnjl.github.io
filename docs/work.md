@@ -2,12 +2,12 @@
 
 | Project / Link                                                       | Core Technology Stack                                                                               |
 | :------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
-| **[skeetfirst.im](https://skeetfirst.im/)**                          | Laravel, self started project.                                                                      |
+| **[skeetfirst.im](https://skeetfirst.im/)**                          | Self started project, laravel. What's on guide to the Isle of Man.                                  |
 | **[AP Verify](https://verify.ap.org/)**                              | Sophisticated suite of AI tools. White-label SaaS Application for high-profile media organsiations. |
-| **[Talent International](https://www.talentinternational.com/)**     | Wordpress, React, Multinational website with Deep CRM integrations                                  |
+| **[Talent International](https://www.talentinternational.com/)**     | Wordpress, React, Multinational website with Deep CRM integrations.                                 |
 | **[RTC Consulting](https://www.rtc.co.uk/)**                         | NextJS, Headless Wordpress, GraphQL                                                                 |
-| **[Megawatt](https://megawatt.game/)**                               | Wordpress Site                                                                                      |
-| **[TravelWest.info](https://journeyplanner.travelwest.info/?ui=ui)** | NextJS, Zustand, Typescript, OpenLayer Maps                                                         |
+| **[Megawatt](https://megawatt.game/)**                               | Wordpress site advanced custom membership features and sales integrations.                          |
+| **[TravelWest.info](https://journeyplanner.travelwest.info/?ui=ui)** | NextJS, Zustand, Typescript, OpenLayer Maps.                                                        |
 
 ---
 
