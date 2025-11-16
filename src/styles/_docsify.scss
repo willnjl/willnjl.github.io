@@ -66,3 +66,24 @@ body {
 .markdown-section tr:nth-child(2n) {
 	background-color: transparent;
 }
+
+[data-page="work.md"] {
+	td,
+	tr {
+		border: 0;
+	}
+
+	td:nth-child(odd) {
+		border-right: 1px solid rgb(60, 80, 97);
+	}
+
+	tbody tr {
+		border-top: 1px solid rgb(60, 80, 97);
+	}
+
+	thead th {
+		border: 0;
+		border-bottom: 1px solid rgb(60, 80, 97);
+		color: white;
+	}
+}
