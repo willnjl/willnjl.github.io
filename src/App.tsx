@@ -8,19 +8,19 @@ export default function App() {
 	const { isActive } = useAppContext();
 	const [isActiveDebounced, setIsActiveDebounced] = React.useState(isActive);
 
-	// useEffect(() => {
-	// 	const timer = setTimeout(() => setIsActiveDebounced(isActive), 300);
-	// 	return () => clearTimeout(timer);
-	// }, [isActive]);
+	useEffect(() => {
+		const timer = setTimeout(() => setIsActiveDebounced(isActive), 300);
+		return () => clearTimeout(timer);
+	}, [isActive]);
 
-	// useEffect(() => {
-	// 	const body = document.querySelector("body") as HTMLBodyElement;
-	// 	body.style.overflow = isActive ? "" : "hidden";
-	// 	if (isActive) body.classList.add("body--coverpage-closed");
-	// }, [isActive]);
+	useEffect(() => {
+		const body = document.querySelector("body") as HTMLBodyElement;
+		body.style.overflow = isActive ? "" : "hidden";
+		if (isActive) body.classList.add("body--coverpage-closed");
+	}, [isActive]);
 
 	return (
-		<header className={`coverpage`}>
+		<header className={`coverpage ${isActive ? "coverpage--closed" : ""}`}>
 			{!isActiveDebounced && (
 				<>
 					<Scene />
