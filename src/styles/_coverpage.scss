@@ -27,7 +27,7 @@
 			font-size: 0.75rem;
 		}
 
-		@media screen and (min-width: 650px) {
+		@media screen and (min-width: 600px) {
 			h1 {
 				font-size: 1.5rem;
 			}
@@ -39,7 +39,10 @@
 }
 
 .wrap {
-	max-width: 1200px;
+	max-width: 1300px;
 	margin: 0 auto;
 	padding: 0 2rem;
+	@media screen and (min-width: 600px) {
+		padding: 0 5rem;
+	}
 }
