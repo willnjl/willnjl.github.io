@@ -4,7 +4,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
 	plugins: [react()],
 	root: ".", // The root is the current folder (so Vite uses index.html here)
-	base: "./", // Ensures assets load correctly when deployed in subfolders
+	base: "/", // GitHub Pages user site deploys to root
 	build: {
 		outDir: "dist",
 		emptyOutDir: true,

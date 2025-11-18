@@ -9,12 +9,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
   },
+  "homepage": "https://willnjl.github.io",
   "devDependencies": {
     "@types/react": "^19.2.3",
     "@types/react-dom": "^19.2.2",
     "@vitejs/plugin-react": "^5.1.0",
+    "gh-pages": "^6.2.0",
     "sass": "^1.94.0",
     "typescript": "^5.9.3",
     "vite": "^7.2.2"
