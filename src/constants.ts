@@ -284,10 +284,7 @@ export const CONTENT_CHROMATIC_ABERRATION_MAX_OPACITY = 2;
  * Define the order in which animations will cycle
  */
 export const JELLYFISH_ANIMATION_SEQUENCE = [
-	"jellyfish|move_4",
-	"jellyfish|move_3",
-	"jellyfish|move_4",
-	"jellyfish|move_3",
 	"jellyfish|move_2",
-	"jellyfish|move_1",
+	"jellyfish|move_3",
+	"jellyfish|move_4",
 ] as const;
