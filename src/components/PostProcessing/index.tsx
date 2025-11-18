@@ -14,13 +14,48 @@ import { Vector2 } from "three";
 export default function PostProcessing() {
 	const { mouseVelocity } = useAppContext();
 	const offset = useMemo(() => new Vector2(0.001, 0.001), []);
+	const time = useRef(0);
+	const noiseTimer = useRef(0);
+	const burstActive = useRef(false);
+	const burstIntensity = useRef(0);
 
-	useFrame(() => {
-		const targetX = mouseVelocity.x * 0.002;
-		const targetY = mouseVelocity.y * 0.002;
+	useFrame((state, delta) => {
+		time.current += delta;
+		noiseTimer.current += delta;
 
-		offset.x += (targetX - offset.x) * 0.1;
-		offset.y += (targetY - offset.y) * 0.1;
+		// Random signal interference bursts every 2-5 seconds
+		if (!burstActive.current && noiseTimer.current > Math.random() * 3 + 2) {
+			burstActive.current = true;
+			burstIntensity.current = 1;
+			noiseTimer.current = 0;
+		}
+
+		// Decay burst intensity quickly
+		if (burstActive.current) {
+			burstIntensity.current *= 0.95;
+			if (burstIntensity.current < 0.01) {
+				burstActive.current = false;
+				burstIntensity.current = 0;
+			}
+		}
+
+		// Base glitchy noise - random flickers
+		const baseGlitch = Math.random() < 0.05 ? (Math.random() - 0.5) * 0.003 : 0;
+
+		// Signal interference with rapid random fluctuations during burst
+		const glitchX = burstActive.current
+			? (Math.random() - 0.5) * 0.45 * burstIntensity.current
+			: baseGlitch;
+		const glitchY = burstActive.current
+			? (Math.random() - 0.5) * 0.25 * burstIntensity.current
+			: baseGlitch * (Math.random() - 0.5);
+
+		// Mouse velocity offset + signal interference
+		const targetX = mouseVelocity.x * 0.002 + glitchX;
+		const targetY = mouseVelocity.y * 0.002 + glitchY;
+
+		offset.x += (targetX - offset.x) * 0.08;
+		offset.y += (targetY - offset.y) * 0.08;
 	});
 
 	return (
