@@ -263,4 +263,14 @@ export const CONTENT_Y_INTENSITY = 4;
 /**
  * Content rotation - lerp speed for smooth transitions
  */
-export const CONTENT_LERP_SPEED = 0.015;
+export const CONTENT_LERP_SPEED = 0.01;
+
+/**
+ * Content text - chromatic aberration intensity multiplier
+ */
+export const CONTENT_CHROMATIC_ABERRATION_INTENSITY = 2;
+
+/**
+ * Content text - chromatic aberration max opacity
+ */
+export const CONTENT_CHROMATIC_ABERRATION_MAX_OPACITY = 2;
