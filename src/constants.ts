@@ -217,12 +217,34 @@ export const CAMERA_MAX_X = 10;
 /**
  * Camera movement - maximum Y position
  */
-export const CAMERA_MAX_Y = 3;
+export const CAMERA_MAX_Y = 5;
 
 /**
  * Camera movement - lerp speed multiplier
  */
 export const CAMERA_LERP_SPEED = 1;
+
+/**
+ * Camera position - Z position (distance from origin)
+ */
+export const CAMERA_POSITION_Z = 6;
+
+/**
+ * Camera start position - X (right side)
+ */
+export const CAMERA_START_X = 2;
+
+/**
+ * Camera start position - Y (elevated)
+ */
+export const CAMERA_START_Y = 3;
+
+/**
+ * Camera look-at target position
+ */
+export const CAMERA_LOOK_AT_X = -0.24;
+export const CAMERA_LOOK_AT_Y = 0;
+export const CAMERA_LOOK_AT_Z = 0;
 
 // ========================================
 // CONTENT

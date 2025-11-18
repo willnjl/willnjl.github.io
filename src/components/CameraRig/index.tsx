@@ -3,7 +3,17 @@ import { useFrame } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
 import { useAppContext } from "@/context/AppContext";
-import { CAMERA_MAX_X, CAMERA_MAX_Y, CAMERA_LERP_SPEED } from "@/constants";
+import {
+	CAMERA_MAX_X,
+	CAMERA_MAX_Y,
+	CAMERA_LERP_SPEED,
+	CAMERA_POSITION_Z,
+	CAMERA_START_X,
+	CAMERA_START_Y,
+	CAMERA_LOOK_AT_X,
+	CAMERA_LOOK_AT_Y,
+	CAMERA_LOOK_AT_Z,
+} from "@/constants";
 
 export const CameraRig: React.FC = () => {
 	const cameraRef = useRef<THREE.PerspectiveCamera>(null!);
@@ -31,9 +41,24 @@ export const CameraRig: React.FC = () => {
 		// Smooth interpolation toward clamped target
 		current.current.lerp(clampedTarget, delta * CAMERA_LERP_SPEED);
 
-		cameraRef.current.position.set(current.current.x, current.current.y, 5);
-		cameraRef.current.lookAt(0, 0, 0);
+		// Apply movement relative to start position
+		cameraRef.current.position.set(
+			CAMERA_START_X + current.current.x,
+			CAMERA_START_Y + current.current.y,
+			CAMERA_POSITION_Z
+		);
+		cameraRef.current.lookAt(
+			CAMERA_LOOK_AT_X,
+			CAMERA_LOOK_AT_Y,
+			CAMERA_LOOK_AT_Z
+		);
 	});
 
-	return <PerspectiveCamera ref={cameraRef} makeDefault position={[0, 0, 5]} />;
+	return (
+		<PerspectiveCamera
+			ref={cameraRef}
+			makeDefault
+			position={[CAMERA_START_X, CAMERA_START_Y, CAMERA_POSITION_Z]}
+		/>
+	);
 };
