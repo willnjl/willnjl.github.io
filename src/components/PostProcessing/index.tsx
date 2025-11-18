@@ -60,6 +60,14 @@ export default function PostProcessing() {
 
 	return (
 		<EffectComposer>
+			{/* Depth of field for atmospheric depth */}
+			<DepthOfField
+				focusDistance={0}
+				focalLength={1}
+				bokehScale={1.5}
+				height={480}
+			/>
+
 			{/* Bloom for bioluminescent glow */}
 			<Bloom
 				intensity={0.8}
