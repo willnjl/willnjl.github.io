@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { useAppContext } from "@/context/AppContext";
 import * as THREE from "three";
-
-const xIntensity = -4;
-const yIntensity = -2;
+import {
+	CONTENT_X_INTENSITY,
+	CONTENT_Y_INTENSITY,
+	CONTENT_LERP_SPEED,
+} from "@/constants";
 
 export default () => {
 	const { mouseVelocity } = useAppContext();
@@ -13,10 +15,10 @@ export default () => {
 
 	useEffect(() => {
 		const animate = () => {
-			const x = current.current.x * -xIntensity;
-			const y = current.current.y * yIntensity;
+			const x = current.current.x * -CONTENT_X_INTENSITY;
+			const y = current.current.y * CONTENT_Y_INTENSITY;
 
-			current.current.lerp(mouseVelocity, 0.01);
+			current.current.lerp(mouseVelocity, CONTENT_LERP_SPEED);
 			if (ref.current) {
 				ref.current.style.transform = `perspective(1880px) rotateY(${x}deg) rotateX(${y}deg) translateZ(50px)`;
 			}

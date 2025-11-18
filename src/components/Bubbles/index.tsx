@@ -1,6 +1,20 @@
 import { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import {
+	BUBBLE_COUNT,
+	BUBBLE_RADIUS,
+	BUBBLE_SPEED,
+	BUBBLE_MIN_DISTANCE,
+	BUBBLE_MAX_DISTANCE,
+	BUBBLE_OPACITY,
+	BUBBLE_COLOR,
+	BUBBLE_SCALE_MIN,
+	BUBBLE_SCALE_MAX,
+	BUBBLE_WOBBLE_SPEED_MIN,
+	BUBBLE_WOBBLE_SPEED_MAX,
+	BUBBLE_WOBBLE_AMPLITUDE,
+} from "@/constants";
 
 interface BubbleProps {
 	count?: number;
@@ -8,12 +22,10 @@ interface BubbleProps {
 	speed?: number;
 }
 
-const COLOR = "#e6effc6f";
-
 export const Bubbles: React.FC<BubbleProps> = ({
-	count = 150,
-	radius = 2,
-	speed = 0.5,
+	count = BUBBLE_COUNT,
+	radius = BUBBLE_RADIUS,
+	speed = BUBBLE_SPEED,
 }) => {
 	const meshRef = useRef<THREE.InstancedMesh>(null!);
 	const dummy = useMemo(() => new THREE.Object3D(), []);
@@ -27,7 +39,9 @@ export const Bubbles: React.FC<BubbleProps> = ({
 		for (let i = 0; i < count; i++) {
 			// Spread bubbles evenly in all directions, avoiding the center area
 			const angle = Math.random() * Math.PI * 2;
-			const distanceFromCenter = Math.random() * 8 + 5; // 5 to 13 units from center
+			const distanceFromCenter =
+				Math.random() * (BUBBLE_MAX_DISTANCE - BUBBLE_MIN_DISTANCE) +
+				BUBBLE_MIN_DISTANCE;
 
 			const xPos = Math.cos(angle) * distanceFromCenter;
 			const zPos = Math.sin(angle) * distanceFromCenter;
@@ -43,9 +57,13 @@ export const Bubbles: React.FC<BubbleProps> = ({
 					Math.random() * 0.05 + 0.02,
 					(Math.random() - 0.5) * 0.02
 				),
-				scale: Math.random() * 0.08 + 0.03,
+				scale:
+					Math.random() * (BUBBLE_SCALE_MAX - BUBBLE_SCALE_MIN) +
+					BUBBLE_SCALE_MIN,
 				wobble: Math.random() * Math.PI * 2,
-				wobbleSpeed: Math.random() * 0.02 + 0.01,
+				wobbleSpeed:
+					Math.random() * (BUBBLE_WOBBLE_SPEED_MAX - BUBBLE_WOBBLE_SPEED_MIN) +
+					BUBBLE_WOBBLE_SPEED_MIN,
 				angle,
 				distanceFromCenter,
 			});
@@ -62,14 +80,16 @@ export const Bubbles: React.FC<BubbleProps> = ({
 
 			// Add wobble effect
 			particle.wobble += particle.wobbleSpeed;
-			const wobbleOffset = Math.sin(particle.wobble) * 0.1;
+			const wobbleOffset = Math.sin(particle.wobble) * BUBBLE_WOBBLE_AMPLITUDE;
 
 			// Reset if bubble goes too high, maintaining radial distance from center
 			if (particle.position.y > maxHeight) {
 				particle.position.y = -maxHeight;
 
 				const newAngle = Math.random() * Math.PI * 2;
-				const newDistance = Math.random() * 8 + 5;
+				const newDistance =
+					Math.random() * (BUBBLE_MAX_DISTANCE - BUBBLE_MIN_DISTANCE) +
+					BUBBLE_MIN_DISTANCE;
 
 				particle.position.x = Math.cos(newAngle) * newDistance;
 				particle.position.z = Math.sin(newAngle) * newDistance;
@@ -96,9 +116,9 @@ export const Bubbles: React.FC<BubbleProps> = ({
 		<instancedMesh ref={meshRef} args={[undefined, undefined, count]}>
 			<sphereGeometry args={[1, 16, 16]} />
 			<meshPhysicalMaterial
-				color="#a3b1bb"
+				color={BUBBLE_COLOR}
 				transparent
-				opacity={0.3}
+				opacity={BUBBLE_OPACITY}
 				roughness={0}
 				metalness={0.1}
 				transmission={0.9}

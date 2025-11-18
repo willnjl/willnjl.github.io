@@ -10,9 +10,15 @@ import LoadingScreen from "../LoadingScreen";
 import AnchorChain from "../AnchorChain";
 import FogShader from "../FogShader";
 import PostProcessing from "../PostProcessing";
-
-const LIGHT_COLOR = "#b9f0ef";
-const GROUND_COLOR = "#000a1a";
+import {
+	AMBIENT_LIGHT_COLOR,
+	DIRECTIONAL_LIGHT_MAIN_COLOR,
+	DIRECTIONAL_LIGHT_SECONDARY_COLOR,
+	POINT_LIGHT_1_COLOR,
+	POINT_LIGHT_2_COLOR,
+	POINT_LIGHT_3_COLOR,
+	POINT_LIGHT_4_COLOR,
+} from "@/constants";
 
 export default function Scene() {
 	return (
@@ -31,32 +37,32 @@ export default function Scene() {
 				<Suspense fallback={null}>
 					<Background />
 
-					<ambientLight intensity={0.15} color="#1a3d5c" />
+					<ambientLight intensity={0.15} color={AMBIENT_LIGHT_COLOR} />
 
 					<directionalLight
 						position={[0, 10, 5]}
 						intensity={0.8}
-						color="#4db8e8"
+						color={DIRECTIONAL_LIGHT_MAIN_COLOR}
 						castShadow
 					/>
 
 					<directionalLight
 						position={[0, -2, -8]}
 						intensity={1.2}
-						color="#6a4c93"
+						color={DIRECTIONAL_LIGHT_SECONDARY_COLOR}
 					/>
 
 					<pointLight
 						position={[-4, 0, 3]}
 						intensity={2.5}
-						color="#d946ef"
+						color={POINT_LIGHT_1_COLOR}
 						distance={8}
 						decay={2}
 					/>
 					<pointLight
 						position={[4, 0, 3]}
 						intensity={2.5}
-						color="#8b5cf6"
+						color={POINT_LIGHT_2_COLOR}
 						distance={8}
 						decay={2}
 					/>
@@ -64,7 +70,7 @@ export default function Scene() {
 					<pointLight
 						position={[0, 3, 0]}
 						intensity={1.8}
-						color="#a78bfa"
+						color={POINT_LIGHT_3_COLOR}
 						distance={6}
 						decay={2}
 					/>
@@ -72,7 +78,7 @@ export default function Scene() {
 					<pointLight
 						position={[0, -2, 0]}
 						intensity={1.0}
-						color="#0ea5e9"
+						color={POINT_LIGHT_4_COLOR}
 						distance={5}
 						decay={2}
 					/>

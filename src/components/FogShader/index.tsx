@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useThree } from "@react-three/fiber";
 import * as THREE from "three";
+import { FOG_BOTTOM_COLOR, FOG_TOP_COLOR } from "@/constants";
 
 interface FogShaderProps {
 	thickness?: number;
@@ -12,8 +13,8 @@ interface FogShaderProps {
 
 export default function FogShader({
 	thickness = 1.0,
-	bottomColor = "#000000",
-	topColor = "#4a90e2",
+	bottomColor = FOG_BOTTOM_COLOR,
+	topColor = FOG_TOP_COLOR,
 	near = 5,
 	far = 50,
 }: FogShaderProps) {

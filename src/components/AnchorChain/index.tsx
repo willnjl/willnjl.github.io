@@ -1,6 +1,7 @@
 import { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import { ANCHOR_CHAIN_COLOR } from "@/constants";
 
 interface AnchorChainProps {
 	startY?: number;
@@ -84,7 +85,7 @@ export const AnchorChain: React.FC<AnchorChainProps> = ({
 				>
 					<torusGeometry args={[linkRadius, linkThickness, 12, 24]} />
 					<meshStandardMaterial
-						color="#fcfbfb"
+						color={ANCHOR_CHAIN_COLOR}
 						metalness={1}
 						roughness={1}
 						envMapIntensity={1.5}

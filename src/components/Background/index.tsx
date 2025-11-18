@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { BG_TOP_COLOR, BG_BOTTOM_COLOR } from "@/constants";
 
 export default () => {
 	return (
@@ -8,8 +9,8 @@ export default () => {
 				side={THREE.BackSide}
 				depthWrite={false}
 				uniforms={{
-					topColor: { value: new THREE.Color(0x0a1e2e) },
-					bottomColor: { value: new THREE.Color(0x000000) },
+					topColor: { value: new THREE.Color(BG_TOP_COLOR) },
+					bottomColor: { value: new THREE.Color(BG_BOTTOM_COLOR) },
 				}}
 				vertexShader={`
                     varying vec3 vWorldPosition;

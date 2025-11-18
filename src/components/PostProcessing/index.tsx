@@ -10,6 +10,19 @@ import {
 import { BlendFunction } from "postprocessing";
 import { useAppContext } from "@/context/AppContext";
 import { Vector2 } from "three";
+import {
+	NOISE_INTENSITY,
+	MOUSE_VELOCITY_INTENSITY,
+	NOISE_FREQUENCY,
+	BLOOM_INTENSITY,
+	BLOOM_LUMINANCE_THRESHOLD,
+	BLOOM_LUMINANCE_SMOOTHING,
+	DOF_FOCUS_DISTANCE,
+	DOF_FOCAL_LENGTH,
+	DOF_BOKEH_SCALE,
+	VIGNETTE_OFFSET,
+	VIGNETTE_DARKNESS,
+} from "@/constants";
 
 export default function PostProcessing() {
 	const { mouseVelocity } = useAppContext();
@@ -40,19 +53,24 @@ export default function PostProcessing() {
 		}
 
 		// Base glitchy noise - random flickers
-		const baseGlitch = Math.random() < 0.05 ? (Math.random() - 0.5) * 0.003 : 0;
+		const baseGlitch =
+			Math.random() < NOISE_FREQUENCY
+				? (Math.random() - 0.5) * 0.003 * NOISE_INTENSITY
+				: 0;
 
 		// Signal interference with rapid random fluctuations during burst
 		const glitchX = burstActive.current
-			? (Math.random() - 0.5) * 0.45 * burstIntensity.current
+			? (Math.random() - 0.5) * 0.45 * burstIntensity.current * NOISE_INTENSITY
 			: baseGlitch;
 		const glitchY = burstActive.current
-			? (Math.random() - 0.5) * 0.25 * burstIntensity.current
+			? (Math.random() - 0.5) * 0.25 * burstIntensity.current * NOISE_INTENSITY
 			: baseGlitch * (Math.random() - 0.5);
 
 		// Mouse velocity offset + signal interference
-		const targetX = mouseVelocity.x * 0.002 + glitchX;
-		const targetY = mouseVelocity.y * 0.002 + glitchY;
+		const targetX =
+			mouseVelocity.x * 0.002 * MOUSE_VELOCITY_INTENSITY + glitchX;
+		const targetY =
+			mouseVelocity.y * 0.002 * MOUSE_VELOCITY_INTENSITY + glitchY;
 
 		offset.x += (targetX - offset.x) * 0.08;
 		offset.y += (targetY - offset.y) * 0.08;
@@ -62,17 +80,17 @@ export default function PostProcessing() {
 		<EffectComposer>
 			{/* Depth of field for atmospheric depth */}
 			<DepthOfField
-				focusDistance={0}
-				focalLength={1}
-				bokehScale={1.5}
+				focusDistance={DOF_FOCUS_DISTANCE}
+				focalLength={DOF_FOCAL_LENGTH}
+				bokehScale={DOF_BOKEH_SCALE}
 				height={480}
 			/>
 
 			{/* Bloom for bioluminescent glow */}
 			<Bloom
-				intensity={0.8}
-				luminanceThreshold={0.2}
-				luminanceSmoothing={0.9}
+				intensity={BLOOM_INTENSITY}
+				luminanceThreshold={BLOOM_LUMINANCE_THRESHOLD}
+				luminanceSmoothing={BLOOM_LUMINANCE_SMOOTHING}
 				height={300}
 				blendFunction={BlendFunction.SCREEN}
 			/>
@@ -85,8 +103,8 @@ export default function PostProcessing() {
 
 			{/* Vignette for depth illusion */}
 			<Vignette
-				offset={0.3}
-				darkness={0.6}
+				offset={VIGNETTE_OFFSET}
+				darkness={VIGNETTE_DARKNESS}
 				eskil={false}
 				blendFunction={BlendFunction.NORMAL}
 			/>
