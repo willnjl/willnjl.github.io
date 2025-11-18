@@ -258,9 +258,9 @@ export const CONTENT_X_INTENSITY = -4;
 /**
  * Content rotation - Y axis intensity (rotation based on mouse velocity)
  */
-export const CONTENT_Y_INTENSITY = -2;
+export const CONTENT_Y_INTENSITY = 4;
 
 /**
  * Content rotation - lerp speed for smooth transitions
  */
-export const CONTENT_LERP_SPEED = 0.01;
+export const CONTENT_LERP_SPEED = 0.015;
