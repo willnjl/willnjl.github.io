@@ -1,1 +1,1 @@
-npx gltfjsx src/assets/ford/2025_ford_transit_courier_trend_1.5.glb --transform --exportdefault -t -o ./public/Model.tsx
+npx gltfjsx src/assets/purple-striped_jellyfish-v1.glb --transform --exportdefault -t -o ./public/Model.tsx

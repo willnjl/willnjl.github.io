@@ -29,40 +29,35 @@ export default function Scene() {
 			>
 				<Suspense fallback={null}>
 					<Background />
-					<ambientLight intensity={0.2} color="#4db8e8" />
+					<ambientLight intensity={1} color="#8601f3" />
 					<directionalLight
-						position={[0, 20, 0]}
-						intensity={1.5}
+						position={[0, 10, 0]}
+						intensity={10}
 						color={LIGHT_COLOR}
 						castShadow
 						shadow-mapSize-width={2048}
 						shadow-mapSize-height={2048}
 					/>
-					<hemisphereLight
+					{/* <hemisphereLight
 						intensity={0.3}
 						color={LIGHT_COLOR}
 						groundColor={GROUND_COLOR}
-					/>
+					/> */}
 					<CameraRig />
 					<CameraControls
 						mouseButtons={{ left: 0, middle: 0, right: 0, wheel: 0 }}
 						touches={{ one: 0, two: 0, three: 0 }}
 					/>
-					<FogShader
+					{/* <FogShader
 						thickness={2.0}
 						bottomColor="#000000"
 						topColor="#4db8e8"
 						near={20}
 						far={55}
-					/>
+					/> */}
 					<Bubbles />
 					<AnchorChain />
-					<Model
-						position={[0, -0.5, 0]}
-						scale={0.0075}
-						castShadow
-						receiveShadow
-					/>
+					<Model position={[0, 0, 0]} scale={4} />
 				</Suspense>
 			</Canvas>
 		</>
