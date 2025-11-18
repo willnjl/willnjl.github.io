@@ -13,6 +13,7 @@ import React from "react";
 import { useGraph } from "@react-three/fiber";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { GLTF, SkeletonUtils } from "three-stdlib";
+import { JELLYFISH_ANIMATION_SEQUENCE } from "@/constants";
 
 type ActionName =
 	| "jellyfish|move_1"
@@ -48,6 +49,9 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
 	const { nodes, materials } = useGraph(clone) as GLTFResult;
 	const { actions } = useAnimations(animations, group);
 
+	// Use centralized animation sequence from constants
+	const animationSequence = JELLYFISH_ANIMATION_SEQUENCE;
+
 	React.useEffect(() => {
 		// Ensure correct rendering of transparent materials with gel-like properties
 		materials.JF_skin_in.side = THREE.DoubleSide;
@@ -77,10 +81,53 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
 	}, [materials]);
 
 	React.useEffect(() => {
-		if (actions["jellyfish|move_3"]) {
-			actions["jellyfish|move_3"].reset().play();
-		}
-	}, [actions]);
+		let currentIndex = 0;
+
+		const playNextAnimation = () => {
+			const previousIndex =
+				(currentIndex - 1 + animationSequence.length) %
+				animationSequence.length;
+			const previousAnimation = animationSequence[previousIndex];
+			const currentAnimation = animationSequence[currentIndex];
+
+			// Fade out previous animation if it exists and is playing
+			if (
+				actions[previousAnimation] &&
+				actions[previousAnimation].isRunning()
+			) {
+				actions[previousAnimation].fadeOut(1.0);
+			}
+
+			// Fade in and play current animation
+			if (actions[currentAnimation]) {
+				const action = actions[currentAnimation];
+				action
+					.reset()
+					.setEffectiveTimeScale(1)
+					.setEffectiveWeight(1)
+					.fadeIn(1.0)
+					.play();
+
+				// Set up listener for when animation finishes
+				const mixer = action.getMixer();
+				const duration = action.getClip().duration;
+
+				// Schedule next animation just before this one ends (1 second before for crossfade)
+				setTimeout(() => {
+					currentIndex = (currentIndex + 1) % animationSequence.length;
+					playNextAnimation();
+				}, (duration - 1.0) * 1000);
+			}
+		};
+
+		// Play first animation immediately
+		playNextAnimation();
+
+		return () => {
+			// Clean up all animations
+			Object.values(actions).forEach((action) => action?.stop());
+		};
+	}, [actions, animationSequence]);
 	return (
 		<group ref={group} {...props} dispose={null}>
 			<group name="Sketchfab_Scene">

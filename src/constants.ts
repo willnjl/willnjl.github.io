@@ -274,3 +274,20 @@ export const CONTENT_CHROMATIC_ABERRATION_INTENSITY = 2;
  * Content text - chromatic aberration max opacity
  */
 export const CONTENT_CHROMATIC_ABERRATION_MAX_OPACITY = 2;
+
+// ========================================
+// JELLYFISH MODEL
+// ========================================
+
+/**
+ * Animation sequence for jellyfish movements
+ * Define the order in which animations will cycle
+ */
+export const JELLYFISH_ANIMATION_SEQUENCE = [
+	"jellyfish|move_4",
+	"jellyfish|move_3",
+	"jellyfish|move_4",
+	"jellyfish|move_3",
+	"jellyfish|move_2",
+	"jellyfish|move_1",
+] as const;
