@@ -5,6 +5,7 @@ import Model from "../Model";
 
 import { CameraRig } from "@/components/CameraRig";
 import Bubbles from "../Bubbles";
+import LuminescentParticles from "../LuminescentParticles";
 import Background from "../Background";
 import LoadingScreen from "../LoadingScreen";
 import AnchorChain from "../AnchorChain";
@@ -90,6 +91,7 @@ export default function Scene() {
 					/>
 
 					<Bubbles />
+					<LuminescentParticles />
 					<AnchorChain />
 					<Model position={[0, 0, 0]} scale={4} />
 

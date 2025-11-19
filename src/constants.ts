@@ -109,7 +109,7 @@ export const BUBBLE_MAX_DISTANCE = 13;
 /**
  * Bubble material opacity (0-1)
  */
-export const BUBBLE_OPACITY = 0.3;
+export const BUBBLE_OPACITY = 0.5;
 
 /**
  * Bubble material color
@@ -288,3 +288,31 @@ export const JELLYFISH_ANIMATION_SEQUENCE = [
 	"jellyfish|move_3",
 	"jellyfish|move_4",
 ] as const;
+// ========================================
+// LUMINESCENT PARTICLES
+// ========================================
+
+/**
+ * Movement rate/activity of luminescent particles
+ */
+export const LUMINESCENT_PARTICLE_ACTIVITY = 0.0025;
+
+/**
+ * Number of luminescent particles
+ */
+export const LUMINESCENT_PARTICLE_COUNT = 40;
+
+/**
+ * Color of luminescent particles
+ */
+export const LUMINESCENT_PARTICLE_COLOR = "#fffaf0";
+
+/**
+ * Size of luminescent particles
+ */
+export const LUMINESCENT_PARTICLE_SIZE = 0.045;
+
+/**
+ * Opacity of luminescent particles
+ */
+export const LUMINESCENT_PARTICLE_OPACITY = 0.5;
