@@ -45,46 +45,28 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 		y: 0,
 	});
 
-	// Shared target vector for camera and DOM - use ref to persist across renders
 	const targetVector = useRef(new THREE.Vector3(0, 0, 0)).current;
 	const mouseVelocity = useRef(new THREE.Vector3(0, 0, 0)).current;
-	// Track last mouse position and time for velocity calculation
 	const lastMousePos = useRef({ x: 0, y: 0, time: Date.now() });
 	const velocityDecayRef = useRef<number | null>(null);
 
-	// For tap/drag distinction
-	const dragStart = useRef<{ x: number; y: number } | null>(null);
-
-	// --- GESTURE HANDLERS ---
-	// Helper to update position and velocity
 	const updatePosition = (clientX: number, clientY: number) => {
 		const x = (clientX - window.innerWidth / 2) / (window.innerWidth / 2);
 		const y = (clientY - window.innerHeight / 2) / (window.innerHeight / 2);
-
 		setMousePosition({ x, y });
-
 		const rotX = -x < 0 ? -x * 5 : -x * 10;
 		const rotY = y * 8;
 		targetVector.set(rotX, rotY, 0);
-
-		// Calculate velocity
 		const now = Date.now();
-		const dt = (now - lastMousePos.current.time) / 1000; // seconds
-
+		const dt = (now - lastMousePos.current.time) / 1000;
 		if (dt > 0) {
 			const vx = (x - lastMousePos.current.x) / dt;
 			const vy = (y - lastMousePos.current.y) / dt;
-			mouseVelocity.set(vx * 2, vy * 2, 0); // Scale for visibility
+			mouseVelocity.set(vx * 2, vy * 2, 0);
 		}
-
 		lastMousePos.current = { x, y, time: now };
-
-		// Clear existing decay timeout
-		if (velocityDecayRef.current) {
+		if (velocityDecayRef.current)
 			cancelAnimationFrame(velocityDecayRef.current);
-		}
-
-		// Start velocity decay after mouse stops
 		const decay = () => {
 			mouseVelocity.lerp(new THREE.Vector3(0, 0, 0), 0.05);
 			if (mouseVelocity.length() > 0.0001) {
@@ -94,21 +76,13 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 				velocityDecayRef.current = null;
 			}
 		};
-
 		velocityDecayRef.current = requestAnimationFrame(decay);
 	};
 
-	// Tap handler (single tap, no move)
-	const onTap = (event: TouchEvent | MouseEvent) => {
-		setIsActive(true);
-		// You can add more tap logic here
-	};
-
-	// Drag handler (move)
+	const onTap = () => setIsActive(true);
 	const onDrag = (dx: number, dy: number, event: TouchEvent | MouseEvent) => {
-		// Safely check for TouchEvent
-		let clientX = 0;
-		let clientY = 0;
+		let clientX = 0,
+			clientY = 0;
 		if (typeof TouchEvent !== "undefined" && event instanceof TouchEvent) {
 			clientX = event.touches[0]?.clientX ?? 0;
 			clientY = event.touches[0]?.clientY ?? 0;
@@ -119,83 +93,58 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 		updatePosition(clientX, clientY);
 	};
 
-	// Set up gesture listeners on the window
 	useEffect(() => {
-		// UseGesture expects a ref, but we want global events, so we use native listeners for tap/drag distinction
-		let moved = false;
-		let startX = 0;
-		let startY = 0;
-		let lastEvent: TouchEvent | MouseEvent | null = null;
-
-		const handleTouchStart = (event: TouchEvent) => {
-			if (event.touches.length === 1) {
+		let moved = false,
+			startX = 0,
+			startY = 0,
+			lastEvent: TouchEvent | MouseEvent | null = null;
+		const handleTouchStart = (e: TouchEvent) => {
+			if (e.touches.length === 1) {
 				moved = false;
-				startX = event.touches[0].clientX;
-				startY = event.touches[0].clientY;
-				lastEvent = event;
+				startX = e.touches[0].clientX;
+				startY = e.touches[0].clientY;
+				lastEvent = e;
 			}
 		};
-		const handleTouchMove = (event: TouchEvent) => {
-			if (event.touches.length === 1) {
-				const dx = event.touches[0].clientX - startX;
-				const dy = event.touches[0].clientY - startY;
-				if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
-					moved = true;
-				}
-				onDrag(dx, dy, event); // Always update position/velocity
-				lastEvent = event;
+		const handleTouchMove = (e: TouchEvent) => {
+			if (e.touches.length === 1) {
+				const dx = e.touches[0].clientX - startX;
+				const dy = e.touches[0].clientY - startY;
+				if (Math.abs(dx) > 5 || Math.abs(dy) > 5) moved = true;
+				onDrag(dx, dy, e);
+				lastEvent = e;
 			}
 		};
-		const handleTouchEnd = (event: TouchEvent) => {
-			if (!moved && lastEvent) {
-				onTap(lastEvent);
-			}
+		const handleTouchEnd = () => {
+			if (!moved && lastEvent) onTap();
 			setMousePosition({ x: 0, y: 0 });
 			lastEvent = null;
 		};
-
-		// Mouse for desktop
-		let mouseDown = false;
-		let mouseStartX = 0;
-		let mouseStartY = 0;
-		let mouseMoved = false;
-		let mouseLastEvent: MouseEvent | null = null;
-
-		const handleMouseDown = (event: MouseEvent) => {
+		let mouseDown = false,
+			mouseStartX = 0,
+			mouseStartY = 0;
+		const handleMouseDown = (e: MouseEvent) => {
 			mouseDown = true;
-			mouseMoved = false;
-			mouseStartX = event.clientX;
-			mouseStartY = event.clientY;
-			mouseLastEvent = event;
+			mouseStartX = e.clientX;
+			mouseStartY = e.clientY;
 		};
-		const handleMouseMove = (event: MouseEvent) => {
-			// Always update position/velocity for mouse movement
-			updatePosition(event.clientX, event.clientY);
-			// If mouse is down, treat as drag for camera, but do not trigger tap
+		const handleMouseMove = (e: MouseEvent) => {
+			updatePosition(e.clientX, e.clientY);
 			if (mouseDown) {
-				const dx = event.clientX - mouseStartX;
-				const dy = event.clientY - mouseStartY;
-				if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
-					mouseMoved = true;
-				}
-				onDrag(dx, dy, event);
-				mouseLastEvent = event;
+				const dx = e.clientX - mouseStartX;
+				const dy = e.clientY - mouseStartY;
+				onDrag(dx, dy, e);
 			}
 		};
-		const handleMouseUp = (event: MouseEvent) => {
-			// Prevent mouse click from triggering tap logic
-			// (onTap is now only for touch events)
+		const handleMouseUp = () => {
 			mouseDown = false;
-			mouseLastEvent = null;
 		};
-
 		window.addEventListener("touchstart", handleTouchStart);
 		window.addEventListener("touchmove", handleTouchMove);
 		window.addEventListener("touchend", handleTouchEnd);
 		window.addEventListener("mousedown", handleMouseDown);
 		window.addEventListener("mousemove", handleMouseMove);
 		window.addEventListener("mouseup", handleMouseUp);
-
 		return () => {
 			window.removeEventListener("touchstart", handleTouchStart);
 			window.removeEventListener("touchmove", handleTouchMove);
