@@ -11,6 +11,7 @@
 	z-index: 9999;
 	animation: fadeOut 0.5s ease-out 2s forwards;
 	z-index: 9999;
+	pointer-events: none;
 	@keyframes fadeOut {
 		to {
 			opacity: 0;
