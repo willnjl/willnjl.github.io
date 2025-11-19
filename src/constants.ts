@@ -222,7 +222,7 @@ export const CAMERA_MAX_Y = 5;
 /**
  * Camera movement - lerp speed multiplier
  */
-export const CAMERA_LERP_SPEED = 1;
+export const CAMERA_LERP_SPEED = 1.85;
 
 /**
  * Camera position - Z position (distance from origin)
