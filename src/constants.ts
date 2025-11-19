@@ -51,17 +51,17 @@ export const BLOOM_LUMINANCE_SMOOTHING = 0.9;
 /**
  * Focus distance for depth of field effect
  */
-export const DOF_FOCUS_DISTANCE = 0;
+export const DOF_FOCUS_DISTANCE = 0.1;
 
 /**
  * Focal length for depth of field effect
  */
-export const DOF_FOCAL_LENGTH = 1;
+export const DOF_FOCAL_LENGTH = 60;
 
 /**
  * Bokeh scale for depth of field blur
  */
-export const DOF_BOKEH_SCALE = 1.5;
+export const DOF_BOKEH_SCALE = 0.25;
 
 // ========================================
 // VIGNETTE EFFECT
