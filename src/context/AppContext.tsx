@@ -106,15 +106,16 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 
 	// Drag handler (move)
 	const onDrag = (dx: number, dy: number, event: TouchEvent | MouseEvent) => {
-		// dx, dy are in pixels; convert to normalized coordinates
-		const clientX =
-			event instanceof TouchEvent
-				? event.touches[0]?.clientX ?? 0
-				: (event as MouseEvent).clientX;
-		const clientY =
-			event instanceof TouchEvent
-				? event.touches[0]?.clientY ?? 0
-				: (event as MouseEvent).clientY;
+		// Safely check for TouchEvent
+		let clientX = 0;
+		let clientY = 0;
+		if (typeof TouchEvent !== "undefined" && event instanceof TouchEvent) {
+			clientX = event.touches[0]?.clientX ?? 0;
+			clientY = event.touches[0]?.clientY ?? 0;
+		} else if ("clientX" in event && "clientY" in event) {
+			clientX = (event as MouseEvent).clientX;
+			clientY = (event as MouseEvent).clientY;
+		}
 		updatePosition(clientX, clientY);
 	};
 
@@ -168,20 +169,22 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 			mouseLastEvent = event;
 		};
 		const handleMouseMove = (event: MouseEvent) => {
+			// Always update position/velocity for mouse movement
+			updatePosition(event.clientX, event.clientY);
+			// If mouse is down, treat as drag for camera, but do not trigger tap
 			if (mouseDown) {
 				const dx = event.clientX - mouseStartX;
 				const dy = event.clientY - mouseStartY;
 				if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
 					mouseMoved = true;
-					onDrag(dx, dy, event);
 				}
+				onDrag(dx, dy, event);
 				mouseLastEvent = event;
 			}
 		};
 		const handleMouseUp = (event: MouseEvent) => {
-			if (mouseDown && !mouseMoved && mouseLastEvent) {
-				onTap(mouseLastEvent);
-			}
+			// Prevent mouse click from triggering tap logic
+			// (onTap is now only for touch events)
 			mouseDown = false;
 			mouseLastEvent = null;
 		};
