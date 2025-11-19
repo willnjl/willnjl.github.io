@@ -7,7 +7,6 @@ import React, {
 	ReactNode,
 } from "react";
 import * as THREE from "three";
-import { useGesture } from "@use-gesture/react";
 
 interface MousePosition {
 	x: number;
@@ -22,6 +21,7 @@ interface AppContextType {
 	mouseVelocity: THREE.Vector3;
 	onTap: (event: TouchEvent | MouseEvent) => void;
 	onDrag: (dx: number, dy: number, event: TouchEvent | MouseEvent) => void;
+	isMobile: boolean;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -44,6 +44,12 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 		x: 0,
 		y: 0,
 	});
+	const isMobile =
+		(typeof window !== "undefined" && "ontouchstart" in window) ||
+		(typeof navigator !== "undefined" &&
+			/Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+				navigator.userAgent
+			));
 
 	const targetVector = useRef(new THREE.Vector3(0, 0, 0)).current;
 	const mouseVelocity = useRef(new THREE.Vector3(0, 0, 0)).current;
@@ -165,6 +171,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 				mouseVelocity,
 				onTap,
 				onDrag,
+				isMobile,
 			}}
 		>
 			{children}

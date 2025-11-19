@@ -10,10 +10,11 @@ import {
 } from "@/constants";
 
 export default () => {
-	const { mouseVelocity } = useAppContext();
+	const { mouseVelocity, isMobile } = useAppContext();
 	const ref = useRef<HTMLDivElement>(null);
-
 	const current = useRef(new THREE.Vector3(0, 0, 0));
+
+	const action = isMobile ? "'Tap' to proceed" : "Press 'Enter' to proceed";
 
 	useEffect(() => {
 		const animate = () => {
@@ -55,7 +56,7 @@ export default () => {
 		<div className="coverpage__content" ref={ref}>
 			<div className="wrap">
 				<h1>Will Leighton</h1>
-				<p>Press 'enter' to proceed</p>
+				<p>{action}</p>
 			</div>
 		</div>
 	);
