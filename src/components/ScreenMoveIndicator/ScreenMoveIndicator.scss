@@ -1,0 +1,147 @@
+.screen-move-indicator {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+	z-index: 1000;
+	background: none;
+}
+.screen-move-indicator {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+	z-index: 1000;
+	background: none;
+	opacity: 1;
+	transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.screen-move-indicator.fade {
+	opacity: 0;
+	transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.move-path {
+	position: relative;
+	width: 180px;
+	height: 60px;
+	margin-bottom: 1.2rem;
+}
+
+.move-dot {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 2.2rem;
+	height: 2.2rem;
+	border: 4px solid #fff;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.12);
+	transform: translateY(-50%);
+	animation: move-dot 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+	box-shadow: 0 0 16px 2px #fff8;
+}
+
+.move-trail {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 0;
+	pointer-events: none;
+}
+.trail {
+	position: absolute;
+	width: 2.2rem;
+	height: 2.2rem;
+	border: 4px solid #fff;
+	border-radius: 50%;
+	opacity: 0.3;
+	transform: translateY(-50%);
+}
+.trail-1 {
+	animation: move-trail-1 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.trail-2 {
+	animation: move-trail-2 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.trail-3 {
+	animation: move-trail-3 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes move-dot {
+	0% {
+		left: 0;
+		opacity: 1;
+	}
+	70% {
+		left: 100%;
+		opacity: 1;
+	}
+	100% {
+		left: 100%;
+		opacity: 0;
+	}
+}
+@keyframes move-trail-1 {
+	0% {
+		left: 0;
+		opacity: 0.3;
+	}
+	40% {
+		left: 40%;
+		opacity: 0.2;
+	}
+	100% {
+		left: 100%;
+		opacity: 0;
+	}
+}
+@keyframes move-trail-2 {
+	0% {
+		left: 0;
+		opacity: 0.2;
+	}
+	60% {
+		left: 70%;
+		opacity: 0.1;
+	}
+	100% {
+		left: 100%;
+		opacity: 0;
+	}
+}
+@keyframes move-trail-3 {
+	0% {
+		left: 0;
+		opacity: 0.1;
+	}
+	80% {
+		left: 90%;
+		opacity: 0.05;
+	}
+	100% {
+		left: 100%;
+		opacity: 0;
+	}
+}
+
+.move-text {
+	color: #fff;
+	font-size: 1.1rem;
+	text-shadow: 0 2px 8px #000a;
+	font-weight: 500;
+	letter-spacing: 0.02em;
+}

@@ -3,9 +3,10 @@ import "./styles/app.scss";
 import Scene from "./components/Scene";
 import { useAppContext } from "./context/AppContext";
 import Content from "./components/Content";
+import ScreenMoveIndicator from "./components/ScreenMoveIndicator";
 
 export default function App() {
-	const { isActive } = useAppContext();
+	const { isActive, isMobile } = useAppContext();
 	const [isActiveDebounced, setIsActiveDebounced] = React.useState(isActive);
 
 	useEffect(() => {
@@ -23,6 +24,7 @@ export default function App() {
 		<header className={`coverpage ${isActive ? "coverpage--closed" : ""}`}>
 			{!isActiveDebounced && (
 				<>
+					<ScreenMoveIndicator />
 					<Scene />
 					<Content />
 				</>
