@@ -4,6 +4,22 @@
  */
 
 // ========================================
+// LOADING PAGE
+// ========================================
+
+export const LOADING_PHRASES = [
+	"Deploying submersible",
+	"Bioilluminating",
+	"Entering submersible",
+	"Plotting course",
+	"Switching on biolights",
+	"Avoiding Kraken",
+	"Charging glow panels",
+	"Untangling seaweed",
+	"Feeding Fish",
+];
+
+// ========================================
 // POST PROCESSING EFFECTS
 // ========================================
 
