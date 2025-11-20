@@ -36,7 +36,7 @@ body {
 	li > ul {
 		padding-top: 1rem;
 	}
-	li {
+	li:not(:last-child) {
 		margin-bottom: 1rem;
 	}
 }
