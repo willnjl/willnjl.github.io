@@ -164,7 +164,7 @@ export const BUBBLE_WOBBLE_AMPLITUDE = 0.1;
 /**
  * Background gradient - top color
  */
-export const BG_TOP_COLOR = 0x0a1e2e;
+export const BG_TOP_COLOR = 0x102b44;
 
 /**
  * Background gradient - bottom color
