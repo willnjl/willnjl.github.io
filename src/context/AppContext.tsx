@@ -145,12 +145,25 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 		const handleMouseUp = () => {
 			mouseDown = false;
 		};
+
+		const handleKeyDown = (e: KeyboardEvent) => {
+			if (
+				e.key === "Enter" ||
+				e.key === "Escape" ||
+				e.code === "Space" ||
+				e.key === " "
+			) {
+				setIsActive(true);
+			}
+		};
+
 		window.addEventListener("touchstart", handleTouchStart);
 		window.addEventListener("touchmove", handleTouchMove);
 		window.addEventListener("touchend", handleTouchEnd);
 		window.addEventListener("mousedown", handleMouseDown);
 		window.addEventListener("mousemove", handleMouseMove);
 		window.addEventListener("mouseup", handleMouseUp);
+		window.addEventListener("keydown", handleKeyDown);
 		return () => {
 			window.removeEventListener("touchstart", handleTouchStart);
 			window.removeEventListener("touchmove", handleTouchMove);
@@ -158,6 +171,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 			window.removeEventListener("mousedown", handleMouseDown);
 			window.removeEventListener("mousemove", handleMouseMove);
 			window.removeEventListener("mouseup", handleMouseUp);
+			window.removeEventListener("keydown", handleKeyDown);
 		};
 	}, []);
 
