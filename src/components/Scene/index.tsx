@@ -96,6 +96,7 @@ export default function Scene() {
 					<LuminescentParticles />
 					<AnchorChain />
 					<Model ref={jellyfishRef} position={[0, 0, 0]} scale={4} />
+					<FogShader />
 					<PostProcessing />
 				</Suspense>
 			</Canvas>

@@ -196,7 +196,7 @@ export const BUBBLE_WOBBLE_SPEED_MAX = 0.03;
 export const BUBBLE_WOBBLE_AMPLITUDE = 0.1;
 
 // ========================================
-// COLORS
+// BACKGROUND
 // ========================================
 
 /**
@@ -209,6 +209,10 @@ export const BG_TOP_COLOR = 0x102b44;
  */
 export const BG_BOTTOM_COLOR = 0x000000;
 
+// ========================================
+// FOG
+// ========================================
+
 /**
  * Fog shader - bottom color
  */
@@ -217,7 +221,11 @@ export const FOG_BOTTOM_COLOR = "#000000";
 /**
  * Fog shader - top color
  */
-export const FOG_TOP_COLOR = "#4a90e2";
+export const FOG_TOP_COLOR = "#2e445c";
+
+// ========================================
+// LIGHS
+// ========================================
 
 /**
  * Scene lighting - ambient light color
@@ -253,6 +261,10 @@ export const POINT_LIGHT_3_COLOR = "#a78bfa";
  * Scene lighting - point light 4 color (bottom)
  */
 export const POINT_LIGHT_4_COLOR = "#0ea5e9";
+
+// ========================================
+// ANCHOR CHAIN
+// ========================================
 
 /**
  * Anchor chain - link color
