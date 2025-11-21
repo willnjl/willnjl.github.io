@@ -271,6 +271,36 @@ export const POINT_LIGHT_4_COLOR = "#0ea5e9";
  */
 export const ANCHOR_CHAIN_COLOR = "#fcfbfb";
 
+/**
+ * Anchor chain - start Y position (top of chain)
+ */
+export const ANCHOR_CHAIN_START_Y = 100;
+
+/**
+ * Anchor chain - end Y position (bottom of chain)
+ */
+export const ANCHOR_CHAIN_END_Y = -200;
+
+/**
+ * Anchor chain - number of links
+ */
+export const ANCHOR_CHAIN_LINK_COUNT = 500;
+
+/**
+ * Anchor chain - link radius (thickness of the ring)
+ */
+export const ANCHOR_CHAIN_LINK_RADIUS = 0.15;
+
+/**
+ * Anchor chain - link thickness (tube thickness)
+ */
+export const ANCHOR_CHAIN_LINK_THICKNESS = 0.045;
+
+/**
+ * Anchor chain - position in the scene [x, y, z]
+ */
+export const ANCHOR_CHAIN_POSITION: [number, number, number] = [15, 0, -10];
+
 // ========================================
 // CAMERA RIG
 // ========================================

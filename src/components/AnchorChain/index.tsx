@@ -1,25 +1,25 @@
 import { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { ANCHOR_CHAIN_COLOR } from "@/constants";
 
-interface AnchorChainProps {
-	startY?: number;
-	endY?: number;
-	linkCount?: number;
-	linkRadius?: number;
-	linkThickness?: number;
-	position?: [number, number, number];
-}
+import {
+	ANCHOR_CHAIN_COLOR,
+	ANCHOR_CHAIN_START_Y,
+	ANCHOR_CHAIN_END_Y,
+	ANCHOR_CHAIN_LINK_COUNT,
+	ANCHOR_CHAIN_LINK_RADIUS,
+	ANCHOR_CHAIN_LINK_THICKNESS,
+	ANCHOR_CHAIN_POSITION,
+} from "@/constants";
 
-export const AnchorChain: React.FC<AnchorChainProps> = ({
-	startY = 100,
-	endY = -200,
-	linkCount = 500,
-	linkRadius = 0.15,
-	linkThickness = 0.045,
-	position = [15, 0, -10],
-}) => {
+export const AnchorChain: React.FC = () => {
+	const startY = ANCHOR_CHAIN_START_Y;
+	const endY = ANCHOR_CHAIN_END_Y;
+	const linkCount = ANCHOR_CHAIN_LINK_COUNT;
+	const linkRadius = ANCHOR_CHAIN_LINK_RADIUS;
+	const linkThickness = ANCHOR_CHAIN_LINK_THICKNESS;
+	const position = ANCHOR_CHAIN_POSITION;
+
 	const groupRef = useRef<THREE.Group>(null!);
 	const timeRef = useRef(0);
 
@@ -29,7 +29,7 @@ export const AnchorChain: React.FC<AnchorChainProps> = ({
 		const linkLength = linkRadius * 2; // Length of each link
 		const spacing = linkLength * 1.65; // Slight overlap to connect links
 
-		for (let i = 0; i < linkCount; i++) {
+		Array.from({ length: linkCount }).forEach((_, i) => {
 			const y = startY - i * spacing;
 			const isVertical = i % 2 === 0;
 
@@ -41,10 +41,10 @@ export const AnchorChain: React.FC<AnchorChainProps> = ({
 				isVertical,
 				index: i,
 			});
-		}
+		});
 
 		return links;
-	}, [startY, endY, linkCount, linkRadius, position]);
+	}, []);
 
 	// Subtle animation - gentle swaying
 	useFrame((state, delta) => {
