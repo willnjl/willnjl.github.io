@@ -7,7 +7,6 @@ import ScreenMoveIndicator from "./components/ScreenMoveIndicator";
 
 export default function App() {
 	const { isClosed, isMobile } = useAppContext();
-	const [isActiveDebounced, setIsActiveDebounced] = React.useState(isClosed);
 	useEffect(() => {
 		const body = document.querySelector("body") as HTMLBodyElement;
 		body.style.overflow = isClosed ? "hidden" : "";
