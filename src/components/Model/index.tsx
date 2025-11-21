@@ -124,7 +124,7 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
 			// Fade in and play current animation
 			if (actions[currentAnimation]) {
 				const action = actions[currentAnimation];
-				console.log(`Playing animation: ${currentAnimation}`);
+				// console.log(`Playing animation: ${currentAnimation}`);
 				action
 					.reset()
 					.setEffectiveTimeScale(1)
