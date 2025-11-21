@@ -27,17 +27,16 @@ export const AnchorChain: React.FC = () => {
 		const links = [];
 		const totalHeight = startY - endY;
 		const linkLength = linkRadius * 2; // Length of each link
-		const spacing = linkLength * 1.65; // Slight overlap to connect links
+		const spacing = linkLength * 1.7; // Slight overlap to connect links
 
 		Array.from({ length: linkCount }).forEach((_, i) => {
 			const y = startY - i * spacing;
 			const isVertical = i % 2 === 0;
-
 			links.push({
 				position: new THREE.Vector3(position[0], y, position[2]),
 				rotation: isVertical
 					? new THREE.Euler(0, 0, 0)
-					: new THREE.Euler(0, 0, Math.PI / 2),
+					: new THREE.Euler(0, Math.PI / 2, 0),
 				isVertical,
 				index: i,
 			});
@@ -45,32 +44,6 @@ export const AnchorChain: React.FC = () => {
 
 		return links;
 	}, []);
-
-	// Subtle animation - gentle swaying
-	useFrame((state, delta) => {
-		if (!groupRef.current) return;
-
-		timeRef.current += delta * 0.5;
-
-		groupRef.current.children.forEach((child, i) => {
-			const link = chainLinks[i];
-			if (!link) return;
-
-			// Gentle sway effect that increases with depth
-			const depthFactor = i / linkCount;
-			const swayX = Math.sin(timeRef.current + i * 0.2) * 0.03 * depthFactor;
-			const swayZ =
-				Math.cos(timeRef.current * 0.7 + i * 0.3) * 0.03 * depthFactor;
-
-			child.position.x = link.position.x + swayX;
-			child.position.z = link.position.z + swayZ;
-
-			// Slight rotation sway
-			const rotationSway =
-				Math.sin(timeRef.current * 0.5 + i * 0.15) * 0.05 * depthFactor;
-			child.rotation.y = rotationSway;
-		});
-	});
 
 	return (
 		<group ref={groupRef}>
@@ -81,7 +54,7 @@ export const AnchorChain: React.FC = () => {
 					rotation={link.rotation}
 					castShadow
 					receiveShadow
-					scale={link.isVertical ? [1, 2, 1] : [2, 1, 1]}
+					scale={[1, 2, 1]}
 				>
 					<torusGeometry args={[linkRadius, linkThickness, 12, 24]} />
 					<meshStandardMaterial
