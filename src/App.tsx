@@ -9,7 +9,7 @@ export default function App() {
 	const { isClosed, isMobile } = useAppContext();
 	useEffect(() => {
 		const body = document.querySelector("body") as HTMLBodyElement;
-		body.style.overflow = isClosed ? "hidden" : "";
+		body.style.overflow = isClosed ? "" : "hidden";
 		if (isClosed) body.classList.add("body--coverpage-closed");
 	}, [isClosed]);
 
