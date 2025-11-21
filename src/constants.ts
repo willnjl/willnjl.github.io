@@ -1,6 +1,16 @@
 // ========================================
-// JELLYFISH SWIM MOVEMENT
+// JELLYFISH MODEL
 // ========================================
+
+/**
+ * Animation sequence for jellyfish movements
+ * Define the order in which animations will cycle
+ */
+export const JELLYFISH_ANIMATION_SEQUENCE = [
+	"jellyfish|move_4",
+	"jellyfish|move_3",
+	"jellyfish|move_2",
+] as const;
 
 /**
  * Jellyfish swim movement amplitude and speed
@@ -12,7 +22,11 @@ export const JELLYFISH_SWIM_X_SPEED = 0.12;
 export const JELLYFISH_SWIM_Y_SPEED = 0.18;
 export const JELLYFISH_SWIM_Z_SPEED = 0.09;
 
+/**
+ * Transition time between model animations
+ */
 export const JELLYFISH_ANIMATION_FADE_TIME = 1.5;
+
 // ========================================
 // EVENT LISTENERS
 // ========================================
@@ -44,7 +58,7 @@ export const LOADING_PHRASES = [
 ];
 
 // ========================================
-// POST PROCESSING EFFECTS
+// CHROMATIC ABBERATION EFFECT
 // ========================================
 
 /**
@@ -66,25 +80,6 @@ export const NOISE_FREQUENCY = 0.9;
 export const MOUSE_VELOCITY_INTENSITY = 1.0;
 
 // ========================================
-// BLOOM EFFECT
-// ========================================
-
-/**
- * Bloom intensity for bioluminescent glow
- */
-export const BLOOM_INTENSITY = 0.8;
-
-/**
- * Luminance threshold for bloom effect
- */
-export const BLOOM_LUMINANCE_THRESHOLD = 0.2;
-
-/**
- * Luminance smoothing for bloom effect
- */
-export const BLOOM_LUMINANCE_SMOOTHING = 0.9;
-
-// ========================================
 // DEPTH OF FIELD
 // ========================================
 
@@ -102,6 +97,25 @@ export const DOF_FOCAL_LENGTH = 60;
  * Bokeh scale for depth of field blur
  */
 export const DOF_BOKEH_SCALE = 0.25;
+
+// ========================================
+// BLOOM EFFECT
+// ========================================
+
+/**
+ * Bloom intensity for bioluminescent glow
+ */
+export const BLOOM_INTENSITY = 1;
+
+/**
+ * Luminance threshold for bloom effect
+ */
+export const BLOOM_LUMINANCE_THRESHOLD = 0.2;
+
+/**
+ * Luminance smoothing for bloom effect
+ */
+export const BLOOM_LUMINANCE_SMOOTHING = 0.9;
 
 // ========================================
 // VIGNETTE EFFECT
@@ -315,19 +329,6 @@ export const CONTENT_CHROMATIC_ABERRATION_INTENSITY = 1.25;
  */
 export const CONTENT_CHROMATIC_ABERRATION_MAX_OPACITY = 0.75;
 
-// ========================================
-// JELLYFISH MODEL
-// ========================================
-
-/**
- * Animation sequence for jellyfish movements
- * Define the order in which animations will cycle
- */
-export const JELLYFISH_ANIMATION_SEQUENCE = [
-	"jellyfish|move_4",
-	"jellyfish|move_3",
-	"jellyfish|move_2",
-] as const;
 // ========================================
 // LUMINESCENT PARTICLES
 // ========================================
