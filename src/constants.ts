@@ -221,7 +221,7 @@ export const FOG_BOTTOM_COLOR = "#000000";
 /**
  * Fog shader - top color
  */
-export const FOG_TOP_COLOR = "#2e445c";
+export const FOG_TOP_COLOR = "#0e151c";
 
 // ========================================
 // LIGHS
