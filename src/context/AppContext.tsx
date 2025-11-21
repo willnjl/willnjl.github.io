@@ -14,8 +14,8 @@ interface MousePosition {
 }
 
 interface AppContextType {
-	isActive: boolean;
-	setIsActive: (active: boolean) => void;
+	isClosed: boolean;
+	setIsClosed: (active: boolean) => void;
 	mousePosition: MousePosition;
 	targetVector: THREE.Vector3;
 	mouseVelocity: THREE.Vector3;
@@ -39,7 +39,7 @@ interface AppProviderProps {
 }
 
 export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
-	const [isActive, setIsActive] = useState(false);
+	const [isClosed, setIsClosed] = useState(false);
 	const [mousePosition, setMousePosition] = useState<MousePosition>({
 		x: 0,
 		y: 0,
@@ -85,7 +85,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 		velocityDecayRef.current = requestAnimationFrame(decay);
 	};
 
-	const onTap = () => setIsActive(true);
+	const onTap = () => setIsClosed(true);
 	const onDrag = (dx: number, dy: number, event: TouchEvent | MouseEvent) => {
 		let clientX = 0,
 			clientY = 0;
@@ -153,7 +153,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 				e.code === "Space" ||
 				e.key === " "
 			) {
-				setIsActive(true);
+				setIsClosed(true);
 			}
 		};
 
@@ -178,8 +178,8 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 	return (
 		<AppContext.Provider
 			value={{
-				isActive,
-				setIsActive,
+				isClosed,
+				setIsClosed,
 				mousePosition,
 				targetVector,
 				mouseVelocity,

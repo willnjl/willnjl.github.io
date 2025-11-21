@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/app.scss";
 import Scene from "./components/Scene";
 import { useAppContext } from "./context/AppContext";
@@ -6,23 +6,17 @@ import Content from "./components/Content";
 import ScreenMoveIndicator from "./components/ScreenMoveIndicator";
 
 export default function App() {
-	const { isActive, isMobile } = useAppContext();
-	const [isActiveDebounced, setIsActiveDebounced] = React.useState(isActive);
-
-	useEffect(() => {
-		const timer = setTimeout(() => setIsActiveDebounced(isActive), 300);
-		return () => clearTimeout(timer);
-	}, [isActive]);
-
+	const { isClosed, isMobile } = useAppContext();
+	const [isActiveDebounced, setIsActiveDebounced] = React.useState(isClosed);
 	useEffect(() => {
 		const body = document.querySelector("body") as HTMLBodyElement;
-		body.style.overflow = isActive ? "" : "hidden";
-		if (isActive) body.classList.add("body--coverpage-closed");
-	}, [isActive]);
+		body.style.overflow = isClosed ? "hidden" : "";
+		if (isClosed) body.classList.add("body--coverpage-closed");
+	}, [isClosed]);
 
 	return (
-		<header className={`coverpage ${isActive ? "coverpage--closed" : ""}`}>
-			{!isActiveDebounced && (
+		<header className={`coverpage ${isClosed ? "coverpage--closed" : ""}`}>
+			{!isClosed && (
 				<>
 					<ScreenMoveIndicator />
 					<Scene />
