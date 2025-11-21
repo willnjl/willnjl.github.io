@@ -21,6 +21,7 @@ import {
 	JELLYFISH_SWIM_X_SPEED,
 	JELLYFISH_SWIM_Y_SPEED,
 	JELLYFISH_SWIM_Z_SPEED,
+	JELLYFISH_ANIMATION_FADE_TIME,
 } from "@/constants";
 
 type ActionName =
@@ -107,50 +108,36 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
 		let currentIndex = 0;
 
 		const playNextAnimation = () => {
-			const previousIndex =
-				(currentIndex - 1 + animationSequence.length) %
-				animationSequence.length;
-			const previousAnimation = animationSequence[previousIndex];
-			const currentAnimation = animationSequence[currentIndex];
+			const prev =
+				animationSequence[
+					(currentIndex - 1 + animationSequence.length) %
+						animationSequence.length
+				];
+			const curr = animationSequence[currentIndex];
 
-			// Fade out previous animation if it exists and is playing
-			if (
-				actions[previousAnimation] &&
-				actions[previousAnimation].isRunning()
-			) {
-				actions[previousAnimation].fadeOut(1.0);
-			}
+			actions[prev]?.isRunning() &&
+				actions[prev].fadeOut(JELLYFISH_ANIMATION_FADE_TIME);
 
-			// Fade in and play current animation
-			if (actions[currentAnimation]) {
-				const action = actions[currentAnimation];
-				// console.log(`Playing animation: ${currentAnimation}`);
+			const action = actions[curr];
+			if (action) {
+				console.log("now playing animation " + curr);
 				action
 					.reset()
 					.setEffectiveTimeScale(1)
 					.setEffectiveWeight(1)
-					.fadeIn(1.0)
+					.fadeIn(JELLYFISH_ANIMATION_FADE_TIME)
 					.play();
-
-				// Set up listener for when animation finishes
-				const mixer = action.getMixer();
 				const duration = action.getClip().duration;
-
-				// Schedule next animation just before this one ends (1 second before for crossfade)
 				setTimeout(() => {
 					currentIndex = (currentIndex + 1) % animationSequence.length;
 					playNextAnimation();
-				}, (duration - 1.0) * 1000);
+				}, Math.max(0, (duration - JELLYFISH_ANIMATION_FADE_TIME) * 1000));
 			}
 		};
 
-		// Play first animation immediately
 		playNextAnimation();
 
-		return () => {
-			// Clean up all animations
-			Object.values(actions).forEach((action) => action?.stop());
-		};
+		return () => Object.values(actions).forEach((action) => action?.stop());
 	}, [actions, animationSequence]);
 
 	return (
