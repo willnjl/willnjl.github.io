@@ -157,13 +157,18 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 			}
 		};
 
-		window.addEventListener("touchstart", handleTouchStart);
-		window.addEventListener("touchmove", handleTouchMove);
-		window.addEventListener("touchend", handleTouchEnd);
-		window.addEventListener("mousedown", handleMouseDown);
-		window.addEventListener("mousemove", handleMouseMove);
-		window.addEventListener("mouseup", handleMouseUp);
-		window.addEventListener("keydown", handleKeyDown);
+		const addEventListeners = () => {
+			window.addEventListener("touchstart", handleTouchStart);
+			window.addEventListener("touchmove", handleTouchMove);
+			window.addEventListener("touchend", handleTouchEnd);
+			window.addEventListener("mousedown", handleMouseDown);
+			window.addEventListener("mousemove", handleMouseMove);
+			window.addEventListener("mouseup", handleMouseUp);
+			window.addEventListener("keydown", handleKeyDown);
+		};
+
+		const timeoutId = setTimeout(addEventListeners, 2000);
+
 		return () => {
 			window.removeEventListener("touchstart", handleTouchStart);
 			window.removeEventListener("touchmove", handleTouchMove);
@@ -172,6 +177,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 			window.removeEventListener("mousemove", handleMouseMove);
 			window.removeEventListener("mouseup", handleMouseUp);
 			window.removeEventListener("keydown", handleKeyDown);
+			clearTimeout(timeoutId);
 		};
 	}, []);
 
