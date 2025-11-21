@@ -36,19 +36,19 @@ export const LOADING_PHRASES = [
  * General noise/glitch intensity multiplier (0-2)
  * Controls the strength of chromatic aberration noise effects
  */
-export const NOISE_INTENSITY = 0.5;
-
-/**
- * Mouse velocity effect intensity multiplier (0-2)
- * Controls how much mouse movement affects chromatic aberration
- */
-export const MOUSE_VELOCITY_INTENSITY = 1.0;
+export const NOISE_INTENSITY = 0.4;
 
 /**
  * Probability of noise occurring per frame (0-1)
  * Higher values = more frequent glitch flickers
  */
 export const NOISE_FREQUENCY = 0.9;
+
+/**
+ * Mouse velocity effect intensity multiplier (0-2)
+ * Controls how much mouse movement affects chromatic aberration
+ */
+export const MOUSE_VELOCITY_INTENSITY = 1.0;
 
 // ========================================
 // BLOOM EFFECT
@@ -257,12 +257,12 @@ export const CAMERA_POSITION_Z = 6;
 /**
  * Camera start position - X (right side)
  */
-export const CAMERA_START_X = 2;
+export const CAMERA_START_X = -2;
 
 /**
  * Camera start position - Y (elevated)
  */
-export const CAMERA_START_Y = 3;
+export const CAMERA_START_Y = -0.5;
 
 /**
  * Camera look-at target position
@@ -309,9 +309,9 @@ export const CONTENT_CHROMATIC_ABERRATION_MAX_OPACITY = 0.75;
  * Define the order in which animations will cycle
  */
 export const JELLYFISH_ANIMATION_SEQUENCE = [
-	"jellyfish|move_2",
-	"jellyfish|move_3",
 	"jellyfish|move_4",
+	"jellyfish|move_3",
+	"jellyfish|move_2",
 ] as const;
 // ========================================
 // LUMINESCENT PARTICLES
