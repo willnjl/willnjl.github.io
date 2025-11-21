@@ -13,7 +13,15 @@ import React from "react";
 import { useGraph } from "@react-three/fiber";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { GLTF, SkeletonUtils } from "three-stdlib";
-import { JELLYFISH_ANIMATION_SEQUENCE } from "@/constants";
+import {
+	JELLYFISH_ANIMATION_SEQUENCE,
+	JELLYFISH_SWIM_X_AMPLITUDE,
+	JELLYFISH_SWIM_Y_AMPLITUDE,
+	JELLYFISH_SWIM_Z_AMPLITUDE,
+	JELLYFISH_SWIM_X_SPEED,
+	JELLYFISH_SWIM_Y_SPEED,
+	JELLYFISH_SWIM_Z_SPEED,
+} from "@/constants";
 
 type ActionName =
 	| "jellyfish|move_1"
@@ -40,6 +48,8 @@ type GLTFResult = GLTF & {
 	animations: GLTFAction[];
 };
 
+import { useFrame } from "@react-three/fiber";
+
 export default function Model(props: JSX.IntrinsicElements["group"]) {
 	const group = React.useRef<THREE.Group>();
 	const { scene, animations } = useGLTF(
@@ -51,6 +61,19 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
 
 	// Use centralized animation sequence from constants
 	const animationSequence = JELLYFISH_ANIMATION_SEQUENCE;
+
+	// Animate gentle swimming
+	useFrame(({ clock }) => {
+		if (group.current) {
+			const t = clock.getElapsedTime();
+			group.current.position.x =
+				Math.sin(t * JELLYFISH_SWIM_X_SPEED) * JELLYFISH_SWIM_X_AMPLITUDE;
+			group.current.position.y =
+				Math.sin(t * JELLYFISH_SWIM_Y_SPEED) * JELLYFISH_SWIM_Y_AMPLITUDE;
+			group.current.position.z =
+				Math.cos(t * JELLYFISH_SWIM_Z_SPEED) * JELLYFISH_SWIM_Z_AMPLITUDE;
+		}
+	});
 
 	React.useEffect(() => {
 		// Ensure correct rendering of transparent materials with gel-like properties
@@ -101,6 +124,7 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
 			// Fade in and play current animation
 			if (actions[currentAnimation]) {
 				const action = actions[currentAnimation];
+				console.log(`Playing animation: ${currentAnimation}`);
 				action
 					.reset()
 					.setEffectiveTimeScale(1)
@@ -128,6 +152,7 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
 			Object.values(actions).forEach((action) => action?.stop());
 		};
 	}, [actions, animationSequence]);
+
 	return (
 		<group ref={group} {...props} dispose={null}>
 			<group name="Sketchfab_Scene">

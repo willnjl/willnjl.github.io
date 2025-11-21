@@ -1,4 +1,17 @@
 // ========================================
+// JELLYFISH SWIM MOVEMENT
+// ========================================
+
+/**
+ * Jellyfish swim movement amplitude and speed
+ */
+export const JELLYFISH_SWIM_X_AMPLITUDE = 0.5;
+export const JELLYFISH_SWIM_Y_AMPLITUDE = 0.3;
+export const JELLYFISH_SWIM_Z_AMPLITUDE = 0.4;
+export const JELLYFISH_SWIM_X_SPEED = 0.12;
+export const JELLYFISH_SWIM_Y_SPEED = 0.18;
+export const JELLYFISH_SWIM_Z_SPEED = 0.09;
+// ========================================
 // EVENT LISTENERS
 // ========================================
 
