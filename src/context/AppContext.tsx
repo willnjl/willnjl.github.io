@@ -88,18 +88,9 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 
 	const onTap = () => setIsClosed(true);
 	const onDrag = (dx: number, dy: number, event: TouchEvent | MouseEvent) => {
-		let clientX = 0,
-			clientY = 0;
-		if (typeof TouchEvent !== "undefined" && event instanceof TouchEvent) {
-			clientX = event.touches[0]?.clientX ?? 0;
-			clientY = event.touches[0]?.clientY ?? 0;
-		} else if ("clientX" in event && "clientY" in event) {
-			clientX = (event as MouseEvent).clientX;
-			clientY = (event as MouseEvent).clientY;
+		if (Math.abs(dx) > 0 || Math.abs(dy) > 0) {
+			mouseVelocity.multiplyScalar(DRAG_VELOCITY_AMPLIFICATION);
 		}
-		updatePosition(clientX, clientY);
-		// Amplify velocity only for drag events
-		mouseVelocity.multiplyScalar(DRAG_VELOCITY_AMPLIFICATION);
 	};
 
 	useEffect(() => {
@@ -120,6 +111,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 				const dx = e.touches[0].clientX - startX;
 				const dy = e.touches[0].clientY - startY;
 				if (Math.abs(dx) > 5 || Math.abs(dy) > 5) moved = true;
+				updatePosition(e.touches[0].clientX, e.touches[0].clientY);
 				onDrag(dx, dy, e);
 				lastEvent = e;
 			}
