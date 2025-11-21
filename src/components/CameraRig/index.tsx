@@ -15,7 +15,7 @@ import {
 	CAMERA_LOOK_AT_Z,
 } from "@/constants";
 
-export const CameraRig: React.FC = () => {
+export const CameraRig: React.FC = ({ jellyfishRef }) => {
 	const cameraRef = useRef<THREE.PerspectiveCamera>(null!);
 	const { targetVector } = useAppContext();
 
@@ -47,11 +47,15 @@ export const CameraRig: React.FC = () => {
 			CAMERA_START_Y + current.current.y,
 			CAMERA_POSITION_Z
 		);
-		cameraRef.current.lookAt(
-			CAMERA_LOOK_AT_X,
-			CAMERA_LOOK_AT_Y,
-			CAMERA_LOOK_AT_Z
-		);
+		if (jellyfishRef?.current) {
+			cameraRef.current.lookAt(jellyfishRef.current.position);
+		} else {
+			cameraRef.current.lookAt(
+				CAMERA_LOOK_AT_X,
+				CAMERA_LOOK_AT_Y,
+				CAMERA_LOOK_AT_Z
+			);
+		}
 	});
 
 	return (

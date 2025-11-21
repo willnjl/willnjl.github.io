@@ -51,123 +51,128 @@ type GLTFResult = GLTF & {
 
 import { useFrame } from "@react-three/fiber";
 
-export default function Model(props: JSX.IntrinsicElements["group"]) {
-	const group = React.useRef<THREE.Group>();
-	const { scene, animations } = useGLTF(
-		"/purple-striped_jellyfish-transformed.glb"
-	);
-	const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
-	const { nodes, materials } = useGraph(clone) as GLTFResult;
-	const { actions } = useAnimations(animations, group);
+const Model = React.forwardRef<THREE.Group, JSX.IntrinsicElements["group"]>(
+	(props, ref) => {
+		const group =
+			(ref as React.RefObject<THREE.Group>) || React.useRef<THREE.Group>();
+		const { scene, animations } = useGLTF(
+			"/purple-striped_jellyfish-transformed.glb"
+		);
+		const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
+		const { nodes, materials } = useGraph(clone) as GLTFResult;
+		const { actions } = useAnimations(animations, group);
 
-	// Use centralized animation sequence from constants
-	const animationSequence = JELLYFISH_ANIMATION_SEQUENCE;
+		// Use centralized animation sequence from constants
+		const animationSequence = JELLYFISH_ANIMATION_SEQUENCE;
 
-	// Animate gentle swimming
-	useFrame(({ clock }) => {
-		if (group.current) {
-			const t = clock.getElapsedTime();
-			group.current.position.x =
-				Math.sin(t * JELLYFISH_SWIM_X_SPEED) * JELLYFISH_SWIM_X_AMPLITUDE;
-			group.current.position.y =
-				Math.sin(t * JELLYFISH_SWIM_Y_SPEED) * JELLYFISH_SWIM_Y_AMPLITUDE;
-			group.current.position.z =
-				Math.cos(t * JELLYFISH_SWIM_Z_SPEED) * JELLYFISH_SWIM_Z_AMPLITUDE;
-		}
-	});
-
-	React.useEffect(() => {
-		// Ensure correct rendering of transparent materials with gel-like properties
-		materials.JF_skin_in.side = THREE.DoubleSide;
-		materials.JF_skin_in.roughness = 0.1;
-		materials.JF_skin_in.metalness = 0;
-		materials.JF_skin_in.transparent = true;
-		materials.JF_skin_in.opacity = 0.5;
-		(materials.JF_skin_in as any).clearcoat = 1.0;
-		(materials.JF_skin_in as any).clearcoatRoughness = 0.1;
-		materials.JF_skin_in.needsUpdate = true;
-
-		materials.JF_skin_out.side = THREE.DoubleSide;
-		materials.JF_skin_out.roughness = 0.15;
-		materials.JF_skin_out.metalness = 0;
-		materials.JF_skin_out.transparent = true;
-		materials.JF_skin_out.opacity = 0.4;
-		(materials.JF_skin_out as any).clearcoat = 0.8;
-		(materials.JF_skin_out as any).clearcoatRoughness = 0.2;
-		materials.JF_skin_out.needsUpdate = true;
-
-		materials.JF_heart.side = THREE.DoubleSide;
-		materials.JF_heart.roughness = 0.2;
-		materials.JF_heart.metalness = 0;
-		(materials.JF_heart as any).clearcoat = 0.6;
-		(materials.JF_heart as any).clearcoatRoughness = 0.3;
-		materials.JF_heart.needsUpdate = true;
-	}, [materials]);
-
-	React.useEffect(() => {
-		let currentIndex = 0;
-
-		const playNextAnimation = () => {
-			const prev =
-				animationSequence[
-					(currentIndex - 1 + animationSequence.length) %
-						animationSequence.length
-				];
-			const curr = animationSequence[currentIndex];
-
-			actions[prev]?.isRunning() &&
-				actions[prev].fadeOut(JELLYFISH_ANIMATION_FADE_TIME);
-
-			const action = actions[curr];
-			if (action) {
-				console.log("now playing animation " + curr);
-				action
-					.reset()
-					.setEffectiveTimeScale(1)
-					.setEffectiveWeight(1)
-					.fadeIn(JELLYFISH_ANIMATION_FADE_TIME)
-					.play();
-				const duration = action.getClip().duration;
-				setTimeout(() => {
-					currentIndex = (currentIndex + 1) % animationSequence.length;
-					playNextAnimation();
-				}, Math.max(0, (duration - JELLYFISH_ANIMATION_FADE_TIME) * 1000));
+		// Animate gentle swimming
+		useFrame(({ clock }) => {
+			if (group.current) {
+				const t = clock.getElapsedTime();
+				group.current.position.x =
+					Math.sin(t * JELLYFISH_SWIM_X_SPEED) * JELLYFISH_SWIM_X_AMPLITUDE;
+				group.current.position.y =
+					Math.sin(t * JELLYFISH_SWIM_Y_SPEED) * JELLYFISH_SWIM_Y_AMPLITUDE;
+				group.current.position.z =
+					Math.cos(t * JELLYFISH_SWIM_Z_SPEED) * JELLYFISH_SWIM_Z_AMPLITUDE;
 			}
-		};
+		});
 
-		playNextAnimation();
+		React.useEffect(() => {
+			// Ensure correct rendering of transparent materials with gel-like properties
+			materials.JF_skin_in.side = THREE.DoubleSide;
+			materials.JF_skin_in.roughness = 0.1;
+			materials.JF_skin_in.metalness = 0;
+			materials.JF_skin_in.transparent = true;
+			materials.JF_skin_in.opacity = 0.5;
+			(materials.JF_skin_in as any).clearcoat = 1.0;
+			(materials.JF_skin_in as any).clearcoatRoughness = 0.1;
+			materials.JF_skin_in.needsUpdate = true;
 
-		return () => Object.values(actions).forEach((action) => action?.stop());
-	}, [actions, animationSequence]);
+			materials.JF_skin_out.side = THREE.DoubleSide;
+			materials.JF_skin_out.roughness = 0.15;
+			materials.JF_skin_out.metalness = 0;
+			materials.JF_skin_out.transparent = true;
+			materials.JF_skin_out.opacity = 0.4;
+			(materials.JF_skin_out as any).clearcoat = 0.8;
+			(materials.JF_skin_out as any).clearcoatRoughness = 0.2;
+			materials.JF_skin_out.needsUpdate = true;
 
-	return (
-		<group ref={group} {...props} dispose={null}>
-			<group name="Sketchfab_Scene">
-				<primitive object={nodes._rootJoint} />
-				<skinnedMesh
-					name="Object_442"
-					geometry={nodes.Object_442.geometry}
-					material={materials.JF_heart}
-					skeleton={nodes.Object_442.skeleton}
-					rotation={[-Math.PI / 2, 0.497, 0]}
-				/>
-				<skinnedMesh
-					name="Object_444"
-					geometry={nodes.Object_444.geometry}
-					material={materials.JF_skin_in}
-					skeleton={nodes.Object_444.skeleton}
-					rotation={[-Math.PI / 2, 0.497, 0]}
-				/>
-				<skinnedMesh
-					name="Object_446"
-					geometry={nodes.Object_446.geometry}
-					material={materials.JF_skin_out}
-					skeleton={nodes.Object_446.skeleton}
-					rotation={[-Math.PI / 2, 0.497, 0]}
-				/>
+			materials.JF_heart.side = THREE.DoubleSide;
+			materials.JF_heart.roughness = 0.2;
+			materials.JF_heart.metalness = 0;
+			(materials.JF_heart as any).clearcoat = 0.6;
+			(materials.JF_heart as any).clearcoatRoughness = 0.3;
+			materials.JF_heart.needsUpdate = true;
+		}, [materials]);
+
+		React.useEffect(() => {
+			let currentIndex = 0;
+
+			const playNextAnimation = () => {
+				const prev =
+					animationSequence[
+						(currentIndex - 1 + animationSequence.length) %
+							animationSequence.length
+					];
+				const curr = animationSequence[currentIndex];
+
+				actions[prev]?.isRunning() &&
+					actions[prev].fadeOut(JELLYFISH_ANIMATION_FADE_TIME);
+
+				const action = actions[curr];
+				if (action) {
+					console.log("now playing animation " + curr);
+					action
+						.reset()
+						.setEffectiveTimeScale(1)
+						.setEffectiveWeight(1)
+						.fadeIn(JELLYFISH_ANIMATION_FADE_TIME)
+						.play();
+					const duration = action.getClip().duration;
+					setTimeout(() => {
+						currentIndex = (currentIndex + 1) % animationSequence.length;
+						playNextAnimation();
+					}, Math.max(0, (duration - JELLYFISH_ANIMATION_FADE_TIME) * 1000));
+				}
+			};
+
+			playNextAnimation();
+
+			return () => Object.values(actions).forEach((action) => action?.stop());
+		}, [actions, animationSequence]);
+
+		return (
+			<group ref={group} {...props} dispose={null}>
+				<group name="Sketchfab_Scene">
+					<primitive object={nodes._rootJoint} />
+					<skinnedMesh
+						name="Object_442"
+						geometry={nodes.Object_442.geometry}
+						material={materials.JF_heart}
+						skeleton={nodes.Object_442.skeleton}
+						rotation={[-Math.PI / 2, 0.497, 0]}
+					/>
+					<skinnedMesh
+						name="Object_444"
+						geometry={nodes.Object_444.geometry}
+						material={materials.JF_skin_in}
+						skeleton={nodes.Object_444.skeleton}
+						rotation={[-Math.PI / 2, 0.497, 0]}
+					/>
+					<skinnedMesh
+						name="Object_446"
+						geometry={nodes.Object_446.geometry}
+						material={materials.JF_skin_out}
+						skeleton={nodes.Object_446.skeleton}
+						rotation={[-Math.PI / 2, 0.497, 0]}
+					/>
+				</group>
 			</group>
-		</group>
-	);
-}
+		);
+	}
+);
+
+export default Model;
 
 useGLTF.preload("/purple-striped_jellyfish-transformed.glb");

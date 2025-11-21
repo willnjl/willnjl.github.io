@@ -1,6 +1,7 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { CameraControls } from "@react-three/drei";
+import * as THREE from "three";
 import Model from "../Model";
 
 import { CameraRig } from "@/components/CameraRig";
@@ -22,6 +23,7 @@ import {
 } from "@/constants";
 
 export default function Scene() {
+	const jellyfishRef = useRef<THREE.Group>(null);
 	return (
 		<>
 			<LoadingScreen />
@@ -84,7 +86,7 @@ export default function Scene() {
 						decay={2}
 					/>
 
-					<CameraRig />
+					<CameraRig jellyfishRef={jellyfishRef} />
 					<CameraControls
 						mouseButtons={{ left: 0, middle: 0, right: 0, wheel: 0 }}
 						touches={{ one: 0, two: 0, three: 0 }}
@@ -93,7 +95,7 @@ export default function Scene() {
 					<Bubbles />
 					<LuminescentParticles />
 					<AnchorChain />
-					<Model position={[0, 0, 0]} scale={4} />
+					<Model ref={jellyfishRef} position={[0, 0, 0]} scale={4} />
 
 					<PostProcessing />
 				</Suspense>
