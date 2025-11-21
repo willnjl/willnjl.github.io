@@ -15,7 +15,11 @@ import {
 	CAMERA_LOOK_AT_Z,
 } from "@/constants";
 
-export const CameraRig: React.FC = ({ jellyfishRef }) => {
+type JellyfishRef = React.RefObject<THREE.Object3D>;
+
+export const CameraRig: React.FC<{ jellyfishRef?: JellyfishRef }> = ({
+	jellyfishRef,
+}) => {
 	const cameraRef = useRef<THREE.PerspectiveCamera>(null!);
 	const { targetVector } = useAppContext();
 

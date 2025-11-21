@@ -23,7 +23,7 @@ import {
 } from "@/constants";
 
 export default function Scene() {
-	const jellyfishRef = useRef<THREE.Group>(null);
+	const jellyfishRef = useRef<THREE.Group>(new THREE.Group());
 	return (
 		<>
 			<LoadingScreen />
@@ -96,7 +96,6 @@ export default function Scene() {
 					<LuminescentParticles />
 					<AnchorChain />
 					<Model ref={jellyfishRef} position={[0, 0, 0]} scale={4} />
-
 					<PostProcessing />
 				</Suspense>
 			</Canvas>
