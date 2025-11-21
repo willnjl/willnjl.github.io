@@ -7,6 +7,7 @@ import React, {
 	ReactNode,
 } from "react";
 import * as THREE from "three";
+import { DRAG_VELOCITY_AMPLIFICATION } from "@/constants";
 
 interface MousePosition {
 	x: number;
@@ -97,6 +98,8 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 			clientY = (event as MouseEvent).clientY;
 		}
 		updatePosition(clientX, clientY);
+		// Amplify velocity only for drag events
+		mouseVelocity.multiplyScalar(DRAG_VELOCITY_AMPLIFICATION);
 	};
 
 	useEffect(() => {

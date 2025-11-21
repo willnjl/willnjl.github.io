@@ -1,3 +1,12 @@
+// ========================================
+// EVENT LISTENERS
+// ========================================
+
+/*
+ * Amplification factor for drag/mouse velocity
+ */
+export const DRAG_VELOCITY_AMPLIFICATION = 2;
+
 /**
  * Global project constants
  * Centralized configuration for easy tuning of visual effects and behaviors
@@ -284,12 +293,12 @@ export const CONTENT_LERP_SPEED = 0.01;
 /**
  * Content text - chromatic aberration intensity multiplier
  */
-export const CONTENT_CHROMATIC_ABERRATION_INTENSITY = 2;
+export const CONTENT_CHROMATIC_ABERRATION_INTENSITY = 1.25;
 
 /**
  * Content text - chromatic aberration max opacity
  */
-export const CONTENT_CHROMATIC_ABERRATION_MAX_OPACITY = 2;
+export const CONTENT_CHROMATIC_ABERRATION_MAX_OPACITY = 0.75;
 
 // ========================================
 // JELLYFISH MODEL
