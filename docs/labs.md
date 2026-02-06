@@ -18,6 +18,8 @@ Built to explore terminal-based productivity and efficient workflow management.
 ![Pomonote Screenshot](https://raw.githubusercontent.com/willnjl/pomonote/refs/heads/main/pomonote.png)
 _Pomonote_
 
+---
+
 ### Rust + WASM Snake
 
 **A classic game engine implementation in the browser.**
