@@ -36,7 +36,7 @@ _Snake WASM_
 ### ACF Layout Gen
 
 **A developer tool for WordPress workflow automation.**
-Quickly converts `acf-json` files into PHP block boilerplate, cutting down on repetitive manual setup.
+Quickly converts json ACF field data into PHP block boilerplate, cutting down on repetitive manual setup.
 
 - **Stack:** Node.js / PHP
 - **Focus:** Developer experience (DX) and automation.
