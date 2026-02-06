@@ -28,10 +28,8 @@ An experiment in compiling low-level code to the web to achieve high-performance
 - [View on GitHub](https://github.com/willnjl/Snake-Game-Rust-Wasm)
 - [Try it out](https://willnjl.github.io/Snake-Game-Rust-Wasm/)
 
-![Pomonote Screenshot](https://raw.githubusercontent.com/willnjl/pomonote/refs/heads/main/snake-wasm.png)
-_Pomonote_
-
----
+![Snake WASM Screenshot](https://github.com/willnjl/willnjl.github.io/blob/main/assets/snake-wasm.png?raw=true)
+_Snake WASM_
 
 ---
 
