@@ -13,6 +13,7 @@ Built to explore terminal-based productivity and efficient workflow management.
 
 - **Stack:** Rust / Ratatui
 - **Focus:** CLI UX, state management, and terminal rendering.
+- **Testing** Fully tested using Rust's built in unit testing tools.
 - [View on GitHub](https://github.com/willnjl/pomonote)
 
 ![Pomonote Screenshot](https://raw.githubusercontent.com/willnjl/pomonote/refs/heads/main/pomonote.png)
