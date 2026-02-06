@@ -1,6 +1,8 @@
 # 👋 Hi there! I'm Will.
 
-Experienced web developer working in **fast-paced environments** with **cutting-edge** web technologies. Solving complex problems and crafting exceptional user experiences.
+Experienced web developer working in **fast-paced environments** with **cutting-edge** web technologies.
+
+Solving complex problems and crafting exceptional user experiences.
 
 Based in Bristol, UK.
 

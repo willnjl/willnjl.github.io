@@ -1,12 +1,12 @@
 # About
 
-Full Stack Developer with an agency background, specializing in accessible UX implementation and complex technical challenges. Motivated by continuous learning and bringing high-quality ideas to fruition.
+Full Stack Developer with an agency background, specializing in building accessible, precise Web UX implementation and solving complex challenges. I'm motivated by a thirst for knowledge and by bringing ideas to fruition.
 
 ---
 
 ## Skills (A-Z)
 
-Here is broad but not exhaustive overview of my skills and experience over the years as a developer. Feel free to ask me about anything you can see here or indeed anything not listed. I'm always open to sharing knowledge and experience! You can also [See my work](work.md).
+Here is a broad but not exhaustive overview of my skills and experience over the years as a developer. Feel free to ask me about anything you can see here or indeed anything not listed. I'm always open to sharing knowledge and experience! You can also [See my work](work.md).
 
 ### AI Intelligence
 
