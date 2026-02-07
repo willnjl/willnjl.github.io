@@ -1,6 +1,6 @@
 # Labs
 
-This is a collection of experiments, side projects, and playgrounds where I explore new technologies, low-level programming, and performance-driven tools.
+This is a collection of experiments and side projects where I explore new technologies, low-level programming, and create tools to make my life easier.
 
 ---
 
@@ -21,7 +21,7 @@ _Pomonote_
 
 ---
 
-### Rust + WASM Snake
+<!-- ### Rust + WASM Snake
 
 **A classic game engine implementation in the browser.**
 An experiment in compiling low-level code to the web to achieve high-performance rendering and memory safety.
@@ -34,7 +34,7 @@ An experiment in compiling low-level code to the web to achieve high-performance
 ![Snake WASM Screenshot](https://github.com/willnjl/willnjl.github.io/blob/main/assets/snake-wasm.png?raw=true)
 _Snake WASM_
 
----
+--- -->
 
 ### ACF Layout Gen
 
