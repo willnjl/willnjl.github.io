@@ -96,3 +96,25 @@ body {
 		color: white;
 	}
 }
+
+.markdown-section code {
+	background-color: #2a2f35;
+}
+
+.github-corner svg {
+	fill: #324c66;
+	color: white;
+	opacity: 0.5;
+	&:hover {
+		transition: 0.2s ease-out;
+		opacity: 0.78;
+	}
+}
+
+.markdown-section blockquote {
+	// border: 1px solid;
+	p {
+		color: #bebdbd;
+		font-size: 1rem;
+	}
+}

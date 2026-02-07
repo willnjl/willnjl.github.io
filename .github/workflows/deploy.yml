@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Copy docs
+        run: cp -r docs public
+
       - name: Build
         run: npm run build
 
