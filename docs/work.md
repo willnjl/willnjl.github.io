@@ -2,7 +2,7 @@
 
 > These were mostly team projects completed in an agency environment. They are listed here to demonstrate the type of work I've been involved in and as a conversation starter.
 
-## SaaS & Enterprise Applications / Business Websites
+---
 
 **[AP Verify](https://verify.ap.org/)**
 
