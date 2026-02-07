@@ -1,10 +1,8 @@
 # Labs
 
-This is a collection of experiments and side projects where I explore new technologies, low-level programming, and create tools to make my life easier.
+This is a dedicated space for my side projects and DX tools. I use these to get under the hood and sharpen my skills with lower-level programming.
 
 ---
-
-## 🛠️ Featured Experiments
 
 ### Pomonote
 
