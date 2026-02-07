@@ -1,17 +1,68 @@
 # Work
 
-| Project / Link                                                       | Core Technology Stack                                                                               |
-| :------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
-| **[skeetfirst.im](https://skeetfirst.im/)**                          | Self started project, laravel. What's on guide to the Isle of Man.                                  |
-| **[AP Verify](https://verify.ap.org/)**                              | Sophisticated suite of AI tools. White-label SaaS Application for high-profile media organsiations. |
-| **[Talent International](https://www.talentinternational.com/)**     | Wordpress, React, Multinational website with Deep CRM integrations.                                 |
-| **[RTC Consulting](https://www.rtc.co.uk/)**                         | NextJS, Headless Wordpress, GraphQL                                                                 |
-| **[Megawatt](https://megawatt.game/)**                               | Wordpress site advanced custom membership features and sales integrations.                          |
-| **[TravelWest.info](https://journeyplanner.travelwest.info/?ui=ui)** | NextJS, Zustand, Typescript, OpenLayer Maps.                                                        |
+> These were mostly team projects completed in an agency environment. They are listed here to demonstrate the type of work I've been involved in and as a conversation starter.
+
+## SaaS & Enterprise Applications / Business Websites
+
+**[AP Verify](https://verify.ap.org/)**
+
+`Laravel` `React` `AI Tools` `SaaS`
+
+Sophisticated suite of AI tools. White-label SaaS Application for high-profile media organisations.
+
+![AP Verify Screenshot](https://github.com/willnjl/willnjl.github.io/blob/main/assets/ap-verify.png?raw=true)
 
 ---
 
-_A quick note: these were mostly team projects completed in an agency environment. They are listed here to demonstrate the type of work I've been involved in and as a conversation starter._
+**[skeetfirst.im](https://skeetfirst.im/)**
+
+`Laravel`
+
+Self-started project. What's on guide to the Isle of Man.
+
+![skeetfirst.im Screenshot](https://github.com/willnjl/willnjl.github.io/blob/main/assets/skeetfirst.png?raw=true)
+
+---
+
+**[TravelWest.info](https://journeyplanner.travelwest.info/?ui=ui)**
+
+`NextJS` `Zustand` `Typescript` `OpenLayer Maps`
+
+Interactive journey planner with custom mapping functionality.
+
+![TravelWest Screenshot](https://github.com/willnjl/willnjl.github.io/blob/main/assets/travel-west.png?raw=true)
+
+---
+
+**[Talent International](https://www.talentinternational.com/)**
+
+`Wordpress` `React` `Multi CRM Integration`
+
+Multinational website with Deep CRM integrations.
+
+![Talent International Screenshot](https://github.com/willnjl/willnjl.github.io/blob/main/assets/talent.png?raw=true)
+
+---
+
+**[Megawatt](https://megawatt.game/)**
+
+`Wordpress` `Custom Membership` `Sales Integration`
+
+Gaming platform with advanced custom membership features and sales integrations.
+
+![Megawatt Screenshot](https://github.com/willnjl/willnjl.github.io/blob/main/assets/megawatt.png?raw=true)
+
+---
+
+**[RTC Consulting](https://www.rtc.co.uk/)**
+
+`NextJS` `Headless Wordpress` `GraphQL`
+
+Modern headless CMS architecture with GraphQL API.
+
+![RTC Consulting Screenshot](https://github.com/willnjl/willnjl.github.io/blob/main/assets/rt-consulting.png?raw=true)
+
+---
 
 ---
 
