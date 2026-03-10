@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "swiper/css";
+@import "swiper/navigation";
 @import "./history";
 
 @theme {
@@ -21,5 +22,11 @@ body {
 .content {
 	p:not(last-child) {
 		@apply mb-3;
+	}
+}
+
+button {
+	svg {
+		width: 100%;
 	}
 }
