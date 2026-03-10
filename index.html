@@ -1,13 +1,54 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>portfolio</title>
+		<link rel="preconnect" href="https://fonts.bunny.net" />
+		<link
+			href="https://fonts.bunny.net/css?family=anonymous-pro:400,400i,700,700i"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="bg-rose-50">
+		<div id="app"></div>
+		<header class="py-5 absolute top-0 left-0 w-full">
+			<div class="wrap">
+				<div class="flex gap-[6vw]">
+					<div>
+						<h1 class="text-xl md:text-3xl font-semibold">Will Leighton</h1>
+						<p class="max-md:text-sm">Full-Stack Developer</p>
+					</div>
+					<ul class="ml-auto text-sm">
+						<li>
+							<a href="#contact">Contact</a>
+						</li>
+						<li>
+							<a href="#contact">About</a>
+						</li>
+						<li>
+							<a href="#contact">Work</a>
+						</li>
+						<li>
+							<a href="#playground">Playground</a>
+						</li>
+					</ul>
+					<div class="text-sm hidden md:block">
+						<a href="mailto:will_leighton@outlook.com" class="underline"
+							>will_leighton@outlook.com</a
+						>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="pt-10 h-svh min-h-44 relative">
+			<div class="absolute bottom-0 left-0 w-full py-5">
+				<div class="wrap">
+					<h2 class="text-scaled xl:text-7xl">Hi there! I'm Will 👋</h2>
+				</div>
+			</div>
+		</section>
+		<script type="module" src="/src/main.ts"></script>
+	</body>
 </html>
