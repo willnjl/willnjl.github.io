@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "swiper/css";
+@import "./history";
 
 @theme {
 	--font-sans: "Anonymous Pro", monospace;
