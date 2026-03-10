@@ -1,10 +1,24 @@
 @import "tailwindcss";
+@import "swiper/css";
 
 @theme {
 	--font-sans: "Anonymous Pro", monospace;
-	--text-scaled: 6vw;
+	--text-scaled-lg: 6vw;
+	--text-scaled: 4vw;
 }
-
+body {
+	overflow-x: hidden;
+}
 .wrap {
 	@apply max-w-6xl mx-auto px-5;
+}
+
+.test {
+	border: 1px solid red;
+}
+
+.content {
+	p:not(last-child) {
+		@apply mb-3;
+	}
 }
