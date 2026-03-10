@@ -29,3 +29,11 @@ button {
 		width: 100%;
 	}
 }
+
+.dissolve {
+	filter: blur(14px);
+	transition: filter 0.5s ease-out;
+}
+.dissolve-active {
+	filter: blur(0px);
+}
