@@ -1,0 +1,60 @@
+#ticker {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0rem;
+	overflow: hidden;
+	transform: rotate(0.4deg) scale(1);
+}
+
+.ticker-row {
+	overflow: hidden;
+	padding-block: 0.55rem;
+}
+
+.ticker-marquee {
+	--textWidth: 0px;
+	--ticker-duration: 100s;
+	--ticker-delay: 0s;
+	--ticker-direction: normal;
+	overflow: hidden;
+	line-height: 1;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	white-space: nowrap;
+	color: color-mix(in srgb, #2f2f2f 75%, #8f9f3d 25%);
+}
+
+.ticker-marquee__content {
+	display: inline-flex;
+	align-items: center;
+	min-width: max-content;
+	will-change: transform;
+	animation: ticker-scroll var(--ticker-duration) linear infinite;
+	animation-delay: var(--ticker-delay);
+	animation-direction: var(--ticker-direction);
+}
+
+.ticker-marquee__text,
+.ticker-marquee__copy {
+	padding-inline-end: 1.5rem;
+}
+
+.ticker-marquee__text span:hover {
+}
+
+.ticker-marquee__copies {
+	display: inline-flex;
+	align-items: center;
+}
+
+@keyframes ticker-scroll {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(calc(var(--textWidth) * -1));
+	}
+}
