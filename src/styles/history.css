@@ -12,7 +12,7 @@
 			position: absolute;
 			top: 0;
 			left: 0;
-			transform: translate(-50px);
+			transform: translate(-30px);
 		}
 
 		&::after {
@@ -29,8 +29,17 @@
 			position: absolute;
 			top: 0;
 			left: 0;
-			transform: translate(calc(-50% + -48px));
+			transform: translate(calc(-50% + -28px));
 			transform-origin: center;
+		}
+
+		@media screen and (min-width: 90rem) {
+			&::before {
+				transform: translate(-50px);
+			}
+			&::after {
+				transform: translate(calc(-50% + -48px));
+			}
 		}
 	}
 
