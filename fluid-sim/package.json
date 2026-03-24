@@ -1,0 +1,15 @@
+{
+  "name": "fluid-sim",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Fluid simulation library — WebAssembly + WebGL, fully self-contained.",
+  "main": "./fluid-sim.js",
+  "module": "./fluid-sim.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./fluid-sim.js",
+      "types": "./index.d.ts"
+    }
+  }
+}
