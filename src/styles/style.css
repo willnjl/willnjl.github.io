@@ -31,10 +31,14 @@ button {
 	}
 }
 
-.dissolve {
+/* .dissolve {
 	filter: blur(14px);
 	transition: filter 0.5s ease-out;
 }
 .dissolve-active {
 	filter: blur(0px);
+} */
+
+.invert-text {
+	@apply invert mix-blend-difference;
 }
