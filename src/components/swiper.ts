@@ -4,7 +4,7 @@ import { Navigation } from "swiper/modules";
 [].forEach.call(
 	document.querySelectorAll(".swiper-work"),
 	(item: HTMLElement) => {
-		const swiper = new Swiper(item, {
+		new Swiper(item, {
 			modules: [Navigation],
 			navigation: {
 				nextEl: ".swiper-nav-next",
