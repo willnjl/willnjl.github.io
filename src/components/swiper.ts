@@ -10,11 +10,12 @@ import { Navigation } from "swiper/modules";
 				nextEl: ".swiper-nav-next",
 				prevEl: ".swiper-nav-prev",
 			},
-			slidesPerView: "auto",
+			slidesPerView: 1,
 			spaceBetween: 4,
 			breakpoints: {
-				1025: {
-					spaceBetween: 15,
+				640: {
+					slidesPerView: "auto",
+					spaceBetween: 10,
 				},
 			},
 		});

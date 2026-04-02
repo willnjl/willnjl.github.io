@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Fluid Simulator</title>
+		<link rel="preconnect" href="https://fonts.bunny.net" />
+		<link
+			href="https://fonts.bunny.net/css?family=anonymous-pro:400,400i,700,700i"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="bg-sky-50">
+		<main class="max-w-lg mx-auto pt-12 pb-32">
+			<div class="fluid-sim-description">
+				<h2 class="text-2xl font-bold mb-4">High-Performance Fluid Dynamics</h2>
+
+				<p class="">
+					This engine achieves a consistent <strong>75 FPS</strong> by
+					offloading heavy numerical analysis to
+					<strong>WebAssembly (WASM)</strong>. By compiling
+					<strong>Rust</strong> to WASM, the simulation executes at near-native
+					speeds, allowing the browser to process the thousands of linear
+					operations required for every single.
+				</p>
+
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 gap-4 my-10 bg-sky-900 p-4 rounded-lg"
+				>
+					<div>
+						<h3 class="text-sm uppercase tracking-wider text-olive-50 mb-2">
+							Computational Load
+						</h3>
+						<p class="text-xs text-olive-50">
+							On a typical 128 &times; 128 grid, the solver manages over
+							<strong>16,000 cells</strong>. With 20 iterations per project and
+							diffuse step to ensure numerical stability, the Rust core performs
+							over <strong>1.3 million calculations per frame</strong>.
+						</p>
+					</div>
+					<div>
+						<h3 class="text-sm uppercase tracking-wider text-olive-50 mb-2">
+							Rendering Pipeline
+						</h3>
+						<p class="text-xs text-olive-50">
+							Instead of slow DOM updates, the density field is passed as a
+							<strong>Raw Float32 Array</strong> directly to a
+							<strong>WebGL Fragment Shader</strong>. This allows for per-pixel
+							interpolation and hardware-accelerated color mapping at zero CPU
+							cost.
+						</p>
+					</div>
+				</div>
+
+				<p class="mb-4">
+					The simulation solves the <strong>Navier-Stokes equations</strong> for
+					incompressible flow. The mathematical core relies on four primary
+					stages executed in a tight loop:
+				</p>
+
+				<ul class="space-y-5 mb-12">
+					<li>
+						<strong>Diffusion:</strong> Uses the <em>Gauss-Seidel</em> iterative
+						method to solve the heat equation, preventing the fluid from
+						becoming a "checkerboard" of isolated values.
+					</li>
+					<li>
+						<strong>Advection:</strong> Implements a
+						<em>Linear Back-Trace</em> technique to move density through the
+						velocity field, maintaining fluid momentum while minimizing
+						numerical dissipation.
+					</li>
+					<li>
+						<strong>Incompressible Projection:</strong> A critical step that
+						solves a <em>Poisson Equation</em> to force the velocity field to be
+						mass-conserving, creating realistic vortices and swirls.
+					</li>
+					<li>
+						<strong>WASM-to-GPU Bridge:</strong> Velocity and density data are
+						updated in Rust memory and mapped to a WebGL texture buffer,
+						bypassing the overhead of JavaScript's garbage collector.
+					</li>
+				</ul>
+
+				<p
+					class="mb-3 font-semibold text-olive-500 border-l-4 border-olive-600 pl-3"
+				>
+					Interactive: Move the mouse around the canvas to inject momentum.
+				</p>
+			</div>
+			<div class="pt-4">
+				<p id="hud"></p>
+				<canvas class="aspect-square w-full fluid-sim border bg-white"></canvas>
+			</div>
+		</main>
+		<script type="module" src="/src/pages/fluid.ts"></script>
+	</body>
+</html>

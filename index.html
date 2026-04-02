@@ -39,6 +39,7 @@
 							>will_leighton@outlook.com</a
 						>
 					</div>
+					<div></div>
 				</div>
 			</div>
 		</header>
@@ -86,8 +87,8 @@
 					involved in and as a conversation starter
 				</p>
 			</div>
-			<div class="wrap mb-32 z-20 relative">
-				<div class="swiper-work swiper-container">
+			<div class="wrap mb-32 z-20 relative overflow-hidden">
+				<div class="swiper-work swiper-container py-2">
 					<div class="flex justify-end mb-4">
 						<button
 							class="w-10 fill-sky-600 hover:opacity-35 relative cursor-pointer swiper-nav-prev disabled:pointer-events-none disabled:opacity-10 active:translate-0.5"
@@ -111,9 +112,11 @@
 					<ul class="swiper-wrapper">
 						<li
 							role="article"
-							class="max-w-96 border shadow-sm border-white rounded-3xl swiper-slide overflow-hidden bg-sky-50/50 backdrop-blur-sm"
+							class="sm:max-w-96 border shadow-sm border-white rounded-3xl swiper-slide overflow-hidden bg-sky-50/50 backdrop-blur-sm"
 						>
-							<div class="aspect-video bg-sky-100/50"></div>
+							<div class="aspect-video bg-sky-100/50">
+								<img src="/assets/skeetfirst.png" alt="skeetfirst" />
+							</div>
 							<div class="p-4 text-sm">
 								<strong class="text-olive-500 font-medium text-xs block mb-1"
 									>Project:</strong
@@ -144,7 +147,9 @@
 							role="article"
 							class="max-w-96 border shadow-sm border-white rounded-3xl swiper-slide overflow-hidden bg-sky-50/50 backdrop-blur-sm"
 						>
-							<div class="aspect-video bg-sky-100/50"></div>
+							<div class="aspect-video bg-sky-100/50">
+								<img src="/assets/talent.png" alt="skeetfirst" />
+							</div>
 							<div class="p-4 text-sm">
 								<strong class="text-olive-500 font-medium text-xs block mb-1"
 									>Project:</strong
@@ -180,7 +185,9 @@
 							role="article"
 							class="max-w-96 border shadow-sm border-white rounded-3xl swiper-slide overflow-hidden bg-sky-50/50 backdrop-blur-sm"
 						>
-							<div class="aspect-video bg-sky-100/50"></div>
+							<div class="aspect-video bg-sky-100/50">
+								<img src="/assets/travel-west.png" alt="skeetfirst" />
+							</div>
 							<div class="p-4 text-sm">
 								<strong class="text-olive-500 font-medium text-xs block mb-1"
 									>Project:</strong
@@ -213,7 +220,9 @@
 							role="article"
 							class="max-w-96 border shadow-sm border-white rounded-3xl swiper-slide overflow-hidden bg-sky-50/50 backdrop-blur-sm"
 						>
-							<div class="aspect-video bg-sky-100/50"></div>
+							<div class="aspect-video bg-sky-100/50">
+								<img src="/assets/ap-verify.png" alt="skeetfirst" />
+							</div>
 							<div class="p-4 text-sm">
 								<strong class="text-olive-500 font-medium text-xs block mb-1"
 									>Project:</strong
@@ -247,7 +256,9 @@
 							role="article"
 							class="max-w-96 border shadow-sm border-white rounded-3xl swiper-slide overflow-hidden bg-sky-50/50 backdrop-blur-sm"
 						>
-							<div class="aspect-video bg-sky-100/50"></div>
+							<div class="aspect-video bg-sky-100/50">
+								<img src="/assets/megawatt.png" alt="skeetfirst" />
+							</div>
 							<div class="p-4 text-sm">
 								<strong class="text-olive-500 font-medium text-xs block mb-1"
 									>Project:</strong
@@ -282,7 +293,9 @@
 							role="article"
 							class="max-w-96 border shadow-sm border-white rounded-3xl swiper-slide overflow-hidden bg-sky-50/50 backdrop-blur-sm"
 						>
-							<div class="aspect-video bg-sky-100/50"></div>
+							<div class="aspect-video bg-sky-100/50">
+								<img src="/assets/rt-consulting.png" alt="skeetfirst" />
+							</div>
 							<div class="p-4 text-sm">
 								<strong class="text-olive-500 font-medium text-xs block mb-1"
 									>Project:</strong
@@ -314,6 +327,50 @@
 					</ul>
 				</div>
 			</div>
+			<!-- Interesting Projects -->
+			<div class="wrap mb-32">
+				<h4 class="text-3xl mb-8 font-bold">Techical Playground</h4>
+
+				<ul class="grid gap-5 sm:grid-cols-2">
+					<li
+						role="article"
+						class="order shadow-sm border-white rounded-3xl bg-sky-50/50 backdrop-blur-sm pl-4 py-6"
+					>
+						<a href="/fluid.html" class="text-xl font-semibold">
+							Real-Time Fluid Dynamics
+						</a>
+						<ul class="flex gap-2 py-2">
+							<li class="text-[10px] uppercase tracking-widest">Rust</li>
+							<li class="text-[10px] uppercase tracking-widest">WASM</li>
+							<li class="text-[10px] uppercase tracking-widest">WebGL</li>
+						</ul>
+						<p class="mt-1 mb-2 text-sm max-w-2xl">
+							A custom Navier-Stokes solver written in Rust and compiled to
+							WASM. Processes over 1 million operations per frame at 75 FPS
+							using WebGL shaders.
+						</p>
+					</li>
+
+					<li
+						role="article"
+						class="order shadow-sm border-white rounded-3xl bg-sky-50/50 backdrop-blur-sm pl-4 py-6"
+					>
+						<a href="/threejs-project.html" class="text-xl font-semibold">
+							High Fidelity 3D Rendering
+						</a>
+						<ul class="flex gap-2 py-2">
+							<li class="text-[10px] uppercase tracking-widest">Three.js</li>
+							<li class="text-[10px] uppercase tracking-wides">GLSL</li>
+						</ul>
+						<p class="mt-1 mb-2 text-sm max-w-2xl">
+							An immersive 3D environment built with Three.js, featuring
+							physically-based rendering (PBR), custom lighting models, and
+							optimized scene graphs.
+						</p>
+					</li>
+				</ul>
+			</div>
+			<!-- Work History -->
 			<div class="wrap">
 				<h4 class="text-3xl mb-12 dissolve">Work History</h4>
 				<ul class="history-list max-xl:pl-9 max-w-2xl">
@@ -550,6 +607,7 @@
 					<div>
 						<h1 class="text-xl md:text-3xl font-semibold">Will Leighton</h1>
 						<p class="max-md:text-sm">Full-Stack Developer</p>
+						<div id="hud"></div>
 					</div>
 					<ul class="ml-auto text-sm">
 						<li>
@@ -570,7 +628,6 @@
 							>will_leighton@outlook.com</a
 						>
 					</div>
-					<span id="hud-fps">0</span>
 				</div>
 			</div>
 		</footer>
