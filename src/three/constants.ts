@@ -91,7 +91,7 @@ export const DOF_FOCUS_DISTANCE = 0.1;
 /**
  * Focal length for depth of field effect
  */
-export const DOF_FOCAL_LENGTH = 60;
+export const DOF_FOCAL_LENGTH = 0.05;
 
 /**
  * Bokeh scale for depth of field blur

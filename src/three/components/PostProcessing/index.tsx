@@ -77,7 +77,7 @@ export default function PostProcessing() {
 	});
 
 	return (
-		<EffectComposer>
+		<EffectComposer multisampling={0}>
 			{/* Depth of field for atmospheric depth */}
 			<DepthOfField
 				focusDistance={DOF_FOCUS_DISTANCE}
