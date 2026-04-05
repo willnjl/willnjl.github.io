@@ -10,6 +10,6 @@ export default () => (
 		<ScreenMoveIndicator />
 		<Scene />
 		<EnterMessage />
-		<BlurLayer />
+		{/* <BlurLayer /> */}
 	</div>
 );

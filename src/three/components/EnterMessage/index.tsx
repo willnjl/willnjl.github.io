@@ -15,7 +15,7 @@ export default () => {
 	const ref = useRef<HTMLDivElement>(null);
 	const current = useRef(new THREE.Vector3(0, 0, 0));
 
-	const action = isMobile ? "'Tap' to proceed" : "Press 'Enter' to proceed";
+	// const action = isMobile ? "'Tap' to proceed" : "Press 'Enter' to proceed";
 
 	useEffect(() => {
 		const animate = () => {
@@ -56,8 +56,14 @@ export default () => {
 	return (
 		<div className="enter-message" ref={ref}>
 			<div className="wrap">
-				<h1>Will Leighton</h1>
-				<p>{action}</p>
+				<ul>
+					<li>Three.js</li>
+					<li>React</li>
+					<li>GLTF Model Rendering</li>
+					<li>Shaders</li>
+					<li>Post Processing</li>
+					<li>Particle System</li>
+				</ul>
 			</div>
 		</div>
 	);

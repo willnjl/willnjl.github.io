@@ -159,7 +159,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 			window.addEventListener("mousedown", handleMouseDown);
 			window.addEventListener("mousemove", handleMouseMove);
 			window.addEventListener("mouseup", handleMouseUp);
-			window.addEventListener("keydown", handleKeyDown);
+			// window.addEventListener("keydown", handleKeyDown);
 		};
 
 		const timeoutId = setTimeout(addEventListeners, 2000);
@@ -171,7 +171,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 			window.removeEventListener("mousedown", handleMouseDown);
 			window.removeEventListener("mousemove", handleMouseMove);
 			window.removeEventListener("mouseup", handleMouseUp);
-			window.removeEventListener("keydown", handleKeyDown);
+			// window.removeEventListener("keydown", handleKeyDown);
 			clearTimeout(timeoutId);
 		};
 	}, []);
