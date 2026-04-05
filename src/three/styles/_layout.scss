@@ -1,0 +1,13 @@
+main {
+	position: relative;
+	z-index: 0;
+}
+
+.wrap {
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 0 2rem;
+	@media screen and (min-width: 600px) {
+		padding: 0 5rem;
+	}
+}

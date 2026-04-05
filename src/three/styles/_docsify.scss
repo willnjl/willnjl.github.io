@@ -1,0 +1,129 @@
+div#app:empty::before {
+	content: "" !important;
+}
+
+.sidebar-toggle span {
+	background-color: var(--theme-color);
+}
+
+.sidebar,
+.sidebar-toggle,
+body {
+	background-color: var(--bg-color) !important;
+}
+.sidebar,
+.sidebar ul li a,
+.content {
+	color: var(--text-color);
+}
+
+.content {
+	h1,
+	h2,
+	h3,
+	h4,
+	strong,
+	ul,
+	p {
+		&,
+		* {
+			color: var(--theme-color);
+		}
+		font-weight: 600;
+		line-height: var(--line-height);
+	}
+
+	li > ul {
+		padding-top: 1rem;
+	}
+	li:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+}
+
+.section-link {
+	font-size: var(--font-size);
+}
+
+.app-name {
+	margin-bottom: 1.5rem !important;
+}
+
+.sidebar > h1 {
+	text-align: left;
+	margin: 0 0 0 15px;
+}
+
+.markdown-section hr {
+	border-bottom: 1px solid #324c66;
+}
+
+.sidebar-nav a[target="_blank"] {
+	&::after {
+		content: "🔗";
+		fill: white;
+		font-size: 0.8rem;
+		margin-left: 0.5rem;
+	}
+}
+
+.markdown-section p.tip,
+.markdown-section tr:nth-child(2n) {
+	background-color: transparent;
+}
+
+[data-page="work.md"] {
+	td,
+	tr {
+		border: 0;
+	}
+	@media screen and (max-width: 1000px) {
+		td {
+			font-size: 0.75rem;
+		}
+	}
+	td:nth-child(odd) {
+		border-right: 1px solid rgb(60, 80, 97);
+	}
+
+	tbody tr {
+		border-top: 1px solid rgb(60, 80, 97);
+	}
+
+	thead th {
+		border: 0;
+		border-bottom: 1px solid rgb(60, 80, 97);
+		color: white;
+	}
+}
+
+.markdown-section code {
+	background-color: #2a2f35;
+}
+
+.github-corner svg {
+	fill: #324c66;
+	color: white;
+	opacity: 0.5;
+	&:hover {
+		transition: 0.2s ease-out;
+		opacity: 0.78;
+	}
+}
+
+.markdown-section blockquote {
+	// border: 1px solid;
+	p {
+		color: #bebdbd;
+		font-size: 1rem;
+	}
+}
+
+.sidebar > h1 img {
+	display: block;
+	width: 6rem;
+	border-radius: 100%;
+	overflow: hidden;
+	border: 1px solid var(--theme-color);
+	margin: 0 auto;
+}
