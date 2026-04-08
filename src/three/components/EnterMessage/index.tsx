@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import "./EnterMessage.scss";
 import { useAppContext } from "@/three/context/AppContext";
 import * as THREE from "three";
@@ -11,7 +11,7 @@ import {
 } from "@/three/constants";
 
 export default () => {
-	const { mouseVelocity, isMobile } = useAppContext();
+	const { mouseVelocity } = useAppContext();
 	const ref = useRef<HTMLDivElement>(null);
 	const current = useRef(new THREE.Vector3(0, 0, 0));
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { LOADING_PHRASES } from "@/three/constants";
 
 export default function LoadingScreen() {

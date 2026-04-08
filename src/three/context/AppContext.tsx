@@ -87,7 +87,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 	};
 
 	const onTap = () => setIsClosed(true);
-	const onDrag = (dx: number, dy: number, event: TouchEvent | MouseEvent) => {
+	const onDrag = (dx: number, dy: number, _event: TouchEvent | MouseEvent) => {
 		if (Math.abs(dx) > 0 || Math.abs(dy) > 0) {
 			mouseVelocity.multiplyScalar(DRAG_VELOCITY_AMPLIFICATION);
 		}
@@ -141,16 +141,16 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 			mouseDown = false;
 		};
 
-		const handleKeyDown = (e: KeyboardEvent) => {
-			if (
-				e.key === "Enter" ||
-				e.key === "Escape" ||
-				e.code === "Space" ||
-				e.key === " "
-			) {
-				setIsClosed(true);
-			}
-		};
+		// const handleKeyDown = (e: KeyboardEvent) => {
+		// 	if (
+		// 		e.key === "Enter" ||
+		// 		e.key === "Escape" ||
+		// 		e.code === "Space" ||
+		// 		e.key === " "
+		// 	) {
+		// 		setIsClosed(true);
+		// 	}
+		// };
 
 		const addEventListeners = () => {
 			window.addEventListener("touchstart", handleTouchStart);

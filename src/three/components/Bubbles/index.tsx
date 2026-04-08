@@ -35,7 +35,15 @@ export const Bubbles: React.FC<BubbleProps> = ({
 
 	// Generate random initial positions and velocities for each bubble
 	const particles = useMemo(() => {
-		const temp = [];
+		const temp: Array<{
+			position: THREE.Vector3;
+			velocity: THREE.Vector3;
+			scale: number;
+			wobble: number;
+			wobbleSpeed: number;
+			angle: number;
+			distanceFromCenter: number;
+		}> = [];
 		for (let i = 0; i < count; i++) {
 			// Spread bubbles evenly in all directions, avoiding the center area
 			const angle = Math.random() * Math.PI * 2;
@@ -71,7 +79,7 @@ export const Bubbles: React.FC<BubbleProps> = ({
 		return temp;
 	}, [count, radius]);
 
-	useFrame((state) => {
+	useFrame(() => {
 		if (!meshRef.current) return;
 
 		particles.forEach((particle, i) => {

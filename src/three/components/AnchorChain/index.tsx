@@ -1,31 +1,33 @@
 import { useRef, useMemo } from "react";
-import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
 import {
 	ANCHOR_CHAIN_COLOR,
 	ANCHOR_CHAIN_START_Y,
-	ANCHOR_CHAIN_END_Y,
 	ANCHOR_CHAIN_LINK_COUNT,
 	ANCHOR_CHAIN_LINK_RADIUS,
 	ANCHOR_CHAIN_LINK_THICKNESS,
 	ANCHOR_CHAIN_POSITION,
 } from "@/three/constants";
 
+type LinkT = {
+	position: THREE.Vector3;
+	rotation: THREE.Euler;
+	isVertical: boolean;
+	index: number;
+};
+
 export const AnchorChain: React.FC = () => {
 	const startY = ANCHOR_CHAIN_START_Y;
-	const endY = ANCHOR_CHAIN_END_Y;
 	const linkCount = ANCHOR_CHAIN_LINK_COUNT;
 	const linkRadius = ANCHOR_CHAIN_LINK_RADIUS;
 	const linkThickness = ANCHOR_CHAIN_LINK_THICKNESS;
 	const position = ANCHOR_CHAIN_POSITION;
 
 	const groupRef = useRef<THREE.Group>(null!);
-	const timeRef = useRef(0);
 
 	const chainLinks = useMemo(() => {
-		const links = [];
-		const totalHeight = startY - endY;
+		const links: LinkT[] = [];
 		const linkLength = linkRadius * 2; // Length of each link
 		const spacing = linkLength * 1.7; // Slight overlap to connect links
 

@@ -1,6 +1,5 @@
 import { useRef, useMemo } from "react";
-import { useLoader } from "@react-three/fiber";
-import { Texture, CanvasTexture } from "three";
+import { CanvasTexture } from "three";
 import {
 	LUMINESCENT_PARTICLE_COUNT,
 	LUMINESCENT_PARTICLE_COLOR,
@@ -33,8 +32,8 @@ export const LuminescentParticles: React.FC = () => {
 	const opacity = LUMINESCENT_PARTICLE_OPACITY;
 	const meshRef = useRef<THREE.Points>(null!);
 	const particles = useMemo(() => {
-		const positions = [];
-		const colors = [];
+		const positions: number[] = [];
+		const colors: number[] = [];
 		for (let i = 0; i < count; i++) {
 			const x = (Math.random() - 0.5) * 16;
 			const y = (Math.random() - 0.5) * 16;

@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
 import "./ScreenMoveIndicator.scss";
 import { useAppContext } from "@/three/context/AppContext";
 
 const ScreenMoveIndicator: React.FC = () => {
 	const { isMobile } = useAppContext();
-	const [visible, setVisible] = useState(true);
 
 	const message = isMobile ? "Move around with your finger" : "Move around";
 	return (
