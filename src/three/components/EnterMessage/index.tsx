@@ -55,16 +55,7 @@ export default () => {
 
 	return (
 		<div className="enter-message" ref={ref}>
-			<div className="wrap">
-				<ul>
-					<li>Three.js</li>
-					<li>React</li>
-					<li>GLTF Model Rendering</li>
-					<li>Shaders</li>
-					<li>Post Processing</li>
-					<li>Particle System</li>
-				</ul>
-			</div>
+			<div className="wrap"></div>
 		</div>
 	);
 };

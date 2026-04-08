@@ -18,7 +18,7 @@ if (!isMobile)
 			maxDensity: 35,
 			mouseEffectAmplitude: 0.5,
 			mouseEffectRadius: 4,
-			colorProfile: "greyscale",
+			colorProfile: "heatmap",
 			canvas: document.querySelector(".fluid-sim") as HTMLCanvasElement,
 		});
 	})();

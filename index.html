@@ -13,6 +13,7 @@
 	</head>
 	<body class="bg-sky-50">
 		<div id="app"></div>
+
 		<header class="py-5 absolute top-0 left-0 w-full z-10">
 			<div class="wrap">
 				<div class="flex gap-[6vw]">
@@ -20,26 +21,46 @@
 						<h1 class="text-xl md:text-3xl font-semibold">Will Leighton</h1>
 						<p class="max-md:text-sm">Full-Stack Developer</p>
 					</div>
-					<ul class="ml-auto text-sm">
+					<nav class="ml-auto">
+						<ul class="ml-auto text-sm">
+							<li>
+								<a class="underline" href="#about">About</a>
+							</li>
+							<li>
+								<a class="underline" href="#work">Work</a>
+							</li>
+							<li>
+								<a class="underline" href="#playground">Playground</a>
+							</li>
+							<li>
+								<a class="underline" href="#work-history">Employment History</a>
+							</li>
+						</ul>
+					</nav>
+					<ul class="text-sm hidden md:block">
 						<li>
-							<a href="#about">About</a>
+							<a href="mailto:will_leighton@outlook.com" class="underline"
+								>will_leighton@outlook.com</a
+							>
 						</li>
 						<li>
-							<a href="#work">Work</a>
+							<a
+								target="_blank"
+								href="https://www.linkedin.com/in/will-leighton-62899a1b7/"
+								class="underline"
+								>Linkedin</a
+							>
 						</li>
-						<!-- <li>
-							<a href="#interactive">Interactive</a>
-						</li> -->
 						<li>
-							<a href="#contact">Contact</a>
+							<a
+								target="_blank"
+								download=""
+								href="/assets/cv.pdf"
+								class="underline"
+								>Curriculum vitae</a
+							>
 						</li>
 					</ul>
-					<div class="text-sm hidden md:block">
-						<a href="mailto:will_leighton@outlook.com" class="underline"
-							>will_leighton@outlook.com</a
-						>
-					</div>
-					<div></div>
 				</div>
 			</div>
 		</header>
@@ -61,7 +82,7 @@
 			</div>
 		</section>
 		<!-- ABOUT -->
-		<section id="about" class="h-187.5 max-h-screen pt-12 relative">
+		<section id="about" class="pb-12 lg:pb-60 pt-12 relative">
 			<div class="wrap relative dissolve">
 				<h3 class="text-2xl md:text-scaled mb-4">About</h3>
 				<div class="content">
@@ -78,20 +99,20 @@
 			</div>
 		</section>
 		<!-- Work -->
-		<section id="work" class="relative overflow-hidden">
+		<section id="work" class="relative">
 			<div class="wrap relative mb-6 dissolve">
 				<h3 class="text-2xl md:text-scaled mb-6">Work</h3>
-				<p class="pl-4 border-l-3 border-slate-500 mb-6">
+				<p class="pl-4 border-l-3 border-sky-700 mb-6 content">
 					This list includes team projects completed in an agency environment.
 					They are listed here to demonstrate the type of work I've been
 					involved in and as a conversation starter
 				</p>
 			</div>
-			<div class="wrap mb-32 z-20 relative overflow-hidden">
+			<div class="wrap mb-12 lg:mb-32 z-20 relative">
 				<div class="swiper-work swiper-container py-2">
 					<div class="flex justify-end mb-4">
 						<button
-							class="w-10 fill-sky-600 hover:opacity-35 relative cursor-pointer swiper-nav-prev disabled:pointer-events-none disabled:opacity-10 active:translate-0.5"
+							class="w-10 fill-sky-600 hover:opacity-60 relative cursor-pointer swiper-nav-prev disabled:pointer-events-none disabled:opacity-10 active:translate-0.5"
 						>
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
 								<path
@@ -100,7 +121,7 @@
 							</svg>
 						</button>
 						<button
-							class="w-10 fill-sky-600 hover:opacity-35 relative cursor-pointer swiper-nav-next disabled:pointer-events-none disabled:opacity-10 active:translate-0.5"
+							class="w-10 fill-sky-600 hover:opacity-60 relative cursor-pointer swiper-nav-next disabled:pointer-events-none disabled:opacity-10 active:translate-0.5"
 						>
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
 								<path
@@ -137,9 +158,11 @@
 									>Topics:</strong
 								>
 								<ul class="grid grid-cols-2 mb-2 gap-2">
-									<li>Startup Venure</li>
-									<li>Laravel</li>
-									<li>Design</li>
+									<li class="text-[10px] uppercase tracking-widest">
+										Startup Venure
+									</li>
+									<li class="text-[10px] uppercase tracking-widest">Laravel</li>
+									<li class="text-[10px] uppercase tracking-widest">Design</li>
 								</ul>
 							</div>
 						</li>
@@ -172,12 +195,20 @@
 									>Topics:</strong
 								>
 								<ul class="grid grid-cols-2 mb-2 gap-2">
-									<li>Wordpress</li>
-									<li>React</li>
-									<li>Typescript</li>
-									<li>PHP</li>
-									<li>Multi CRM Integration</li>
-									<li>Wordpress Plugin Development</li>
+									<li class="text-[10px] uppercase tracking-widest">
+										Wordpress
+									</li>
+									<li class="text-[10px] uppercase tracking-widest">React</li>
+									<li class="text-[10px] uppercase tracking-widest">
+										Typescript
+									</li>
+									<li class="text-[10px] uppercase tracking-widest">PHP</li>
+									<li class="text-[10px] uppercase tracking-widest">
+										Multi CRM Integration
+									</li>
+									<li class="text-[10px] uppercase tracking-widest">
+										Wordpress Plugin Development
+									</li>
 								</ul>
 							</div>
 						</li>
@@ -210,9 +241,13 @@
 									>Topics:</strong
 								>
 								<ul class="grid grid-cols-2 mb-2 gap-2">
-									<li>NextJS</li>
-									<li>Typescript</li>
-									<li>OpenLayer Maps</li>
+									<li class="text-[10px] uppercase tracking-widest">NextJS</li>
+									<li class="text-[10px] uppercase tracking-widest">
+										Typescript
+									</li>
+									<li class="text-[10px] uppercase tracking-widest">
+										OpenLayer Maps
+									</li>
 								</ul>
 							</div>
 						</li>
@@ -246,9 +281,11 @@
 									>Topics:</strong
 								>
 								<ul class="grid grid-cols-2 mb-2 gap-2">
-									<li>Laravel</li>
-									<li>AI Tools</li>
-									<li>SaaS</li>
+									<li class="text-[10px] uppercase tracking-widest">Laravel</li>
+									<li class="text-[10px] uppercase tracking-widest">
+										AI Tools
+									</li>
+									<li class="text-[10px] uppercase tracking-widest">SaaS</li>
 								</ul>
 							</div>
 						</li>
@@ -282,10 +319,16 @@
 									>Topics:</strong
 								>
 								<ul class="grid grid-cols-2 mb-2 gap-2">
-									<li>Wordpress</li>
-									<li>PHP</li>
-									<li>Sales Integration</li>
-									<li>Wordpress Plugin Development</li>
+									<li class="text-[10px] uppercase tracking-widest">
+										Wordpress
+									</li>
+									<li class="text-[10px] uppercase tracking-widest">PHP</li>
+									<li class="text-[10px] uppercase tracking-widest">
+										Sales Integration
+									</li>
+									<li class="text-[10px] uppercase tracking-widest">
+										Wordpress Plugin Development
+									</li>
 								</ul>
 							</div>
 						</li>
@@ -318,62 +361,100 @@
 									>Topics:</strong
 								>
 								<ul class="grid grid-cols-2 mb-2 gap-2">
-									<li>NextJS</li>
-									<li>Headless</li>
-									<li>GraphQL</li>
+									<li class="text-[10px] uppercase tracking-widest">NextJS</li>
+									<li class="text-[10px] uppercase tracking-widest">
+										Headless
+									</li>
+									<li class="text-[10px] uppercase tracking-widest">GraphQL</li>
 								</ul>
 							</div>
 						</li>
 					</ul>
 				</div>
 			</div>
-			<!-- Interesting Projects -->
-			<div class="wrap mb-32">
-				<h4 class="text-3xl mb-8 font-bold">Techical Playground</h4>
-
-				<ul class="grid gap-5 sm:grid-cols-2">
+			<div class="wrap mb-12 lg:mb-32">
+				<h4 class="text-3xl mb-8 font-bold" id="playground">Playground</h4>
+				<div class="content mb-12">
+					<p class="pl-4 border-l-3 border-sky-700 mb-12">
+						A place for experimenting with UX, devoloping my own tools and
+						creative coding.
+					</p>
+				</div>
+				<ul class="grid gap-5 md:grid-cols-3">
 					<li
 						role="article"
-						class="order shadow-sm border-white rounded-3xl bg-sky-50/50 backdrop-blur-sm pl-4 py-6"
+						class="order shadow-sm border-white rounded-3xl bg-sky-50/50 backdrop-blur-sm overflow-hidden"
 					>
-						<a href="/fluid.html" class="text-xl font-semibold">
-							Real-Time Fluid Dynamics
-						</a>
-						<ul class="flex gap-2 py-2">
-							<li class="text-[10px] uppercase tracking-widest">Rust</li>
-							<li class="text-[10px] uppercase tracking-widest">WASM</li>
-							<li class="text-[10px] uppercase tracking-widest">WebGL</li>
-						</ul>
-						<p class="mt-1 mb-2 text-sm max-w-2xl">
-							A custom Navier-Stokes solver written in Rust and compiled to
-							WASM. Processes over 1 million operations per frame at 75 FPS
-							using WebGL shaders.
-						</p>
+						<div class="aspect-video">
+							<video src="/assets/fluid.mp4" autoplay loop></video>
+						</div>
+						<div class="p-6">
+							<a href="/fluid.html" class="text-xl font-semibold">
+								Real-Time Fluid Dynamics
+							</a>
+							<ul class="flex gap-2 py-2">
+								<li class="text-[10px] uppercase tracking-widest">Rust</li>
+								<li class="text-[10px] uppercase tracking-widest">WASM</li>
+								<li class="text-[10px] uppercase tracking-widest">WebGL</li>
+							</ul>
+							<p class="mt-1 mb-2 text-sm">
+								A custom Navier-Stokes solver written in Rust and compiled to
+								WASM. Processes over 1 million operations per frame at 75 FPS
+								using WebGL shaders.
+							</p>
+						</div>
 					</li>
 
 					<li
 						role="article"
-						class="order shadow-sm border-white rounded-3xl bg-sky-50/50 backdrop-blur-sm pl-4 py-6"
+						class="order shadow-sm border-white rounded-3xl bg-sky-50/50 backdrop-blur-sm overflow-hidden"
 					>
-						<a href="/three-js.html" class="text-xl font-semibold">
-							High Fidelity 3D Rendering
-						</a>
-						<ul class="flex gap-2 py-2">
-							<li class="text-[10px] uppercase tracking-widest">Three.js</li>
-							<li class="text-[10px] uppercase tracking-wides">GLSL</li>
-						</ul>
-						<p class="mt-1 mb-2 text-sm max-w-2xl">
-							An immersive 3D environment built with Three.js, featuring
-							physically-based rendering (PBR), custom lighting models, and
-							optimized scene graphs.
-						</p>
+						<div class="aspect-video">
+							<video src="/assets/three-js.mp4" autoplay loop></video>
+						</div>
+						<div class="p-6">
+							<a href="/three-js.html" class="text-xl font-semibold">
+								High Fidelity 3D Rendering
+							</a>
+							<ul class="flex gap-2 py-2">
+								<li class="text-[10px] uppercase tracking-widest">Three.js</li>
+								<li class="text-[10px] uppercase tracking-widest">React</li>
+							</ul>
+							<p class="mt-1 mb-2 text-sm">
+								Enter an immersive 3D sub sea environment built with Three.js,
+								featuring event driven postprocessing, Blender animated models
+								and particle systems.
+							</p>
+						</div>
+					</li>
+					<li
+						role="article"
+						class="order shadow-sm border-white rounded-3xl bg-sky-50/50 backdrop-blur-sm overflow-hidden"
+					>
+						<div class="aspect-video">
+							<img src="/assets//pomonote.png" class="object-contain" alt="" />
+						</div>
+						<div class="p-6">
+							<a href="/pomonote.html" class="text-xl font-semibold">
+								Pomonote
+							</a>
+							<ul class="flex gap-2 py-2">
+								<li class="text-[10px] uppercase tracking-widest">Rust</li>
+								<li class="text-[10px] uppercase tracking-widest">CLI</li>
+							</ul>
+							<p class="mt-1 mb-2 text-sm">
+								A command line developer tool for managing tasks and using the
+								pomodoro focus timing method to maximize productivity and track
+								work sessions.
+							</p>
+						</div>
 					</li>
 				</ul>
 			</div>
 			<!-- Work History -->
 			<div class="wrap">
-				<h4 class="text-3xl mb-12 dissolve">Work History</h4>
-				<ul class="history-list max-xl:pl-9 max-w-2xl">
+				<h4 class="text-3xl mb-12 dissolve" id="work-history">Work History</h4>
+				<ul class="history-list max-xl:pl-9 content">
 					<li class="history-list__item">
 						<div class="flex flex-col gap-4">
 							<div class="grid grid-cols-2 gap-5">
@@ -603,31 +684,52 @@
 		</section>
 		<footer class="pt-32 pb-32">
 			<div class="wrap">
-				<div class="flex gap-[6vw]">
+				<div class="flex flex-col md:flex-row gap-[6vw]">
 					<div>
 						<h1 class="text-xl md:text-3xl font-semibold">Will Leighton</h1>
 						<p class="max-md:text-sm">Full-Stack Developer</p>
 						<div id="hud"></div>
 					</div>
-					<ul class="ml-auto text-sm">
+					<nav class="md:ml-auto">
+						<ul class="ml-auto text-sm">
+							<li>
+								<a class="underline" href="#about">About</a>
+							</li>
+							<li>
+								<a class="underline" href="#work">Work</a>
+							</li>
+							<li>
+								<a class="underline" href="#playground">Playground</a>
+							</li>
+							<li>
+								<a class="underline" href="#work-history">Employment History</a>
+							</li>
+						</ul>
+					</nav>
+					<ul class="text-sm">
 						<li>
-							<a href="#about">About</a>
+							<a href="mailto:will_leighton@outlook.com" class="underline"
+								>will_leighton@outlook.com</a
+							>
 						</li>
 						<li>
-							<a href="#work">Work</a>
+							<a
+								target="_blank"
+								href="https://www.linkedin.com/in/will-leighton-62899a1b7/"
+								class="underline"
+								>Linkedin</a
+							>
 						</li>
-						<!-- <li>
-							<a href="#interactive">Interactive</a>
-						</li> -->
 						<li>
-							<a href="#contact">Contact</a>
+							<a
+								target="_blank"
+								download=""
+								href="/assets/cv.pdf"
+								class="underline"
+								>Curriculum vitae</a
+							>
 						</li>
 					</ul>
-					<div class="text-sm hidden md:block">
-						<a href="mailto:will_leighton@outlook.com" class="underline"
-							>will_leighton@outlook.com</a
-						>
-					</div>
 				</div>
 			</div>
 		</footer>

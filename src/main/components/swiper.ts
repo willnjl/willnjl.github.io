@@ -1,4 +1,5 @@
 import Swiper from "swiper";
+import "swiper/swiper.css";
 import { Navigation } from "swiper/modules";
 
 [].forEach.call(

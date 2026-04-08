@@ -7,6 +7,11 @@ import "./Coverpage.scss";
 
 export default () => (
 	<div className="coverpage">
+		{/* <div className="wrap">
+			<a href="/" className="back-link">
+				Back to homepage
+			</a>
+		</div> */}
 		<ScreenMoveIndicator />
 		<Scene />
 		<EnterMessage />

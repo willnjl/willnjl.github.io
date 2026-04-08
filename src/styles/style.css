@@ -1,5 +1,8 @@
-@import "tailwindcss";
-@import "swiper/css";
+@import "tailwindcss" source(none);
+
+@source "../../index.html";
+@source "../../fluid.html";
+
 @import "./history";
 @import "./ticker";
 
@@ -8,11 +11,12 @@
 	--text-scaled-lg: 6vw;
 	--text-scaled: 4vw;
 }
+
 body {
 	overflow-x: hidden;
 }
 .wrap {
-	@apply max-w-6xl mx-auto px-5;
+	@apply max-w-7xl mx-auto px-5;
 }
 
 .test {
@@ -20,6 +24,7 @@ body {
 }
 
 .content {
+	@apply max-w-2xl;
 	p:not(last-child) {
 		@apply mb-3;
 	}
@@ -41,4 +46,18 @@ button {
 
 .invert-text {
 	@apply invert mix-blend-difference;
+}
+
+.aspect-video {
+	position: relative;
+	width: 100%;
+	& > img,
+	& > video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 }
