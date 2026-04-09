@@ -65,7 +65,7 @@ export const LOADING_PHRASES = [
  * General noise/glitch intensity multiplier (0-2)
  * Controls the strength of chromatic aberration noise effects
  */
-export const NOISE_INTENSITY = 0.4;
+export const NOISE_INTENSITY = 0.2;
 
 /**
  * Probability of noise occurring per frame (0-1)
@@ -77,7 +77,7 @@ export const NOISE_FREQUENCY = 0.9;
  * Mouse velocity effect intensity multiplier (0-2)
  * Controls how much mouse movement affects chromatic aberration
  */
-export const MOUSE_VELOCITY_INTENSITY = 1.0;
+export const MOUSE_VELOCITY_INTENSITY = 0.5;
 
 // ========================================
 // DEPTH OF FIELD
