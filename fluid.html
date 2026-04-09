@@ -46,9 +46,9 @@
 					it can be compiled into many different languages. I used WebAssembly
 					(WASM), a binary instruction format that allows low-level code to run
 					at near-native speeds in the browser. It runs with minimal overhead,
-					bypassing JavaScript's slower interpretation layer and the compiled
-					binary format is therefore optimized for quick parsing and execution,
-					making it ideal for performance-critical tasks like fluid simulation.
+					bypassing for example JavaScript's slower interpretation layer. The
+					compiled binary format is therefore optimized for performance-critical
+					tasks like fluid simulation.
 				</p>
 
 				<p>
@@ -58,21 +58,20 @@
 				</p>
 				<h5 class="font-bold mb-3">Rendering</h5>
 				<p>
-					I started out with trying to render each cell as a square on at HTML
+					I started out with trying to render each cell as a square on a HTML
 					Canvas. The issue with this was that each draw call to the canvas ate
 					up a small peice of the CPU, multiply that thousands of times and the
 					result is something super laggy.
 				</p>
 				<h5 class="font-bold mb-3">Shaders</h5>
-
 				<p>
 					The solution is to turn to the dark arts, something that until now as
 					as a web developer I had only seen glimpses of...
 					<strong>Shaders</strong>. Shaders have there own C like language
 					called GLSL (OpenGL Shading Language) which essentially allows your
-					browser directly to the computer's Graphics Processing Unit (GPU). The
-					advantage of this is while your CPU processes tasks one after another,
-					the GPU processes thousands of pixels simultaneously.
+					browser to talk directly to the computer's Graphics Processing Unit
+					(GPU). The advantage of this is while your CPU processes tasks one
+					after another, the GPU processes thousands of pixels simultaneously.
 				</p>
 
 				<div
