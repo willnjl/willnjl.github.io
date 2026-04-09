@@ -24,10 +24,13 @@ body {
 }
 
 .content {
-	@apply max-w-2xl;
 	p:not(last-child) {
-		@apply mb-3;
+		@apply mb-6;
 	}
+}
+
+.wrap .content {
+	@apply max-w-2xl;
 }
 
 button {

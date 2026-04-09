@@ -13,18 +13,62 @@
 		/>
 	</head>
 	<body class="bg-sky-50">
-		<main class="max-w-lg mx-auto pt-12 pb-32">
-			<div class="fluid-sim-description">
+		<main class="max-w-4xl mx-auto pt-12 pb-32">
+			<div class="fluid-sim-description content">
 				<a href="/" class="underline mb-3 inline-block"> Back to homepage </a>
-				<h2 class="text-2xl font-bold mb-4">High-Performance Fluid Dynamics</h2>
+				<h1 class="text-2xl md:text-scaled mb-6">Real Time Fluid Dynamics</h1>
+				<p>
+					I'm a Web Developer who enjoys trying out new tech and had recently
+					been spending some time learning Rust.
+				</p>
 
-				<p class="">
-					This engine achieves a consistent <strong>75 FPS</strong> by
-					offloading heavy numerical analysis to
-					<strong>WebAssembly (WASM)</strong>. By compiling
-					<strong>Rust</strong> to WASM, the simulation executes at near-native
-					speeds, allowing the browser to process the thousands of linear
-					operations required for every single.
+				<p>
+					Sometimes you can have lot of fun learning a new skill in development
+					but at the end say "cool, but what can I use this for?"
+				</p>
+
+				<p>
+					I came across this article for
+					<a
+						class="underline"
+						|href="https://mikeash.com/pyblog/fluid-simulation-for-dummies.html"
+						>Fluid Simulation for Dummies</a
+					>
+					by Mike Ash and I decided to convert the it's C code into Rust and
+					start building something fun and interactive for the web.
+				</p>
+
+				<p>
+					Converting the C code to Rust was the easy part. Next I had to compile
+					the Code to the Web. I used WebAssembly (WASM), a binary instruction
+					format that allows low-level code to run at near-native speeds in the
+					browser. It allows you to write extremely fast applications because it
+					runs at near-native speeds with minimal overhead, bypassing
+					JavaScript's slower interpretation layer. The compiled binary format
+					is optimized for quick parsing and execution, making it ideal for
+					performance-critical tasks like fluid simulation.
+				</p>
+
+				<p>
+					Once I had my Fluid Sim code making super fast calculations I needed
+					to figure out how to render this data in a way that was fun for the
+					user and performant in the Browser.
+				</p>
+				<p>
+					I started out with trying to render each cell as a square on at HTML
+					Canvas. The issue with this was that each draw call to the canvas ate
+					up a small peice of the CPU, multiply that thousands of times and the
+					result is something super laggy.
+				</p>
+
+				<p>
+					The solution is to turn to the dark arts, something that until now as
+					as a web developer I had only seen glimpses of...
+					<strong>Shaders</strong>. Shaders have there own C like language
+					called GLSL (OpenGL Shading Language) which essentially allows your
+					browser directly to the computer's Graphics Processing Unit (GPU). The
+					advantage of this is while your CPU processes tasks one after another,
+					the GPU processes thousands of pixels simultaneously.
 				</p>
 
 				<div
@@ -54,36 +98,6 @@
 						</p>
 					</div>
 				</div>
-
-				<p class="mb-4">
-					The simulation solves the <strong>Navier-Stokes equations</strong> for
-					incompressible flow. The mathematical core relies on four primary
-					stages executed in a tight loop:
-				</p>
-
-				<ul class="space-y-5 mb-12">
-					<li>
-						<strong>Diffusion:</strong> Uses the <em>Gauss-Seidel</em> iterative
-						method to solve the heat equation, preventing the fluid from
-						becoming a "checkerboard" of isolated values.
-					</li>
-					<li>
-						<strong>Advection:</strong> Implements a
-						<em>Linear Back-Trace</em> technique to move density through the
-						velocity field, maintaining fluid momentum while minimizing
-						numerical dissipation.
-					</li>
-					<li>
-						<strong>Incompressible Projection:</strong> A critical step that
-						solves a <em>Poisson Equation</em> to force the velocity field to be
-						mass-conserving, creating realistic vortices and swirls.
-					</li>
-					<li>
-						<strong>WASM-to-GPU Bridge:</strong> Velocity and density data are
-						updated in Rust memory and mapped to a WebGL texture buffer,
-						bypassing the overhead of JavaScript's garbage collector.
-					</li>
-				</ul>
 
 				<p
 					class="mb-3 font-semibold text-olive-500 border-l-4 border-olive-600 pl-3"
