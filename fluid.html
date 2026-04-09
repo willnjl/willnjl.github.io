@@ -21,7 +21,7 @@
 					I'm a Web Developer who enjoys trying out new tech and had recently
 					been spending some time learning Rust.
 				</p>
-
+				<h5 class="font-bold mb-3">The Why</h5>
 				<p>
 					Sometimes you can have lot of fun learning a new skill in development
 					but at the end say "cool, but what can I use this for?"
@@ -31,22 +31,24 @@
 					I came across this article for
 					<a
 						class="underline"
-						|href="https://mikeash.com/pyblog/fluid-simulation-for-dummies.html"
+						target="_blank"
+						href="https://mikeash.com/pyblog/fluid-simulation-for-dummies.html"
 						>Fluid Simulation for Dummies</a
 					>
 					by Mike Ash and I decided to convert the it's C code into Rust and
 					start building something fun and interactive for the web.
 				</p>
 
+				<h5 class="font-bold mb-3">C -> Rust -> WASM</h5>
 				<p>
 					Converting the C code to Rust was the easy part. Next I had to compile
-					the Code to the Web. I used WebAssembly (WASM), a binary instruction
-					format that allows low-level code to run at near-native speeds in the
-					browser. It allows you to write extremely fast applications because it
-					runs at near-native speeds with minimal overhead, bypassing
-					JavaScript's slower interpretation layer. The compiled binary format
-					is optimized for quick parsing and execution, making it ideal for
-					performance-critical tasks like fluid simulation.
+					the code to the Web. One of the intersting things about Rust is that
+					it can be compiled into many different languages. I used WebAssembly
+					(WASM), a binary instruction format that allows low-level code to run
+					at near-native speeds in the browser. It runs with minimal overhead,
+					bypassing JavaScript's slower interpretation layer and the compiled
+					binary format is therefore optimized for quick parsing and execution,
+					making it ideal for performance-critical tasks like fluid simulation.
 				</p>
 
 				<p>
@@ -54,12 +56,14 @@
 					to figure out how to render this data in a way that was fun for the
 					user and performant in the Browser.
 				</p>
+				<h5 class="font-bold mb-3">Rendering</h5>
 				<p>
 					I started out with trying to render each cell as a square on at HTML
 					Canvas. The issue with this was that each draw call to the canvas ate
 					up a small peice of the CPU, multiply that thousands of times and the
 					result is something super laggy.
 				</p>
+				<h5 class="font-bold mb-3">Shaders</h5>
 
 				<p>
 					The solution is to turn to the dark arts, something that until now as
