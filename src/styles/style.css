@@ -64,3 +64,9 @@ button {
 		object-fit: cover;
 	}
 }
+
+a[target="_blank"]::after {
+	content: "↗";
+	margin-left: 0.25em;
+	font-size: 0.85em;
+}
