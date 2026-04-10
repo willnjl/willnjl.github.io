@@ -3,8 +3,9 @@
 @source "../../index.html";
 @source "../../fluid.html";
 
-@import "./history";
-@import "./ticker";
+@import "./_history";
+@import "./_ticker";
+@import "./_wave";
 
 @theme {
 	--font-sans: "Anonymous Pro", monospace;
