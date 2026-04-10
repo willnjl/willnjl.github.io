@@ -2,9 +2,7 @@
 .wave-emoji:hover svg {
 	animation: wave 1.2s ease-out forwards;
 }
-.wave-emoji:hover svg {
-	animation: wave 1.2s ease-out;
-}
+
 @keyframes wave {
 	0% {
 		transform: rotate(0deg);
