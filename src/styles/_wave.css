@@ -1,5 +1,5 @@
 .wave-emoji,
-.wave-emoji:hover svg {
+.wave-emoji svg {
 	animation: wave 1.2s ease-out forwards;
 }
 
