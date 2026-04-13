@@ -2,7 +2,7 @@
 	position: relative;
 	.history-list__item {
 		position: relative;
-		@apply pb-24;
+		@apply pb-12;
 		&::before {
 			content: "";
 			background-color: var(--color-slate-500);
